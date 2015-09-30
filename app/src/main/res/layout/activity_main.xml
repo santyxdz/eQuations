@@ -9,25 +9,39 @@
     android:orientation="vertical"
     android:weightSum="1">
 
-    <com.androidplot.xy.XYPlot
-        android:id="@+id/Grafica"
-        android:layout_width="fill_parent"
-        android:layout_height="204dp"
-        androidplot.rangeLabel="Aplitud"
-        androidplot.domainLabel="Tiempo"
-        android:layout_weight="0.14"></com.androidplot.xy.XYPlot>
-
-    <EditText
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_gravity="center_horizontal" />
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView" >
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_gravity="center_horizontal" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/Grafica"
+                android:layout_width="fill_parent"
+                android:layout_height="204dp"
+                androidplot.rangeLabel="Aplitud"
+                androidplot.domainLabel="Tiempo"
+                android:layout_weight="0.14"></com.androidplot.xy.XYPlot>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/inpt_f"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/request_f"
+                android:textAlignment="center"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/graph_buttom"
+                android:id="@+id/btn_graph"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
