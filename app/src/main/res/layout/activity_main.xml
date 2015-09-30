@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/margin_horizontal"
+    android:paddingRight="@dimen/margin_horizontal"
+    android:paddingTop="@dimen/margin_vertical"
+    android:paddingBottom="@dimen/margin_vertical"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/Grafica"
+        android:layout_width="fill_parent"
+        android:layout_height="204dp"
+        androidplot.rangeLabel="Aplitud"
+        androidplot.domainLabel="Tiempo"
+        android:layout_weight="0.14"></com.androidplot.xy.XYPlot>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

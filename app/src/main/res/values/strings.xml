@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">eQuations</string>
+    <string name="action_settings">Configuraciones</string>
+    <string name="graph_buttom">Graficar</string>
+</resources>
