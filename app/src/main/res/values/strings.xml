@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">eQuations</string>
-    <string name="action_settings">Configuraciones</string>
-    <string name="graph_buttom">Graficar</string>
-    <string name="request_f">f(x)</string>
-</resources>
