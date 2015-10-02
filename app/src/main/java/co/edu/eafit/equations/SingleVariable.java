@@ -29,13 +29,14 @@ public class SingleVariable extends Fragment{
         TextView txtv_header = (TextView)header.findViewById(R.id.txt_title);
         TextView txtv_footer = (TextView)header.findViewById(R.id.txt_title);
         txtv_footer.setText("El Footer");
-        txtv_header.setText("El Header");
+        txtv_header.setText(getString(R.string.single_variables_equations));
         gridView.addHeaderView(header);
         gridView.addFooterView(footer);
         MenuAdapter mAdapter = new MenuAdapter(this.getActivity(),R.id.txt_line1);
         ArrayList<String> mData = new ArrayList<>();
-        for (int i = 0; i < 30; i++) {
-            mData.add("SAMPLE #");}
+        for (int i = 0; i < 7; i++) {
+            mData.add("X");
+        }
 //        }
 //        if (mAdapter == null) {
 //            mAdapter = new MenuAdapter(getActivity(), R.id.txt_line1);

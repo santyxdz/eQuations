@@ -11,15 +11,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.etsy.android.grid.util.DynamicHeightImageView;
 import com.etsy.android.grid.util.DynamicHeightTextView;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * Created by Santi on 1/10/2015.
- */
 public class MenuAdapter extends ArrayAdapter<String>{
     public static final String TAG = "MenuAdapter";
     static class ViewHolder{
