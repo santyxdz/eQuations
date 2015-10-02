@@ -108,4 +108,9 @@
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="title_activity_tabs">Tabs</string>
     <string name="single_variables_equations">Single Variable Equations</string>
+    <string-array name="cabecera_tabla_BIncremental">
+        <item>Cont</item>
+        <item>x</item>
+        <item>F(x)</item>
+    </string-array>
 </resources>
