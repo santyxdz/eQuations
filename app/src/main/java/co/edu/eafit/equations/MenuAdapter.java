@@ -1,6 +1,7 @@
 package co.edu.eafit.equations;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -72,6 +73,9 @@ public class MenuAdapter extends ArrayAdapter<String>{
             public void onClick(final View v) {
                 Toast.makeText(getContext(), "Button Clicked Position " +
                         position, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent();
+                intent.setClass(getContext(),Tabs.class);
+                getContext().startActivity(intent);
             }
         });
 

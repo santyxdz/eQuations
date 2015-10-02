@@ -21,8 +21,10 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.0.1'
     compile files('libs/androidplot-core-0.6.1.jar')
     compile files('libs/exp4j-0.4.5.jar')
-    compile project(':library')
+    compile project(':StaggeredGrid')
+//    compile project(':Pagger')
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:design:23.0.1'
 }
