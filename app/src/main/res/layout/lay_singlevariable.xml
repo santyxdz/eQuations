@@ -9,4 +9,5 @@
         android:text="Newton"
         android:id="@+id/textView2"
         android:layout_gravity="right" />
+
 </LinearLayout>

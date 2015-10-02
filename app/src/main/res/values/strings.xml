@@ -13,4 +13,14 @@
     <string name="action_settings">Settings</string>
     <string name="request_f">f(x)</string>
     <string name="graph_button">Graficar</string>
+    <string name="title_activity_incremental_searches">IncrementalSearches</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string-array name="cabecera_tabla_BIncremental">
+        <item>Cont</item>
+        <item>x</item>
+        <item>F(x)</item>
+    </string-array>
+
 </resources>
