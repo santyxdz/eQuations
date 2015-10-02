@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Santi\AndroidStudioProjects\equations\app\build\intermediates\exploded-aar\equations\library\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9fabdf3b2805e029e2f3946900f95072386934d5">
+        <dex dex="C:\Users\Santi\AndroidStudioProjects\equations\app\build\intermediates\pre-dexed\debug\classes-c2a214fc1567c296c452cdc2eff650e6cf9039ad.jar" />
+    </item>
+    <item
+        jar="C:\Users\Santi\AndroidStudioProjects\equations\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="C:\Users\Santi\AndroidStudioProjects\equations\app\build\intermediates\pre-dexed\debug\classes-f6dee0896388040c0ac2a51dcc0df193bdbe1cb6.jar" />
+    </item>
+
+</items>
