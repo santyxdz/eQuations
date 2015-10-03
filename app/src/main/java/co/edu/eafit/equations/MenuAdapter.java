@@ -62,14 +62,40 @@ public class MenuAdapter extends ArrayAdapter<String>{
         Log.d(TAG, "getView position:" + position + " h:" + positionHeight);
 
         vh.txtLineOne.setHeightRatio(positionHeight);
-        vh.txtLineOne.setText(getItem(position) + position);
+        //vh.txtLineOne.setText(getItem(position) + position);
+        vh.txtLineOne.setText(getItem(position));
 
         vh.btn_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                Toast.makeText(getContext(), "Button Clicked Position " +
-                        position, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent();
+                intent.setClass(getContext(), Tabs.class);
+                /*Toast.makeText(getContext(), "Button Clicked Position " +
+                        position, Toast.LENGTH_SHORT).show();*/
+                switch (position){
+                    case 0:
+                    intent.putExtra("type","Incremental Searches");
+                        break;
+                    case 1:
+                        intent.putExtra("type", "Bisection");
+                        break;
+                    case 2:
+                        intent.putExtra("type", "False Position");
+                        break;
+                    case 3:
+                        intent.putExtra("type", "Fixed Point");
+                        break;
+                    case 4:
+                        intent.putExtra("type", "Newton");
+                        break;
+                    case 5:
+                        intent.putExtra("type", "Secant");
+                        break;
+                    case 6:
+                        intent.putExtra("type","Multiple Roots");
+                        break;
+                }
+                intent.putExtra("id",position);
                 intent.setClass(getContext(),Tabs.class);
                 getContext().startActivity(intent);
             }

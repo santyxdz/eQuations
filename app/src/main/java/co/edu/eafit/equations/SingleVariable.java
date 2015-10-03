@@ -1,7 +1,6 @@
 package co.edu.eafit.equations;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,12 +10,6 @@ import android.widget.TextView;
 import android.widget.AbsListView;
 
 import com.etsy.android.grid.StaggeredGridView;
-
-import java.util.ArrayList;
-
-/**
- * Created by Santi on 30/09/2015.
- */
 public class SingleVariable extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,26 +21,18 @@ public class SingleVariable extends Fragment{
         View footer = layoutInflater.inflate(R.layout.list_item_header_footer,null);
         TextView txtv_header = (TextView)header.findViewById(R.id.txt_title);
         TextView txtv_footer = (TextView)header.findViewById(R.id.txt_title);
-        txtv_footer.setText("El Footer");
+        txtv_footer.setText("x");
         txtv_header.setText(getString(R.string.single_variables_equations));
         gridView.addHeaderView(header);
         gridView.addFooterView(footer);
         MenuAdapter mAdapter = new MenuAdapter(this.getActivity(),R.id.txt_line1);
-        ArrayList<String> mData = new ArrayList<>();
-        for (int i = 0; i < 7; i++) {
-            mData.add("X");
-        }
-//        }
-//        if (mAdapter == null) {
-//            mAdapter = new MenuAdapter(getActivity(), R.id.txt_line1);
-//        }
-//
-//        if (mData == null) {
-//            mData = generateSampleData();
-//        }
-        for(String data:mData) {
-            mAdapter.add(data);
-        }
+        mAdapter.add("Incremental Searches");
+        mAdapter.add("Bisection");
+        mAdapter.add("False Position");
+        mAdapter.add("Fixed Point");
+        mAdapter.add("Newton");
+        mAdapter.add("Secant");
+        mAdapter.add("Multiple Roots");
         gridView.setAdapter(mAdapter);
         return rootView;
     }

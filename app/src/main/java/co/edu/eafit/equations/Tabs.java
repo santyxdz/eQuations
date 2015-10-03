@@ -41,8 +41,9 @@ public class Tabs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabs);
-
+        String nameToolbar = getIntent().getExtras().getString("type");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(nameToolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -98,15 +99,38 @@ public class Tabs extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             Fragment tab = null;
+            int type = getIntent().getExtras().getInt("id");
             switch (position) {
                 case 0:
-                    tab = InputIncrementalSearches.newInstance(position);
+                    switch (type){
+                        case 0:
+                            tab = InputIncrementalSearches.newInstance(position);
+                            break;
+                        default:
+                            tab = InputIncrementalSearches.newInstance(position);
+                            break;
+                    }
                     break;
                 case 1:
-                    tab = TableIncrementalSearches.newInstance(position);
+                    switch (type){
+                        case 0:
+                            tab = TableIncrementalSearches.newInstance(position);
+                            break;
+                        default:
+                            tab = TableIncrementalSearches.newInstance(position);
+                            break;
+                    }
+                    ;
                     break;
                 case 2:
-                    tab =  Help.newInstance(position);
+                    switch (type){
+                        case 0:
+                            tab =  Help.newInstance(position);
+                            break;
+                        default:
+                            tab =  Help.newInstance(position);
+                            break;
+                    }
                     break;
                 default:
                     Log.i("ErrorMenu:","Creacion de Frament Invalida");
@@ -123,13 +147,13 @@ public class Tabs extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Entrada";
                 case 1:
-                    return "SECTION 2";
+                    return "Tabla";
                 case 2:
-                    return "SECTION 3";
+                    return "Ayuda";
             }
-            return null;
+            return "Default";
         }
     }
 
