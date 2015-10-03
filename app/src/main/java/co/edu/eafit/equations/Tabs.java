@@ -17,8 +17,20 @@ import android.view.MenuItem;
 import android.view.View;
 
 import co.edu.eafit.equations.helps.Help;
+import co.edu.eafit.equations.inputs.InputBisection;
+import co.edu.eafit.equations.inputs.InputFalsePosition;
+import co.edu.eafit.equations.inputs.InputFixedPoint;
 import co.edu.eafit.equations.inputs.InputIncrementalSearches;
+import co.edu.eafit.equations.inputs.InputMultipleRoots;
+import co.edu.eafit.equations.inputs.InputNewton;
+import co.edu.eafit.equations.inputs.InputSecant;
+import co.edu.eafit.equations.tables.TableBisection;
+import co.edu.eafit.equations.tables.TableFalsePosition;
+import co.edu.eafit.equations.tables.TableFixedPoint;
 import co.edu.eafit.equations.tables.TableIncrementalSearches;
+import co.edu.eafit.equations.tables.TableMultipleRoots;
+import co.edu.eafit.equations.tables.TableNewton;
+import co.edu.eafit.equations.tables.TableSecant;
 
 public class Tabs extends AppCompatActivity {
 
@@ -106,8 +118,26 @@ public class Tabs extends AppCompatActivity {
                         case 0:
                             tab = InputIncrementalSearches.newInstance(position);
                             break;
+                        case 1:
+                            tab = InputBisection.newInstance(position);
+                            break;
+                        case 2:
+                            tab = InputFalsePosition.newInstance(position);
+                            break;
+                        case 3:
+                            tab = InputFixedPoint.newInstance(position);
+                            break;
+                        case 4:
+                            tab = InputNewton.newInstance(position);
+                            break;
+                        case 5:
+                            tab = InputSecant.newInstance(position);
+                            break;
+                        case 6:
+                            tab = InputMultipleRoots.newInstance(position);
+                            break;
                         default:
-                            tab = InputIncrementalSearches.newInstance(position);
+                            tab = null;
                             break;
                     }
                     break;
@@ -116,17 +146,33 @@ public class Tabs extends AppCompatActivity {
                         case 0:
                             tab = TableIncrementalSearches.newInstance(position);
                             break;
+                        case 1:
+                            tab = TableBisection.newInstance(position);
+                            break;
+                        case 2:
+                            tab = TableFalsePosition.newInstance(position);
+                            break;
+                        case 3:
+                            tab = TableFixedPoint.newInstance(position);
+                            break;
+                        case 4:
+                            tab = TableNewton.newInstance(position);
+                            break;
+                        case 5:
+                            tab = TableSecant.newInstance(position);
+                            break;
+                        case 6:
+                            tab = TableMultipleRoots.newInstance(position);
+                            break;
                         default:
-                            tab = TableIncrementalSearches.newInstance(position);
+                            tab = null;
                             break;
                     }
                     ;
                     break;
                 case 2:
                     switch (type){
-                        case 0:
-                            tab =  Help.newInstance(position);
-                            break;
+                        //Usar por si nesecita un help en especifico
                         default:
                             tab =  Help.newInstance(position);
                             break;
