@@ -7,23 +7,42 @@
     <item name="red" type="color">#FFFF4444</item>
     <item name="yellow" type="color">#ffea00</item>
     <item name="grey" type="color">#2f4f4a</item>
-    <item name="darkblue" type="color">#FF0099CC</item>
-    <item name="darkpurple" type="color">#FF9933CC</item>
-    <item name="darkgreen" type="color">#FF669900</item>
-    <item name="darkorange" type="color">#FFFF8800</item>
-    <item name="darkred" type="color">#FFCC0000</item>
-
+    <item name="dark_blue" type="color">#FF0099CC</item>
+    <item name="dark_purple" type="color">#FF9933CC</item>
+    <item name="dark_green" type="color">#FF669900</item>
+    <item name="dark_orange" type="color">#FFFF8800</item>
+    <item name="dark_red" type="color">#FFCC0000</item>
+    <item name="pseudo_black" type="color">#212121</item>
+    <item name="white" type="color">#FFFFFF</item>
     <integer-array name="androidcolors">
         <item>@color/blue</item>
         <item>@color/purple</item>
         <item>@color/green</item>
         <item>@color/orange</item>
         <item>@color/red</item>
-        <item>@color/darkblue</item>
-        <item>@color/darkpurple</item>
-        <item>@color/darkgreen</item>
-        <item>@color/darkorange</item>
-        <item>@color/darkred</item>
+        <item>@color/dark_blue</item>
+        <item>@color/dark_purple</item>
+        <item>@color/dark_green</item>
+        <item>@color/dark_orange</item>
+        <item>@color/dark_red</item>
     </integer-array>
-
+    <color name="blanco">#FFFFFF</color>
+    <color name="amarillo">#FFFF00</color>
+    <color name="fuchsia">#FF00FF</color>
+    <color name="rojo">#FF0000</color>
+    <color name="plata">#C0C0C0</color>
+    <color name="gris">#808080</color>
+    <color name="verde_oliva">#808000</color>
+    <color name="morado">#800080</color>
+    <color name="marron">#800000</color>
+    <color name="agua">#00FFFF</color>
+    <color name="lima">#00FF00</color>
+    <color name="teal">#008080</color>
+    <color name="verde">#008000</color>
+    <color name="azul">#0000FF</color>
+    <color name="azulclaro">#FFAEE4E8</color>
+    <color name="navy">#000080</color>
+    <color name="negro">#000000</color>
+    <color name="marfil">#FFFFF0</color>
+    <color name="dorado">#EEE8AA</color>
 </resources> 

@@ -25,6 +25,7 @@ public class SingleVariable extends Fragment{
         txtv_header.setText(getString(R.string.single_variables_equations));
         gridView.addHeaderView(header);
         gridView.addFooterView(footer);
+        gridView.setBackgroundColor(getResources().getColor(R.color.white));
         MenuAdapter mAdapter = new MenuAdapter(this.getActivity(),R.id.txt_line1);
         mAdapter.add("Incremental Searches");
         mAdapter.add("Bisection");

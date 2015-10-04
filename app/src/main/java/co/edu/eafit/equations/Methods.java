@@ -2,18 +2,21 @@ package co.edu.eafit.equations;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class Methods {
-    public static BigDecimal f(double datoX){
-        double x = Math.sin(datoX);
-        return new BigDecimal(x);
+    public static Expression function;
+    public static BigDecimal f(double x){
+        double fx = function.setVariable("x", x).evaluate();
+        return new BigDecimal(fx);
     }
-    public static void IncrementalSearches(BigDecimal x0, BigDecimal  delta, long iter, Tabla tabla){
+    public static void IncrementalSearches(BigDecimal x0, BigDecimal  delta, long iter, Tabla tabla, String fx){
+        function = new ExpressionBuilder(fx).variable("x").build();
         BigDecimal y0 = f(x0.doubleValue());
         BigDecimal cero = new BigDecimal("0.0");
         if (y0.compareTo(cero)==0) {
-            tabla.setResult(x0.toString() + "Is a root");
-            //txt_push.setText(""+ x0 + "Is a root");
+            tabla.setResult(x0.toString() + " Is a root");
         }else{
             BigDecimal x1 = x0.add(delta);
             BigDecimal y1 = f(x1.doubleValue());
@@ -30,20 +33,15 @@ public class Methods {
                 tabla.addRow(newRow);
                 cont++;
             }
-            //Log.i("Matrix Size", tabla.getColumnas() + ":" + tabla.getFilas());
             if(y1.compareTo(cero)==0){
-                tabla.setResult(x1.toString() + "Is a root");
-                //txt_push.setText(""+ x1 + "Is a root");
+                tabla.setResult(x1.toString() + " Is a root");
             }else{
                 if((y0.multiply(y1)).compareTo(cero)==-1){//menor que cero
                     tabla.setResult(x1.toString()
-                            +"There's a root between x0 and x1 in the interval ["
+                            +" There's a root between x0 and x1 in the interval ["
                             +x0.toString()+","+x1.toString()+"]");
-                    /*txt_push.setText(""+ x1 + "There's a root between x0 and x1 in the interval ["+
-                            x0+" , "+x1+" ]");*/
                 }else{
-                    tabla.setResult("No root found");
-                    //txt_push.setText(" Not root found");
+                    tabla.setResult(" No root found");
                 }
             }
         }

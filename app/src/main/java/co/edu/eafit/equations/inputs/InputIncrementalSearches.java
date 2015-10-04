@@ -36,9 +36,7 @@ public class InputIncrementalSearches extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.tab_input_incremental_searches, null);
-        TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-        textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-        EditText inpt_function = (EditText)rootView.findViewById(R.id.inpt_function);
+        final EditText inpt_function = (EditText)rootView.findViewById(R.id.inpt_function);
         final EditText inpt_delta = (EditText)rootView.findViewById(R.id.inpt_delta);
         final EditText inpt_init = (EditText)rootView.findViewById(R.id.inpt_init);
         final EditText inpt_iter = (EditText)rootView.findViewById(R.id.inpt_iter);
@@ -56,7 +54,10 @@ public class InputIncrementalSearches extends Fragment {
                                 R.array.cabecera_tabla_BIncremental
                         )
                 );
-                Methods.IncrementalSearches(x0, delta, iter, ((Tabs) getActivity()).getTabla());
+                Methods.IncrementalSearches(x0, delta, iter,
+                        ((Tabs) getActivity()).getTabla(),
+                        inpt_function.getText().toString()
+                );
                 ((TableIncrementalSearches)((Tabs) getActivity()).getFragmentTable()).load_tables();
                 txt_push.setText(((Tabs)getActivity()).getTabla().getResult());
             }

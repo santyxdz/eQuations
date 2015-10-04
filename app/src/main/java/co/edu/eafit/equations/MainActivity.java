@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
         switch (position){
             case 0: //Inicio
-                fragment = new SingleVariable();
+                fragment = new Main();
                 break;
             case 1: //Graficar
                 fragment = new Graphic();
