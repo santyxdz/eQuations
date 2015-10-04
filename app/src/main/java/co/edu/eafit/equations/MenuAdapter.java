@@ -59,7 +59,7 @@ public class MenuAdapter extends ArrayAdapter<String>{
 
         convertView.setBackgroundResource(mBackgroundColors.get(backgroundIndex));
 
-        Log.d(TAG, "getView position:" + position + " h:" + positionHeight);
+        //Log.d(TAG, "getView position:" + position + " h:" + positionHeight);
 
         vh.txtLineOne.setHeightRatio(positionHeight);
         //vh.txtLineOne.setText(getItem(position) + position);
@@ -74,7 +74,7 @@ public class MenuAdapter extends ArrayAdapter<String>{
                         position, Toast.LENGTH_SHORT).show();*/
                 switch (position){
                     case 0:
-                    intent.putExtra("type","Incremental Searches");
+                        intent.putExtra("type","Incremental Searches");
                         break;
                     case 1:
                         intent.putExtra("type", "Bisection");
@@ -96,7 +96,6 @@ public class MenuAdapter extends ArrayAdapter<String>{
                         break;
                 }
                 intent.putExtra("id",position);
-                intent.setClass(getContext(),Tabs.class);
                 getContext().startActivity(intent);
             }
         });
@@ -113,7 +112,7 @@ public class MenuAdapter extends ArrayAdapter<String>{
         if (ratio == 0) {
             ratio = getRandomHeightRatio();
             sPositionHeightRatios.append(position, ratio);
-            Log.d(TAG, "getPositionRatio:" + position + " ratio:" + ratio);
+            //Log.d(TAG, "getPositionRatio:" + position + " ratio:" + ratio);
         }
         return ratio;
     }

@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TableLayout;
 
 import co.edu.eafit.equations.helps.Help;
 import co.edu.eafit.equations.inputs.InputBisection;
@@ -34,21 +35,24 @@ import co.edu.eafit.equations.tables.TableSecant;
 
 public class Tabs extends AppCompatActivity {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
     private ViewPager mViewPager;
-
+    private Fragment fragmentInput;
+    private Fragment fragmentTable;
+    private Fragment fragmentHelp;
+    public  Fragment getFragmentInput(){return this.fragmentInput;}
+    public  Fragment getFragmentTable(){return this.fragmentTable;}
+    public  Fragment getFragmentHelp(){return this.fragmentHelp;}
+    public void setFragmentInput(Fragment fragment){this.fragmentInput = fragment;}
+    public void setFragmentTable(Fragment fragment){this.fragmentTable = fragment;}
+    public void setFragmentHelp(Fragment fragment){this.fragmentHelp = fragment;}
+    private Tabla tabla;
+    public Tabla getTabla(){
+        return this.tabla;
+    }
+    public void setTabla(Tabla tabla){
+        this.tabla = tabla;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,18 +60,13 @@ public class Tabs extends AppCompatActivity {
         String nameToolbar = getIntent().getExtras().getString("type");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(nameToolbar);
+        setTabla(new Tabla());
         setSupportActionBar(toolbar);
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
-        // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,16 +81,12 @@ public class Tabs extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_tabs, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -113,71 +108,86 @@ public class Tabs extends AppCompatActivity {
             Fragment tab = null;
             int type = getIntent().getExtras().getInt("id");
             switch (position) {
-                case 0:
-                    switch (type){
-                        case 0:
-                            tab = InputIncrementalSearches.newInstance(position);
-                            break;
-                        case 1:
-                            tab = InputBisection.newInstance(position);
-                            break;
-                        case 2:
-                            tab = InputFalsePosition.newInstance(position);
-                            break;
-                        case 3:
-                            tab = InputFixedPoint.newInstance(position);
-                            break;
-                        case 4:
-                            tab = InputNewton.newInstance(position);
-                            break;
-                        case 5:
-                            tab = InputSecant.newInstance(position);
-                            break;
-                        case 6:
-                            tab = InputMultipleRoots.newInstance(position);
-                            break;
-                        default:
-                            tab = null;
-                            break;
+                case 0: //Entradas
+                    if(fragmentInput!=null){
+                        return fragmentInput;
+                    }else{
+                        switch (type){
+                            case 0:
+                                fragmentInput = InputIncrementalSearches.newInstance();
+                                break;
+                            case 1:
+                                fragmentInput = InputBisection.newInstance(position);
+                                break;
+                            case 2:
+                                fragmentInput = InputFalsePosition.newInstance(position);
+                                break;
+                            case 3:
+                                fragmentInput = InputFixedPoint.newInstance(position);
+                                break;
+                            case 4:
+                                fragmentInput = InputNewton.newInstance(position);
+                                break;
+                            case 5:
+                                fragmentInput = InputSecant.newInstance(position);
+                                break;
+                            case 6:
+                                fragmentInput = InputMultipleRoots.newInstance(position);
+                                break;
+                            default:
+                                fragmentInput = null;
+                                break;
+                        }
+                        return fragmentInput;
                     }
-                    break;
+                    //break;
                 case 1:
-                    switch (type){
-                        case 0:
-                            tab = TableIncrementalSearches.newInstance(position);
-                            break;
-                        case 1:
-                            tab = TableBisection.newInstance(position);
-                            break;
-                        case 2:
-                            tab = TableFalsePosition.newInstance(position);
-                            break;
-                        case 3:
-                            tab = TableFixedPoint.newInstance(position);
-                            break;
-                        case 4:
-                            tab = TableNewton.newInstance(position);
-                            break;
-                        case 5:
-                            tab = TableSecant.newInstance(position);
-                            break;
-                        case 6:
-                            tab = TableMultipleRoots.newInstance(position);
-                            break;
-                        default:
-                            tab = null;
-                            break;
+                    if(fragmentTable!=null){
+                        return fragmentTable;
+                    }else {
+                        switch (type) {
+                            case 0:
+                                fragmentTable = TableIncrementalSearches.newInstance();
+                                break;
+                            case 1:
+                                fragmentTable = TableBisection.newInstance(position);
+                                break;
+                            case 2:
+                                fragmentTable = TableFalsePosition.newInstance(position);
+                                break;
+                            case 3:
+                                fragmentTable = TableFixedPoint.newInstance(position);
+                                break;
+                            case 4:
+                                fragmentTable = TableNewton.newInstance(position);
+                                break;
+                            case 5:
+                                fragmentTable = TableSecant.newInstance(position);
+                                break;
+                            case 6:
+                                fragmentTable = TableMultipleRoots.newInstance(position);
+                                break;
+                            default:
+                                fragmentTable = null;
+                                break;
+                        }
+                        ;
+                        return fragmentTable;
+                        //break;
                     }
-                    ;
-                    break;
                 case 2:
-                    switch (type){
-                        //Usar por si nesecita un help en especifico
-                        default:
-                            tab =  Help.newInstance(position);
-                            break;
+                    if(fragmentHelp!=null){
+                        return fragmentHelp;
+                    }else{
+                        switch (type){
+                            //Usar por si nesecita un help en especifico
+                            default:
+                                fragmentHelp =  Help.newInstance(position);
+                                break;
+                        }
+                        return fragmentHelp;
+                        //break;
                     }
-                    break;
                 default:
                     Log.i("ErrorMenu:","Creacion de Frament Invalida");
             }
