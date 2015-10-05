@@ -19,7 +19,11 @@
     <string name="single_variables_equations">Single Variable Equations</string>
     <string name="absolute_error">Absolute Error</string>
     <string name="relative_error">Relative Error</string>
+<<<<<<< HEAD
     <string name="by">by \n Juan Daniel Arboleda \n Santiago Montoya \n &amp; Sergio Atehortua</string>
+=======
+    <string name="output">OutPut</string>
+>>>>>>> origin/master
     <string-array name="cabecera_tabla_BIncremental">
         <item>Iteration</item>
         <item>La vendita X</item>
@@ -30,26 +34,34 @@
         <item>X-inf</item>
         <item>X-sup</item>
         <item>X-med</item>
-        <item>F(med)</item>
+        <item>f(med)</item>
         <item>Error</item>
     </string-array>
     <string-array name="cabecera_tabla_FixedPoint">
         <item>Iter</item>
         <item>Xn</item>
-        <item>F(Xn)</item>
+        <item>f(Xn)</item>
         <item>Error</item>
     </string-array>
     <string-array name="cabecera_tabla_Newton">
         <item>Iter</item>
         <item>Xn</item>
-        <item>F(Xn)</item>
-        <item>dF(Xn)</item>
+        <item>f(Xn)</item>
+        <item>f\'(Xn)</item>
         <item>Error</item>
     </string-array>
     <string-array name="cabecera_tabla_Secant">
         <item>Iter</item>
         <item>Xn</item>
-        <item>F(Xn)</item>
+        <item>f(Xn)</item>
+        <item>Error</item>
+    </string-array>
+    <string-array name="cabecera_tabla_multiple_roots">
+        <item>Iter</item>
+        <item>Xn</item>
+        <item>f(Xn)</item>
+        <item>f\'(Xn)</item>
+        <item>f\'\'(Xn)</item>
         <item>Error</item>
     </string-array>
 </resources>
