@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.TextView;
 import android.widget.AbsListView;
+import android.widget.Toast;
 
 import com.etsy.android.grid.StaggeredGridView;
 public class SingleVariable extends Fragment{

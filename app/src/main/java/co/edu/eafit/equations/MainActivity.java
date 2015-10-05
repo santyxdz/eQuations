@@ -1,5 +1,6 @@
 package co.edu.eafit.equations;
 
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity
                 fragment = new Graphic();
                 break;
             case 2: //Aproximaciones
-                fragment = new Approximations();
+                fragment = new SupportedFunctions();
                 break;
             case 3: //Una Variable
                 fragment = new SingleVariable();
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle(mTitle);
+        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.soft_teal)));
     }
 
 

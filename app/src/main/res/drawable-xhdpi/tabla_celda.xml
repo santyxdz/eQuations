@@ -6,7 +6,7 @@
         android:color="@color/negro" />
     <!--Configuración del fondo-->
     <solid
-        android:color="@color/gris"/>
+        android:color="#DAF4F5"/>
     <padding
         android:left="10dp"
         android:top="13dp"

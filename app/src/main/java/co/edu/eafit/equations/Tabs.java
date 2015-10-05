@@ -1,5 +1,7 @@
 package co.edu.eafit.equations;
 
+import android.app.ActionBar;
+import android.graphics.drawable.ColorDrawable;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -60,6 +62,7 @@ public class Tabs extends AppCompatActivity {
         String nameToolbar = getIntent().getExtras().getString("type");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(nameToolbar);
+        //toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.teal)));
         setTabla(new Tabla());
         setSupportActionBar(toolbar);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -203,11 +206,11 @@ public class Tabs extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Entrada";
+                    return "Input";
                 case 1:
-                    return "Tabla";
+                    return "Table";
                 case 2:
-                    return "Ayuda";
+                    return "Help";
             }
             return "Default";
         }
