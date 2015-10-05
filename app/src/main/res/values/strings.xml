@@ -19,11 +19,8 @@
     <string name="single_variables_equations">Single Variable Equations</string>
     <string name="absolute_error">Absolute Error</string>
     <string name="relative_error">Relative Error</string>
-<<<<<<< HEAD
     <string name="by">by \n Juan Daniel Arboleda \n Santiago Montoya \n &amp; Sergio Atehortua</string>
-=======
     <string name="output">OutPut</string>
->>>>>>> origin/master
     <string-array name="cabecera_tabla_BIncremental">
         <item>Iteration</item>
         <item>La vendita X</item>

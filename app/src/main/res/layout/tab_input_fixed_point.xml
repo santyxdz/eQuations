@@ -105,8 +105,8 @@
                 android:layout_height="36dp"
                 android:text="Calcular"
                 android:id="@+id/btn_run"
-                android:theme="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:background="#ff6b2b"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                android:background="@color/bg_buttom_submit"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal" />
 
