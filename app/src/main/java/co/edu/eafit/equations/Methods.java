@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Methods {
     public static Expression function;
     public static Expression function_gx;
+    public static Expression function_ddf;
     public static BigDecimal f(double x){
         double fx = function.setVariable("x", x).evaluate();
         return new BigDecimal(fx);
@@ -16,6 +17,10 @@ public class Methods {
     public static BigDecimal g(double x){
         double gx = function_gx.setVariable("x", x).evaluate();
         return new BigDecimal(gx);
+    }
+    public static BigDecimal ddf(double x){
+        double ddf = function_ddf.setVariable("x", x).evaluate();
+        return new BigDecimal(ddf);
     }
     public static void IncrementalSearches(BigDecimal x0, BigDecimal  delta, long iter, Tabla tabla, String fx){
         function = new ExpressionBuilder(fx).variable("x").build();
@@ -315,5 +320,58 @@ public class Methods {
 
         }
     }
+
+    public static void MultipleRoots(BigDecimal x0, BigDecimal tol, long iter,
+                                     int TipeE, String fx, String dfx, String ddfx, Tabla tabla ){
+        function = new ExpressionBuilder(fx).variable("x").build();
+        function_gx = new ExpressionBuilder(dfx).variable("x").build();
+        function_ddf = new ExpressionBuilder(ddfx).variable("x").build();
+        BigDecimal zero = new BigDecimal("0.0");
+        BigDecimal yx = f(x0.doubleValue());
+        BigDecimal dyx = g(x0.doubleValue());
+        BigDecimal ddyx= ddf(x0.doubleValue());
+        BigDecimal den = new BigDecimal(Math.pow(dyx.doubleValue(), 2)-(yx.doubleValue()*ddyx.doubleValue()));
+        BigDecimal error = tol.add(new BigDecimal("1"));
+        int cont=0;
+        while (yx.compareTo(zero)!=0 && error.compareTo(tol)==1 && den.compareTo(zero)!=0 && cont < iter){
+            BigDecimal mul = yx.multiply(dyx);
+            BigDecimal xn = new BigDecimal(x0.doubleValue()-(mul.doubleValue()/den.doubleValue()));
+            yx = f(xn.doubleValue());
+            dyx = g(xn.doubleValue());
+            ddyx= ddf(xn.doubleValue());
+            ArrayList<String> newRow = new ArrayList<String>();
+            newRow.add(Long.toString(cont));
+            newRow.add("" + xn.doubleValue());
+            newRow.add("" + yx.doubleValue());
+            newRow.add("" + dyx.doubleValue());
+            newRow.add("" + ddyx.doubleValue());
+            newRow.add("" + error.doubleValue());
+            tabla.addRow(newRow);
+            if (TipeE == 1) { //Absolute Error
+                error = (xn.subtract(x0)).abs();
+            } else {//Relative Error
+                error = new BigDecimal(((xn.subtract(x0)).doubleValue())/xn.doubleValue());
+                error = error.abs();
+            }
+            x0 = xn;
+            den = new BigDecimal(Math.pow(dyx.doubleValue(), 2)-(yx.doubleValue()*ddyx.doubleValue()));
+            cont++;
+        }
+        if (yx.compareTo(zero) == 0) {
+            tabla.setResult("[" + x0.doubleValue() + " IS a root");
+        } else {
+            if (error.compareTo(tol) == -1) {
+                tabla.setResult("[" + x0.doubleValue() + "] Is an aproximation to a root with a " +
+                        "a tolerance of [" + tol.doubleValue() + "]");
+            } else {
+                if(den.compareTo(zero) == 0){
+                    tabla.setResult("Deneominator is zero");
+                }else {
+                    tabla.setResult("There weren't enough iterations");
+                }
+            }
+        }
+    }
+
 
  }
