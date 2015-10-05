@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/StaggeredGrid/StaggeredGrid.iml" filepath="$PROJECT_DIR$/StaggeredGrid/StaggeredGrid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/eQuations.iml" filepath="$PROJECT_DIR$/eQuations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/equations.iml" filepath="$PROJECT_DIR$/equations.iml" />
     </modules>
   </component>
 </project>

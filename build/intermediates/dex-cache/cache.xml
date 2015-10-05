@@ -2,18 +2,60 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Santi\AndroidStudioProjects\equations\app\build\intermediates\exploded-aar\equations\library\unspecified\jars\classes.jar"
+        jar="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="9fabdf3b2805e029e2f3946900f95072386934d5">
-        <dex dex="C:\Users\Santi\AndroidStudioProjects\equations\app\build\intermediates\pre-dexed\debug\classes-c2a214fc1567c296c452cdc2eff650e6cf9039ad.jar" />
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\pre-dexed\debug\classes-07a68d7e9a2f9344d40276229a231331d3442398.jar" />
     </item>
     <item
-        jar="C:\Users\Santi\AndroidStudioProjects\equations\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jar="C:\Users\JDaniels\Documents\Numerico\eQuations\app\libs\androidplot-core-0.6.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3db0daea52375b26bfa61c59b8df93950bdefbbc">
+        <dex dex="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\pre-dexed\debug\androidplot-core-0.6.1-7b042833f6528f342cb2c18a58eb17ff312efb67.jar" />
+    </item>
+    <item
+        jar="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\pre-dexed\debug\classes-6baf8f8f108170e2fbf47c93bde40b6eb7e981cb.jar" />
+    </item>
+    <item
+        jar="C:\Users\JDaniels\Documents\Numerico\eQuations\app\libs\exp4j-0.4.5.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1060f042519efdc41a72a3e4aa823803bf6a1dd8">
+        <dex dex="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\pre-dexed\debug\exp4j-0.4.5-10199229c9c5a19d74ae9141de8f5edeb900341d.jar" />
+    </item>
+    <item
+        jar="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-73b7298d54de0637286d6ffeea5ac03b33977338.jar" />
+    </item>
+    <item
+        jar="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\exploded-aar\eQuations\StaggeredGrid\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8469dcf8d49c019a6bd337139d9972858bb76063">
+        <dex dex="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\pre-dexed\debug\classes-27de964df8c317cbb8378f77df352963dcdbcf80.jar" />
+    </item>
+    <item
+        jar="C:\Users\JDaniels\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-3f6e80a6d503420b3990972e4034634a231803d5.jar" />
+    </item>
+    <item
+        jar="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="C:\Users\Santi\AndroidStudioProjects\equations\app\build\intermediates\pre-dexed\debug\classes-f6dee0896388040c0ac2a51dcc0df193bdbe1cb6.jar" />
+        <dex dex="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\pre-dexed\debug\classes-6a1f7161dad67f887413998ed91a4bdfbd024b77.jar" />
     </item>
 
 </items>

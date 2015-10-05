@@ -108,9 +108,38 @@
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="title_activity_tabs">Tabs</string>
     <string name="single_variables_equations">Single Variable Equations</string>
+    <string name="absolute_error">Absolute Error</string>
+    <string name="relative_error">Relative Error</string>
     <string-array name="cabecera_tabla_BIncremental">
         <item>Iteration</item>
         <item>La vendita X</item>
         <item>f(x)</item>
+    </string-array>
+    <string-array name="cabecera_tabla_Bisection">
+        <item>Iteration</item>
+        <item>X-inf</item>
+        <item>X-sup</item>
+        <item>X-med</item>
+        <item>F(med)</item>
+        <item>Error</item>
+    </string-array>
+    <string-array name="cabecera_tabla_FixedPoint">
+        <item>Iter</item>
+        <item>Xn</item>
+        <item>F(Xn)</item>
+        <item>Error</item>
+    </string-array>
+    <string-array name="cabecera_tabla_Newton">
+        <item>Iter</item>
+        <item>Xn</item>
+        <item>F(Xn)</item>
+        <item>dF(Xn)</item>
+        <item>Error</item>
+    </string-array>
+    <string-array name="cabecera_tabla_Secant">
+        <item>Iter</item>
+        <item>Xn</item>
+        <item>F(Xn)</item>
+        <item>Error</item>
     </string-array>
 </resources>
