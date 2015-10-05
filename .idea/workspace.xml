@@ -10,8 +10,120 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c607c8d-ff62-4154-91fc-f9acaf5bbf60" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StaggeredGrid/.gitignore" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\androidTest\debug\com\etsy\android\grid\R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\androidTest\debug\com\etsy\android\grid\R$styleable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\androidTest\debug\com\etsy\android\grid\R.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\androidTest\debug\com\etsy\android\grid\test\BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\androidTest\debug\com\etsy\android\grid\test\R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\androidTest\debug\com\etsy\android\grid\test\R$styleable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\androidTest\debug\com\etsy\android\grid\test\R.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ClassLoaderSavedState$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ClassLoaderSavedState$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ClassLoaderSavedState.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ExtendableListView$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ExtendableListView$AdapterDataSetObserver.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ExtendableListView$CheckForLongPress.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ExtendableListView$CheckForTap.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ExtendableListView$FixedViewInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ExtendableListView$FlingRunnable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ExtendableListView$LayoutParams.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ExtendableListView$ListSavedState$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ExtendableListView$ListSavedState.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ExtendableListView$PerformClick.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ExtendableListView$RecycleBin.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ExtendableListView$WindowRunnnable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\ExtendableListView.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\HeaderViewListAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\R$styleable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\R.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\StaggeredGridView$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\StaggeredGridView$GridItemRecord$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\StaggeredGridView$GridItemRecord.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\StaggeredGridView$GridLayoutParams.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\StaggeredGridView$GridListSavedState$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\StaggeredGridView$GridListSavedState.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\debug\com\etsy\android\grid\StaggeredGridView.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ClassLoaderSavedState$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ClassLoaderSavedState$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ClassLoaderSavedState.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ExtendableListView$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ExtendableListView$AdapterDataSetObserver.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ExtendableListView$CheckForLongPress.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ExtendableListView$CheckForTap.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ExtendableListView$FixedViewInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ExtendableListView$FlingRunnable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ExtendableListView$LayoutParams.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ExtendableListView$ListSavedState$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ExtendableListView$ListSavedState.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ExtendableListView$PerformClick.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ExtendableListView$RecycleBin.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ExtendableListView$WindowRunnnable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\ExtendableListView.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\HeaderViewListAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\R$styleable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\R.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\StaggeredGridView$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\StaggeredGridView$GridItemRecord$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\StaggeredGridView$GridItemRecord.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\StaggeredGridView$GridLayoutParams.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\StaggeredGridView$GridListSavedState$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\StaggeredGridView$GridListSavedState.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\classes\release\com\etsy\android\grid\StaggeredGridView.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\manifest\tmp\manifestMerger7572997061924229884.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\outputs\aar\library-debug.aar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\outputs\aar\library-release.aar" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\StaggeredGrid\build\intermediates\manifest\tmp\manifestMerger5949562593253025836.xml" afterPath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/manifest/tmp/manifestMerger571147900962646691.xml" />
+      <change type="MOVED" beforePath="C:\Users\Santi\AndroidStudioProjects\equations\equations.iml" afterPath="$PROJECT_DIR$/eQuations.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StaggeredGrid/build/outputs/aar/StaggeredGrid-debug.aar" afterPath="$PROJECT_DIR$/StaggeredGrid/build/outputs/aar/StaggeredGrid-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StaggeredGrid/build/outputs/aar/StaggeredGrid-release.aar" afterPath="$PROJECT_DIR$/StaggeredGrid/build/outputs/aar/StaggeredGrid-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/res/resources-debug-androidTest.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/inputs/InputBisection.java" afterPath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/inputs/InputBisection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/inputs/InputFalsePosition.java" afterPath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/inputs/InputFalsePosition.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/inputs/InputFixedPoint.java" afterPath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/inputs/InputFixedPoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/inputs/InputNewton.java" afterPath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/inputs/InputNewton.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/inputs/InputSecant.java" afterPath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/inputs/InputSecant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/Methods.java" afterPath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/Methods.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StaggeredGrid/StaggeredGrid.iml" afterPath="$PROJECT_DIR$/StaggeredGrid/StaggeredGrid.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/tables/TableBisection.java" afterPath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/tables/TableBisection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/tables/TableFalsePosition.java" afterPath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/tables/TableFalsePosition.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/tables/TableFixedPoint.java" afterPath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/tables/TableFixedPoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/tables/TableNewton.java" afterPath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/tables/TableNewton.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/tables/TableSecant.java" afterPath="$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/tables/TableSecant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/design_23_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/design_23_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/incremental/mergeAssets/debug/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/incremental/mergeAssets/release/merger.xml" afterPath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/incremental/mergeAssets/release/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/incremental/mergeResourcesandroidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/incremental/mergeResourcesandroidTest/debug/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/incremental/packageResourcesdebug/merger.xml" afterPath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/incremental/packageResourcesdebug/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/incremental/packageResourcesrelease/merger.xml" afterPath="$PROJECT_DIR$/StaggeredGrid/build/intermediates/incremental/packageResourcesrelease/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_23_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_23_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_input_bisection.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_input_bisection.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_input_false_position.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_input_false_position.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_input_fixed_point.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_input_fixed_point.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_input_newton.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_input_newton.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_input_secant.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_input_secant.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_table_bisection.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_table_bisection.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_table_false_position.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_table_false_position.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_table_fixed_point.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_table_fixed_point.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_table_incremental_searches.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_table_incremental_searches.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_table_newton.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_table_newton.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_table_secant.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_table_secant.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="eQuations.iws" />
@@ -55,8 +167,8 @@
       <file leaf-file-name="MenuAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/MenuAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1954023">
-              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.48850575">
+              <caret line="79" column="24" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -3492,6 +3604,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3638,6 +3751,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.0708661">
           <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3785,8 +3901,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/co/edu/eafit/equations/MenuAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1954023">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.48850575">
+          <caret line="79" column="24" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
           <folding />
         </state>
       </provider>
