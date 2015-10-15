@@ -61,4 +61,178 @@
         <item>f\'\'(Xn)</item>
         <item>Error</item>
     </string-array>
+    <string name="help_bis">
+        It\'s a closed method because is convergent and always gets a root, this root is detected
+        when there is a sign-change and there is division by two.  For the desired operation of the
+        method, it is necesary to evaluate a continue function.  This method finds a root, this
+        result is possible after running a given number of iterations that determine the number
+        of available divisions for finding a root. The successful result depends on the number
+        of iterations , it is possible that after running all iterations the method does not found
+        a possible root, when it pass the algorithmic result is empty or fail.
+        \n
+        \n
+        First of all we have to have the equation f(x)= 0 in form then we\'re going to find
+        two values such that f(Xa) > 0 y f(Xb) > 0
+        \n
+        Then we have to get an intermediate value
+        \n
+        \n Xc = (Xa + Xb) / 2
+        \n
+        \n next this we have to evaluate the xc value in the function to limit the interval.
+        \n
+        \n if f(Xc) > 0, then Xb = Xc \n
+        if 0 > f(Xc) , then Xa = Xc
+        \n
+        \n Input data:
+        \n
+        \n
+    -Function: it have to be a continuous function.
+    \n -X inf: the minimum value of the interval.
+    \n -X max: the maximum value of the interval.
+    \n -Tolerance: with this data you specified to the method the maximum error expected.
+    \n -Iterations: with this data you specified the maximum number of iteration that the method can
+        do so if it\'s not possible to have an interval with a error less than tolerance the result
+        will be "failure".
+    \n
+    \n Possible outputs:
+    \n
+    \n
+    -A root: return the x value where there\'s a root.
+    \n -A root with a error: return the approximate x value where is located a root and a tolerance.
+    \n -Failure: in case of the algorithm runs the maximum number of iterations and don\'t find
+        the root with the tolerance expected is going to return failure.
+        \n
+        \n
+        \n
+    </string>
+    <string name="help_falposi">
+        It\'s a closed method because is convergent and always gets a root, is a merge of
+        two methods: bisection and secant, in this method we don\'t take the middle point if
+        not that we find a point with the line between the initial point and the final point in
+        the intersection with the x axis. The algorithm runs until get a root or an interval with
+        a error less than a tolerance given before.
+        \n
+        \n Input data:
+        \n
+    \n-Function: it have to be a continuous function.
+    -X inf: the minimum value of the interval.
+    \n-X max: the maximum value of the interval.
+    \n-Tolerance: with this data you specified to the method the maximum error expected.
+    \n-Iterations: with this data you specified the maximum number of iteration that the method
+        can do so if it\'s not possible to have an interval with a error less than tolerance the
+        result will be "failure".
+    \n
+    \n Possible outputs:
+    \n
+    \n-A root: return the x value where there\' a root.
+    \n-A root with a error: return the approximate x value where is located a root and a tolerance.
+    \n-Failure: in case of the algorithm runs the maximum number of iterations and don\'t find the
+        root with the tolerance expected is going to return failure.
+    \n
+    \n
+    \n
+    </string>
+    <string name="help_fixpoint">
+        The Fixed Point method is a iterative open method, with this method you could solve
+        equation systems, not necessary lineal. It\'s necessary to evaluate a continuous function.
+        It can be use to finds a root in a function, as long as, it complies with the convergence
+        criteria.
+        \n
+        \n
+        Algoritm:
+        \n
+        \n
+        1-Have a function f(x).
+        \n 2-Clears the function f(x) to x = g(x)
+        \n 3-Derivate g(x) -> x = g\'(x)
+        \n 4-Then, 1 > g\'(x) > -1
+        \n
+        \n
+        Input data:
+        \n
+        \n
+        -Function f: it have to be a continuous function.
+        \n -Function g: with f(x)=0, "g" is a function where x is isolated and x = g(x).
+        \n -X inf: the initial value.
+        \n -Tolerance: with this data you specified to the method the maximum error expected.
+        \n -Iterations: with this data you specified the maximum number of iteration that the method
+        can do so if it\'s not possible to have an interval with a error less than tolerance the
+        result will be "failure".
+        \n
+        \n
+        Possible outputs:
+        \n
+        \n
+        -A root: return the x value where there\'s a root.
+        \n -A root with a error: return the approximate x value where is located a root and a
+        tolerance.
+        \n -Failure: in case of the algorithm runs the maximum number of iterations and don\'t
+        find the
+        root with the tolerance expected is going to return failure.
+        \n
+        \n
+        \n
+    </string>
+    <string name="help_searchincre">
+        This algorithm is to get an initial interval, a valid interval is detected when there is a
+        sign change because like the function is continue and there\'s a sign change we can say that
+        there\'s a root between that values. For the desired operation of the method, it\'s necessary
+        to evaluate a continue function.
+        \n
+        This method finds a segment that contain at least a root, this segment is possible after
+        running a given number of iterations and a delta for each iterations. The successful result
+        depend of the number of iterations, it\'s possible that after running all iterations doesn\'t
+        found a possible  root and its respective interval, when it pass the algorithmic result is
+        empty or fail.
+        \n
+        \n
+        Input data:
+        \n
+        \n
+        -Function: it have to be a continuous function.
+        \n -X inf: a initial value of the interval.
+        \n -Delta: the increment of each iteration.
+        \n -Iterations: with this data you specified the maximum number of iteration that the
+        method can do so if it\'s not possible to have an interval where exists a sing change the
+        result will
+        be "failure".
+        \n
+        \n
+        Possible outputs:
+        \n
+        \n
+        -A root: return the x value where there\'s a root.
+        \n -An interval: return an interval where there\'s a root between the two values.
+        \n -Failure: in case of the algorithm runs the maximum number of iterations and don\'t
+        find a root or a interval is going to return failure.
+        \n
+        \n
+        \n
+    </string>
+    <string name="help_secant">
+        This method is considered a variant of Newton method, where the secant is more simple
+        because this doesn\'t need evaluate the derivative of the function. The user input two
+        approaches to the root and evaluate int the function getting a secant line. The point
+        is closer to the root with each iteration.
+        \n
+        \n
+        \n
+    </string>
+    <string name="help_newton">
+        Is a variant method of fixed point, this is defined as follows: x(n+1)=x(0)-F(x)/F\'(x).
+        This is one of quicker methods for find a root, this just fails when there are multiple
+        roots.
+        \n
+        \n
+        \n
+    </string>
+    <string name="help_multiroot">
+        Multiple roots can find a root in a function that has greater multiplicity that one so it has
+        more that one root. Some methods can not find roots that being on the axis x because the
+        interval where this is has the signs of the function evaluated in the limits with the same
+        sign, this is a restriction for another methods.
+        \n
+        \n
+        \n
+    </string>
 </resources>

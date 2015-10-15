@@ -31,11 +31,13 @@ public class MenuAdapter extends ArrayAdapter<String>{
         mLayoutInflater = LayoutInflater.from(context);
         mRandom = new Random();
         mBackgroundColors = new ArrayList<>();
-        mBackgroundColors.add(R.color.orange);
-        mBackgroundColors.add(R.color.green);
-        mBackgroundColors.add(R.color.blue);
-        mBackgroundColors.add(R.color.yellow);
-        mBackgroundColors.add(R.color.grey);
+        mBackgroundColors.add(R.color.sway);
+        mBackgroundColors.add(R.color.excel);
+        mBackgroundColors.add(R.color.powerpoint);
+        mBackgroundColors.add(R.color.onenote);
+        mBackgroundColors.add(R.color.publisher);
+        mBackgroundColors.add(R.color.access);
+        mBackgroundColors.add(R.color.word);
     }
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
@@ -45,8 +47,6 @@ public class MenuAdapter extends ArrayAdapter<String>{
             convertView = mLayoutInflater.inflate(R.layout.list_item_sample, parent, false);
             vh = new ViewHolder();
             vh.txtLineOne = (DynamicHeightTextView)convertView.findViewById(R.id.txt_line1);
-            vh.btn_go = (Button) convertView.findViewById(R.id.btn_go);
-
             convertView.setTag(vh);
         }
         else {
@@ -65,7 +65,7 @@ public class MenuAdapter extends ArrayAdapter<String>{
         //vh.txtLineOne.setText(getItem(position) + position);
         vh.txtLineOne.setText(getItem(position));
 
-        vh.btn_go.setOnClickListener(new View.OnClickListener() {
+        vh.txtLineOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 Intent intent = new Intent();

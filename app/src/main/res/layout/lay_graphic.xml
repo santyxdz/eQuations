@@ -13,7 +13,7 @@
             <com.androidplot.xy.XYPlot
                 android:id="@+id/Grafica"
                 android:layout_width="fill_parent"
-                android:layout_height="204dp"
+                android:layout_height="304dp"
                 androidplot.rangeLabel="f(x)"
                 androidplot.domainLabel="x"
                 android:layout_weight="0.14"/>
@@ -25,10 +25,12 @@
                 android:hint="@string/request_f"
                 android:textAlignment="center"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/graph_button"
                 android:id="@+id/btn_graph"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                android:background="@color/bg_buttom_submit"
                 android:layout_gravity="center_horizontal"/>
         </LinearLayout>
     </ScrollView>

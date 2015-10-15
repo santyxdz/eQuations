@@ -5,13 +5,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import co.edu.eafit.equations.R;
 
 public class Help extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
-    private int sectionNumber;
     public static Help newInstance(int sectionNumber) {
         Help fragment = new Help();
         Bundle args = new Bundle();
@@ -26,8 +27,39 @@ public class Help extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tab_help, container, false);
-        TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-        textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+        TextView textView = (TextView) rootView.findViewById(R.id.textView_help);
+        ImageView img = (ImageView) rootView.findViewById(R.id.imageView_help);
+        ScrollView s = (ScrollView) rootView.findViewById(R.id.scrollView3);
+        int type = getActivity().getIntent().getExtras().getInt("id");
+        switch (type) {
+            case 1:
+                textView.setText(getResources().getString(R.string.help_bis));
+                img.setImageResource(R.drawable.bis);
+                break;
+            case 2:
+                textView.setText(getResources().getString(R.string.help_falposi));
+                img.setImageResource(R.drawable.reglafalsa);
+                break;
+            case 3:
+                textView.setText(getResources().getString(R.string.help_fixpoint));
+                img.setImageResource(R.drawable.fixpoi);
+                break;
+            case 4:
+                textView.setText(getResources().getString(R.string.help_newton));
+                img.setImageResource(R.drawable.newton);
+                break;
+            case 5:
+                textView.setText(getResources().getString(R.string.help_secant));
+                img.setImageResource(R.drawable.secant);
+                break;
+            case 6:
+                textView.setText(getResources().getString(R.string.help_multiroot));
+                img.setImageResource(R.drawable.multipleroots);
+                break;
+            default:
+                textView.setText(getResources().getString(R.string.help_searchincre));
+                img.setImageResource(R.drawable.searincre);
+        }
         return rootView;
     }
 }

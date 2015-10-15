@@ -14,18 +14,6 @@
     <item name="dark_red" type="color">#FFCC0000</item>
     <item name="pseudo_black" type="color">#212121</item>
     <item name="white" type="color">#FFFFFF</item>
-    <integer-array name="androidcolors">
-        <item>@color/blue</item>
-        <item>@color/purple</item>
-        <item>@color/green</item>
-        <item>@color/orange</item>
-        <item>@color/red</item>
-        <item>@color/dark_blue</item>
-        <item>@color/dark_purple</item>
-        <item>@color/dark_green</item>
-        <item>@color/dark_orange</item>
-        <item>@color/dark_red</item>
-    </integer-array>
     <color name="blanco">#FFFFFF</color>
     <color name="amarillo">#FFFF00</color>
     <color name="fuchsia">#FF00FF</color>
@@ -47,4 +35,11 @@
     <color name="dorado">#EEE8AA</color>
     <color name="soft_teal">#009688</color>
     <color name="bg_buttom_submit">@color/soft_teal</color>
+    <color name="word">#295497</color>
+    <color name="excel">#1F6E43</color>
+    <color name="powerpoint">#D04324</color>
+    <color name="publisher">#077164</color>
+    <color name="access">#A33639</color>
+    <color name="onenote">#7F1C76</color>
+    <color name="sway">#009983</color>
 </resources>

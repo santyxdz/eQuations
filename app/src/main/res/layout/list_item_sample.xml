@@ -11,13 +11,8 @@
         android:id="@+id/txt_line1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"/>
-
-    <Button
-        android:id="@+id/btn_go"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="Go" />
+        android:gravity="center"
+        android:textSize="27sp"
+        android:textColor="@color/white"/>
 
 </FrameLayout>

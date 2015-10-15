@@ -63,13 +63,14 @@ public class Graphic extends Fragment {
         public void stylize(){
             plot = (XYPlot) rootView.findViewById(R.id.Grafica);
             plot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 0.5);
-            plot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 1.0);
+            plot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 0.5);
             plot.getGraphWidget().getGridBackgroundPaint().setColor(Color.rgb(33, 33, 33)); //BG
             plot.getGraphWidget().getDomainGridLinePaint().setColor(Color.TRANSPARENT); //Y lines
             plot.getGraphWidget().getRangeGridLinePaint().setColor(Color.TRANSPARENT); //X lines
             plot.getBackgroundPaint().setColor(Color.rgb(33,33,33)); //masExterno
             plot.getGraphWidget().getBackgroundPaint().setColor(Color.rgb(33, 33, 33)); //Numbers-medio
-            plot.setRangeBoundaries(-2, 2, BoundaryMode.FIXED);
+            plot.setRangeBoundaries(-4, 4, BoundaryMode.FIXED);
+            plot.setDomainBoundaries(0,8,BoundaryMode.FIXED);
             plot.setBorderPaint(null);
             plot.setPlotMargins(0, 0, 0, 0);
         }

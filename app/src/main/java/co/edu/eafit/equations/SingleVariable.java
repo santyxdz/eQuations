@@ -1,5 +1,6 @@
 package co.edu.eafit.equations;
 
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,7 +22,7 @@ public class SingleVariable extends Fragment{
         View header = layoutInflater.inflate(R.layout.list_item_header_footer, null);
         View footer = layoutInflater.inflate(R.layout.list_item_header_footer,null);
         TextView txtv_header = (TextView)header.findViewById(R.id.txt_title);
-        TextView txtv_footer = (TextView)header.findViewById(R.id.txt_title);
+        TextView txtv_footer = (TextView)footer.findViewById(R.id.txt_title);
         txtv_footer.setText("x");
         txtv_header.setText(getString(R.string.single_variables_equations));
         gridView.addHeaderView(header);
@@ -36,6 +37,7 @@ public class SingleVariable extends Fragment{
         mAdapter.add("Secant");
         mAdapter.add("Multiple Roots");
         gridView.setAdapter(mAdapter);
+        gridView.setBackgroundColor(getResources().getColor(R.color.soft_teal));
         return rootView;
     }
 }
