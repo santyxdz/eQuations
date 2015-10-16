@@ -4,12 +4,14 @@ import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Methods {
     public static Expression function;
     public static Expression function_gx;
     public static Expression function_ddf;
+
     public static BigDecimal f(double x){
         double fx = function.setVariable("x", x).evaluate();
         return new BigDecimal(fx);
@@ -60,6 +62,7 @@ public class Methods {
     }
 
     public static void Bisection(BigDecimal xinf,BigDecimal xsup,BigDecimal tol,long iter,int TipeE, Tabla tabla, String fx){
+        DecimalFormat format = new DecimalFormat("#.###E0");
         function = new ExpressionBuilder(fx).variable("x").build();
         String answer = ">";
         BigDecimal yinf = f(xinf.doubleValue());
@@ -67,10 +70,10 @@ public class Methods {
         BigDecimal zero = new BigDecimal("0.0");
         BigDecimal two = new BigDecimal("2.0");
         if(yinf.compareTo(zero)==0){
-            tabla.setResult(xinf.toString()+" IS a root");
+            tabla.setResult(xinf.toEngineeringString()+" IS a root");
         }else{
             if(ysup.compareTo(zero)==0){
-                tabla.setResult(xsup.toString() +" IS a root");
+                tabla.setResult(xsup.toEngineeringString() +" IS a root");
             }else{
                 if(yinf.multiply(ysup).compareTo(zero)==1){
                     tabla.setResult("["+xinf.toString()+" , "+xsup.toString()+" ] is not a vlid interval");
@@ -99,18 +102,18 @@ public class Methods {
                         }
                         ArrayList<String> newRow = new ArrayList<String>();
                         newRow.add(Long.toString(cont));
-                        newRow.add("" + xinf.doubleValue());
-                        newRow.add("" + xsup.setScale(5, BigDecimal.ROUND_HALF_UP));
-                        newRow.add(""+ xmed.setScale(5, BigDecimal.ROUND_HALF_UP));
-                        newRow.add(""+ ymed.doubleValue());
-                        newRow.add(""+ error.doubleValue());
+                        newRow.add("" + format.format(xinf));
+                        newRow.add("" + format.format(xsup));
+                        newRow.add(""+ format.format(xmed));
+                        newRow.add(""+ format.format(ymed));
+                        newRow.add(""+ format.format(error));
                         tabla.addRow(newRow);
                     }
                     if(ymed.compareTo(zero)==0){
-                        tabla.setResult("Xmed :"+xmed.toString()+" IS a root");
+                        tabla.setResult("Xmed :"+xmed.toEngineeringString()+" IS a root");
                     }else {
                         if(error.compareTo(tol)==-1){
-                            tabla.setResult("["+xmed.doubleValue()+"] Is an aproximation to a root with a " +
+                            tabla.setResult("["+xmed.toEngineeringString()+"] Is an aproximation to a root with a " +
                                     "a tolerance of ["+tol.doubleValue()+"]");
                         }else{
                             tabla.setResult ("There weren't enough iterations");
@@ -122,75 +125,77 @@ public class Methods {
     }
 
 
-     public static void falsePosition(BigDecimal xinf,BigDecimal xsup,BigDecimal tol,long iter,int TipeE, Tabla tabla, String fx){
-         function = new ExpressionBuilder(fx).variable("x").build();
-         String answer = ">";
-         BigDecimal yinf = f(xinf.doubleValue());
-         BigDecimal ysup = f(xsup.doubleValue());
-         BigDecimal zero = new BigDecimal("0.0");
-         BigDecimal two = new BigDecimal("2.0");
-         if(yinf.compareTo(zero)==0){
-             tabla.setResult(xinf.toString()+" IS a root");
-         }else {
-             if (ysup.compareTo(zero) == 0) {
-                 tabla.setResult(xsup.toString() + " IS a root");
-             } else {
-                 if (yinf.multiply(ysup).compareTo(zero) == 1) {
-                     tabla.setResult("[" + xinf.toString() + " , " + xsup.toString() + " ] is not a vlid interval");
-                 } else {
-                     // BigDecimal xmed = xsup.subtract(ysup.multiply((xsup.subtract(xinf)).divide(ysup.subtract(yinf))));
-                     BigDecimal xmed = new BigDecimal(xsup.doubleValue()-(ysup.doubleValue()*((xsup.doubleValue()-xinf.doubleValue())/
-                             (ysup.doubleValue()-yinf.doubleValue()))));
-                     BigDecimal ymed = f(xmed.doubleValue());
-                     long cont = 1;
-                     BigDecimal error = tol.add(two);
-                     while (ymed.compareTo(zero) != 0 && error.compareTo(tol) == 1 && cont < iter) {
-                         if ((yinf.multiply(ymed)).compareTo(zero) == -1) {
-                             xsup =xmed;
-                             ysup = ymed;
-                         } else {
-                             xinf =xmed;
-                             yinf = ymed;
-                         }
-                         BigDecimal aux = xmed;
-                         // BigDecimal xmed = xsup.subtract(ysup.multiply((xsup.subtract(xinf)).divide(ysup.subtract(yinf))));
-                         xmed = new BigDecimal(xsup.doubleValue()-(ysup.doubleValue()*((xsup.doubleValue()-xinf.doubleValue())/
-                                 (ysup.doubleValue()-yinf.doubleValue()))));
-                         ymed = f(xmed.doubleValue());
-                         cont++;
-                         if (TipeE == 1) { //Absolute Error
-                             error = (xmed.subtract(aux)).abs();
-                         } else {//Relative Error
-                             error = new BigDecimal(((xmed.subtract(aux)).doubleValue())/xmed.doubleValue());
-                             error = error.abs();
-                         }
-                         ArrayList<String> newRow = new ArrayList<String>();
-                         newRow.add(Long.toString(cont));
-                         newRow.add("" + xinf.doubleValue());
-                         newRow.add("" + xsup.setScale(5, BigDecimal.ROUND_HALF_UP));
-                         newRow.add("" + xmed.setScale(5, BigDecimal.ROUND_HALF_UP));
-                         newRow.add("" + ymed.doubleValue());
-                         newRow.add("" + error.doubleValue());
-                         tabla.addRow(newRow);
-                     }
-                     if (ymed.compareTo(zero) == 0) {
-                         tabla.setResult("Xmed :" + xmed.toString() + " IS a root");
-                     } else {
-                         if (error.compareTo(tol) == -1) {
-                             tabla.setResult("[" + xmed.doubleValue() + "] Is an aproximation to a root with a " +
-                                     "a tolerance of [" + tol.doubleValue() + "]");
-                         } else {
-                             tabla.setResult("There weren't enough iterations");
-                         }
-                     }
-                 }
-             }
-         }
-     }
+    public static void falsePosition(BigDecimal xinf,BigDecimal xsup,BigDecimal tol,long iter,int TipeE, Tabla tabla, String fx){
+        function = new ExpressionBuilder(fx).variable("x").build();
+        DecimalFormat format = new DecimalFormat("#.###E0");
+        String answer = ">";
+        BigDecimal yinf = f(xinf.doubleValue());
+        BigDecimal ysup = f(xsup.doubleValue());
+        BigDecimal zero = new BigDecimal("0.0");
+        BigDecimal two = new BigDecimal("2.0");
+        if(yinf.compareTo(zero)==0){
+            tabla.setResult(xinf.toString()+" IS a root");
+        }else {
+            if (ysup.compareTo(zero) == 0) {
+                tabla.setResult(xsup.toString() + " IS a root");
+            } else {
+                if (yinf.multiply(ysup).compareTo(zero) == 1) {
+                    tabla.setResult("[" + xinf.toString() + " , " + xsup.toString() + " ] is not a vlid interval");
+                } else {
+                    // BigDecimal xmed = xsup.subtract(ysup.multiply((xsup.subtract(xinf)).divide(ysup.subtract(yinf))));
+                    BigDecimal xmed = new BigDecimal(xsup.doubleValue()-(ysup.doubleValue()*((xsup.doubleValue()-xinf.doubleValue())/
+                            (ysup.doubleValue()-yinf.doubleValue()))));
+                    BigDecimal ymed = f(xmed.doubleValue());
+                    long cont = 1;
+                    BigDecimal error = tol.add(two);
+                    while (ymed.compareTo(zero) != 0 && error.compareTo(tol) == 1 && cont < iter) {
+                        if ((yinf.multiply(ymed)).compareTo(zero) == -1) {
+                            xsup =xmed;
+                            ysup = ymed;
+                        } else {
+                            xinf =xmed;
+                            yinf = ymed;
+                        }
+                        BigDecimal aux = xmed;
+                        // BigDecimal xmed = xsup.subtract(ysup.multiply((xsup.subtract(xinf)).divide(ysup.subtract(yinf))));
+                        xmed = new BigDecimal(xsup.doubleValue()-(ysup.doubleValue()*((xsup.doubleValue()-xinf.doubleValue())/
+                                (ysup.doubleValue()-yinf.doubleValue()))));
+                        ymed = f(xmed.doubleValue());
+                        cont++;
+                        if (TipeE == 1) { //Absolute Error
+                            error = (xmed.subtract(aux)).abs();
+                        } else {//Relative Error
+                            error = new BigDecimal(((xmed.subtract(aux)).doubleValue())/xmed.doubleValue());
+                            error = error.abs();
+                        }
+                        ArrayList<String> newRow = new ArrayList<String>();
+                        newRow.add(Long.toString(cont));
+                        newRow.add("" + format.format(xinf));
+                        newRow.add("" + format.format(xsup));
+                        newRow.add("" + format.format(xmed));
+                        newRow.add("" + format.format(ymed));
+                        newRow.add("" + format.format(error));
+                        tabla.addRow(newRow);
+                    }
+                    if (ymed.compareTo(zero) == 0) {
+                        tabla.setResult("Xmed :" + xmed.toString() + " IS a root");
+                    } else {
+                        if (error.compareTo(tol) == -1) {
+                            tabla.setResult("[" + xmed.doubleValue() + "] Is an aproximation to a root with a " +
+                                    "a tolerance of [" + tol.doubleValue() + "]");
+                        } else {
+                            tabla.setResult("There weren't enough iterations");
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     public static void FixedPoint(BigDecimal xinf,BigDecimal tol,long iter, int TipeE, String fx,String gx,Tabla tabla){
         function = new ExpressionBuilder(fx).variable("x").build();
         function_gx = new ExpressionBuilder(gx).variable("x").build();
+        DecimalFormat format = new DecimalFormat("#.###E0");
         BigDecimal zero = new BigDecimal("0.00");
         BigDecimal yx = f(xinf.doubleValue());
         long cont = 0;
@@ -206,9 +211,9 @@ public class Methods {
             }
             ArrayList<String> newRow = new ArrayList<String>();
             newRow.add(Long.toString(cont));
-            newRow.add("" + xn.doubleValue());
-            newRow.add("" + yx.doubleValue());
-            newRow.add("" + error.doubleValue());
+            newRow.add("" + format.format(xn));
+            newRow.add("" + format.format(yx));
+            newRow.add("" + format.format(error));
             tabla.addRow(newRow);
             xinf = xn;
             cont++;
@@ -228,6 +233,7 @@ public class Methods {
     public static void Newton(BigDecimal xinf,BigDecimal tol,long iter, int TipeE, String fx,String dfx,Tabla tabla){
         function = new ExpressionBuilder(fx).variable("x").build();
         function_gx = new ExpressionBuilder(dfx).variable("x").build();
+        DecimalFormat format = new DecimalFormat("#.###E0");
         BigDecimal zero = new BigDecimal("0.000");
         BigDecimal yx = f(xinf.doubleValue());
         BigDecimal dyx = g(xinf.doubleValue());
@@ -245,10 +251,10 @@ public class Methods {
             }
             ArrayList<String> newRow = new ArrayList<String>();
             newRow.add(Long.toString(cont));
-            newRow.add("" + xn.doubleValue());
-            newRow.add("" + yx.doubleValue());
-            newRow.add("" + dyx.doubleValue());
-            newRow.add("" + error.doubleValue());
+            newRow.add("" + format.format(xn));
+            newRow.add("" + format.format(yx));
+            newRow.add("" + format.format(dyx));
+            newRow.add("" + format.format(error));
             tabla.addRow(newRow);
             xinf = xn;
             cont++;
@@ -272,6 +278,7 @@ public class Methods {
 
     public static void Secant(BigDecimal x0,BigDecimal x1,BigDecimal tol, long iter, int TipeE, String fx,Tabla tabla){
         function = new ExpressionBuilder(fx).variable("x").build();
+        DecimalFormat format = new DecimalFormat("#.###E0");
         BigDecimal fx0 = f(x0.doubleValue());
         BigDecimal zero = new BigDecimal("0.000");
         if (fx0.compareTo(zero)==0){
@@ -292,9 +299,9 @@ public class Methods {
                 }
                 ArrayList<String> newRow = new ArrayList<String>();
                 newRow.add(Long.toString(cont));
-                newRow.add("" + xn.doubleValue());
-                newRow.add("" + fx1.doubleValue());
-                newRow.add("" + error.doubleValue());
+                newRow.add("" + format.format(xn));
+                newRow.add("" + format.format(fx1));
+                newRow.add("" + format.format(error));
                 tabla.addRow(newRow);
                 x0=x1;
                 x1=xn;
@@ -326,6 +333,7 @@ public class Methods {
         function = new ExpressionBuilder(fx).variable("x").build();
         function_gx = new ExpressionBuilder(dfx).variable("x").build();
         function_ddf = new ExpressionBuilder(ddfx).variable("x").build();
+        DecimalFormat format = new DecimalFormat("#.###E0");
         BigDecimal zero = new BigDecimal("0.0");
         BigDecimal yx = f(x0.doubleValue());
         BigDecimal dyx = g(x0.doubleValue());
@@ -341,11 +349,11 @@ public class Methods {
             ddyx= ddf(xn.doubleValue());
             ArrayList<String> newRow = new ArrayList<String>();
             newRow.add(Long.toString(cont));
-            newRow.add("" + xn.doubleValue());
-            newRow.add("" + yx.doubleValue());
-            newRow.add("" + dyx.doubleValue());
-            newRow.add("" + ddyx.doubleValue());
-            newRow.add("" + error.doubleValue());
+            newRow.add("" + format.format(xn));
+            newRow.add("" + format.format(yx));
+            newRow.add("" + format.format(dyx));
+            newRow.add("" + format.format(ddyx));
+            newRow.add("" + format.format(error));
             tabla.addRow(newRow);
             if (TipeE == 1) { //Absolute Error
                 error = (xn.subtract(x0)).abs();
@@ -374,4 +382,4 @@ public class Methods {
     }
 
 
- }
+}

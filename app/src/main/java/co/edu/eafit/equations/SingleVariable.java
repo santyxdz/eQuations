@@ -37,7 +37,7 @@ public class SingleVariable extends Fragment{
         mAdapter.add("Secant");
         mAdapter.add("Multiple Roots");
         gridView.setAdapter(mAdapter);
-        gridView.setBackgroundColor(getResources().getColor(R.color.soft_teal));
+        //gridView.setBackgroundColor(getResources().getColor(R.color.soft_teal));
         return rootView;
     }
 }
