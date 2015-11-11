@@ -8,6 +8,21 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Methods {
+    public static final String[] methods = {
+            "Incremental Searches", //0
+            "Bisection", //1
+            "False Position", //2
+            "Fixed Point", //3
+            "Newton", //4
+            "Secant", // 5
+            "Multiple Roots", //6
+            "Gaussian Elimination", //7
+            "Cholesky LU", //8
+            "Crout LU", //9
+            "Doolittle", //10
+            "Gauss Seidel", //11
+            "Jacobi", //12
+    };
     public static Expression function;
     public static Expression function_gx;
     public static Expression function_ddf;
@@ -41,8 +56,8 @@ public class Methods {
                 y1 = f(x1.doubleValue());
                 ArrayList<String> newRow = new ArrayList<String>();
                 newRow.add(Long.toString(cont));
-                newRow.add("" + x1.doubleValue());
-                newRow.add("" + y1.setScale(5, BigDecimal.ROUND_HALF_UP));
+                newRow.add("" + x1.setScale(10, BigDecimal.ROUND_HALF_UP));
+                newRow.add("" + y1.setScale(10, BigDecimal.ROUND_HALF_UP));
                 tabla.addRow(newRow);
                 cont++;
             }
@@ -102,8 +117,8 @@ public class Methods {
                         }
                         ArrayList<String> newRow = new ArrayList<String>();
                         newRow.add(Long.toString(cont));
-                        newRow.add("" + format.format(xinf));
-                        newRow.add("" + format.format(xsup));
+                        newRow.add("" + xinf.setScale(10, BigDecimal.ROUND_HALF_UP));
+                        newRow.add("" + xsup.setScale(10, BigDecimal.ROUND_HALF_UP));
                         newRow.add(""+ format.format(xmed));
                         newRow.add(""+ format.format(ymed));
                         newRow.add(""+ format.format(error));
@@ -170,8 +185,8 @@ public class Methods {
                         }
                         ArrayList<String> newRow = new ArrayList<String>();
                         newRow.add(Long.toString(cont));
-                        newRow.add("" + format.format(xinf));
-                        newRow.add("" + format.format(xsup));
+                        newRow.add("" + xinf.setScale(10, BigDecimal.ROUND_HALF_UP));
+                        newRow.add("" + xsup.setScale(10, BigDecimal.ROUND_HALF_UP));
                         newRow.add("" + format.format(xmed));
                         newRow.add("" + format.format(ymed));
                         newRow.add("" + format.format(error));
@@ -211,8 +226,8 @@ public class Methods {
             }
             ArrayList<String> newRow = new ArrayList<String>();
             newRow.add(Long.toString(cont));
-            newRow.add("" + format.format(xn));
-            newRow.add("" + format.format(yx));
+            newRow.add("" + xn.setScale(10, BigDecimal.ROUND_HALF_UP));
+            newRow.add("" + yx.setScale(10, BigDecimal.ROUND_HALF_UP));
             newRow.add("" + format.format(error));
             tabla.addRow(newRow);
             xinf = xn;
@@ -251,8 +266,8 @@ public class Methods {
             }
             ArrayList<String> newRow = new ArrayList<String>();
             newRow.add(Long.toString(cont));
-            newRow.add("" + format.format(xn));
-            newRow.add("" + format.format(yx));
+            newRow.add("" + xn.setScale(10, BigDecimal.ROUND_HALF_UP));
+            newRow.add("" + yx.setScale(10, BigDecimal.ROUND_HALF_UP));
             newRow.add("" + format.format(dyx));
             newRow.add("" + format.format(error));
             tabla.addRow(newRow);
@@ -299,7 +314,7 @@ public class Methods {
                 }
                 ArrayList<String> newRow = new ArrayList<String>();
                 newRow.add(Long.toString(cont));
-                newRow.add("" + format.format(xn));
+                newRow.add("" + xn.setScale(10, BigDecimal.ROUND_HALF_UP));
                 newRow.add("" + format.format(fx1));
                 newRow.add("" + format.format(error));
                 tabla.addRow(newRow);
@@ -349,7 +364,7 @@ public class Methods {
             ddyx= ddf(xn.doubleValue());
             ArrayList<String> newRow = new ArrayList<String>();
             newRow.add(Long.toString(cont));
-            newRow.add("" + format.format(xn));
+            newRow.add("" + xn.setScale(10, BigDecimal.ROUND_HALF_UP));
             newRow.add("" + format.format(yx));
             newRow.add("" + format.format(dyx));
             newRow.add("" + format.format(ddyx));

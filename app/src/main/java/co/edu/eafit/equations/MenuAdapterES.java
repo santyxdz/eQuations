@@ -8,24 +8,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.etsy.android.grid.util.DynamicHeightTextView;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MenuAdapter extends ArrayAdapter<String>{
+public class MenuAdapterES extends ArrayAdapter<String>{
     public static final String TAG = "MenuAdapter";
     static class ViewHolder{
         DynamicHeightTextView txtLineOne;
-        String type = "SV";
+        String type = "ES";
         Button btn_go;
     }
     private final LayoutInflater mLayoutInflater;
     private final Random mRandom;
     private final ArrayList<Integer> mBackgroundColors;
     private static final SparseArray<Double> sPositionHeightRatios = new SparseArray<Double>();
-    public MenuAdapter(final Context context, final int textViewResourceId){
+    public MenuAdapterES(final Context context, final int textViewResourceId){
         super(context,textViewResourceId);
         mLayoutInflater = LayoutInflater.from(context);
         mRandom = new Random();
@@ -69,35 +70,27 @@ public class MenuAdapter extends ArrayAdapter<String>{
             public void onClick(final View v) {
                 Intent intent = new Intent();
                 intent.setClass(getContext(), Tabs.class);
-                /*Toast.makeText(getContext(), "Button Clicked Position " +
-                        position, Toast.LENGTH_SHORT).show();*/
                 switch (position){
                     case 0:
-                        intent.putExtra("type","Incremental Searches");
-                        break;
-                    case 1:
-                        intent.putExtra("type", "Bisection");
-                        break;
-                    case 2:
-                        intent.putExtra("type", "False Position");
-                        break;
-                    case 3:
-                        intent.putExtra("type", "Fixed Point");
-                        break;
-                    case 4:
-                        intent.putExtra("type", "Newton");
-                        break;
-                    case 5:
-                        intent.putExtra("type", "Secant");
-                        break;
-                    case 6:
-                        intent.putExtra("type","Multiple Roots");
-                        break;
-                    case 7:
                         intent.putExtra("type","Gaussian Elimination");
                         break;
+                    case 1:
+                        intent.putExtra("type","Cholesky LU");
+                        break;
+                    case 2:
+                        intent.putExtra("type","Crout LU");
+                        break;
+                    case 3:
+                        intent.putExtra("type","Doolittle");
+                        break;
+                    case 4:
+                        intent.putExtra("type","Gauss Seidel");
+                        break;
+                    case 5:
+                        intent.putExtra("type","Jacobi");
+                        break;
                 }
-                intent.putExtra("id",position);
+                intent.putExtra("id", position);
                 getContext().startActivity(intent);
             }
         });

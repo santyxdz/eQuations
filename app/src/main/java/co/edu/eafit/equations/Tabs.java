@@ -1,28 +1,26 @@
 package co.edu.eafit.equations;
 
-import android.app.ActionBar;
-import android.graphics.drawable.ColorDrawable;
-import android.support.design.widget.TabLayout;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TableLayout;
+import android.widget.Toast;
 
 import co.edu.eafit.equations.helps.Help;
 import co.edu.eafit.equations.inputs.InputBisection;
 import co.edu.eafit.equations.inputs.InputFalsePosition;
 import co.edu.eafit.equations.inputs.InputFixedPoint;
+import co.edu.eafit.equations.inputs.InputGaussianElimination;
 import co.edu.eafit.equations.inputs.InputIncrementalSearches;
 import co.edu.eafit.equations.inputs.InputMultipleRoots;
 import co.edu.eafit.equations.inputs.InputNewton;
@@ -30,6 +28,7 @@ import co.edu.eafit.equations.inputs.InputSecant;
 import co.edu.eafit.equations.tables.TableBisection;
 import co.edu.eafit.equations.tables.TableFalsePosition;
 import co.edu.eafit.equations.tables.TableFixedPoint;
+import co.edu.eafit.equations.tables.TableGaussianElimination;
 import co.edu.eafit.equations.tables.TableIncrementalSearches;
 import co.edu.eafit.equations.tables.TableMultipleRoots;
 import co.edu.eafit.equations.tables.TableNewton;
@@ -55,14 +54,14 @@ public class Tabs extends AppCompatActivity {
     public void setTabla(Tabla tabla){
         this.tabla = tabla;
     }
+    public String nameToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabs);
-        String nameToolbar = getIntent().getExtras().getString("type");
+        nameToolbar = getIntent().getExtras().getString("type");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(nameToolbar);
-        //toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.teal)));
         setTabla(new Tabla());
         setSupportActionBar(toolbar);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -78,7 +77,7 @@ public class Tabs extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
+        //Toast.makeText(this,"Bundle:"+nameToolbar,Toast.LENGTH_SHORT).show();
     }
 
 
@@ -91,7 +90,6 @@ public class Tabs extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -109,80 +107,92 @@ public class Tabs extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             Fragment tab = null;
-            int type = getIntent().getExtras().getInt("id");
             switch (position) {
                 case 0: //Entradas
                     if(fragmentInput!=null){
                         return fragmentInput;
                     }else{
-                        switch (type){
-                            case 0:
+                        switch (nameToolbar){
+                            case "Incremental Searches":
                                 fragmentInput = InputIncrementalSearches.newInstance();
                                 break;
-                            case 1:
+                            case "Bisection":
                                 fragmentInput = InputBisection.newInstance(position);
                                 break;
-                            case 2:
+                            case "False Position":
                                 fragmentInput = InputFalsePosition.newInstance(position);
                                 break;
-                            case 3:
+                            case "Fixed Point":
                                 fragmentInput = InputFixedPoint.newInstance(position);
                                 break;
-                            case 4:
+                            case "Newton":
                                 fragmentInput = InputNewton.newInstance(position);
                                 break;
-                            case 5:
+                            case "Secant":
                                 fragmentInput = InputSecant.newInstance(position);
                                 break;
-                            case 6:
+                            case "Multiple Roots":
                                 fragmentInput = InputMultipleRoots.newInstance(position);
                                 break;
+                            case "Gaussian Elimination":
+                                fragmentInput = InputGaussianElimination.newInstance(position);
+                                break;
+                            case "Cholesky LU":
+                            case "Crout LU":
+                            case "Doolittle":
+                            case "Gauss Seidel":
+                            case "Jacobi":
                             default:
                                 fragmentInput = null;
                                 break;
                         }
                         return fragmentInput;
                     }
-                    //break;
                 case 1:
                     if(fragmentTable!=null){
                         return fragmentTable;
                     }else {
-                        switch (type) {
-                            case 0:
+                        switch (nameToolbar) {
+                            case "Incremental Searches":
                                 fragmentTable = TableIncrementalSearches.newInstance();
                                 break;
-                            case 1:
+                            case "Bisection":
                                 fragmentTable = TableBisection.newInstance(position);
                                 break;
-                            case 2:
+                            case "False Position":
                                 fragmentTable = TableFalsePosition.newInstance(position);
                                 break;
-                            case 3:
+                            case "Fixed Point":
                                 fragmentTable = TableFixedPoint.newInstance(position);
                                 break;
-                            case 4:
+                            case "Newton":
                                 fragmentTable = TableNewton.newInstance(position);
                                 break;
-                            case 5:
+                            case "Secant":
                                 fragmentTable = TableSecant.newInstance(position);
                                 break;
-                            case 6:
+                            case "Multiple Roots":
                                 fragmentTable = TableMultipleRoots.newInstance(position);
                                 break;
+                            case "Gaussian Elimination":
+                                fragmentTable = TableGaussianElimination.newInstance(position);
+                                break;
+                            case "Cholesky LU":
+                            case "Crout LU":
+                            case "Doolittle":
+                            case "Gauss Seidel":
+                            case "Jacobi":
                             default:
                                 fragmentTable = null;
                                 break;
                         }
-                        ;
                         return fragmentTable;
-                        //break;
                     }
                 case 2:
                     if(fragmentHelp!=null){
                         return fragmentHelp;
                     }else{
-                        switch (type){
+                        switch (nameToolbar){
                             //Usar por si nesecita un help en especifico
                             default:
                                 fragmentHelp =  Help.newInstance(position);

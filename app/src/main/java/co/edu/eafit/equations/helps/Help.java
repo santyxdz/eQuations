@@ -30,35 +30,46 @@ public class Help extends Fragment {
         TextView textView = (TextView) rootView.findViewById(R.id.textView_help);
         ImageView img = (ImageView) rootView.findViewById(R.id.imageView_help);
         ScrollView s = (ScrollView) rootView.findViewById(R.id.scrollView3);
-        int type = getActivity().getIntent().getExtras().getInt("id");
+        String type = getActivity().getIntent().getExtras().getString("type");
         switch (type) {
-            case 1:
+            case "Incremental Searches":
+                textView.setText(getResources().getString(R.string.help_searchincre));
+                img.setImageResource(R.drawable.searincre);
+                break;
+            case "Bisection":
                 textView.setText(getResources().getString(R.string.help_bis));
                 img.setImageResource(R.drawable.bis);
                 break;
-            case 2:
+            case "False Position":
                 textView.setText(getResources().getString(R.string.help_falposi));
                 img.setImageResource(R.drawable.reglafalsa);
                 break;
-            case 3:
+            case "Fixed Point":
                 textView.setText(getResources().getString(R.string.help_fixpoint));
                 img.setImageResource(R.drawable.fixpoi);
                 break;
-            case 4:
+            case "Newton":
                 textView.setText(getResources().getString(R.string.help_newton));
                 img.setImageResource(R.drawable.newton);
                 break;
-            case 5:
+            case "Secant":
                 textView.setText(getResources().getString(R.string.help_secant));
                 img.setImageResource(R.drawable.secant);
                 break;
-            case 6:
+            case "Multiple Roots":
                 textView.setText(getResources().getString(R.string.help_multiroot));
                 img.setImageResource(R.drawable.multipleroots);
                 break;
+            case "Gaussian Elimination":
+            case "Cholesky LU":
+            case "Crout LU":
+            case "Doolittle":
+            case "Gauss Seidel":
+            case "Jacobi":
             default:
-                textView.setText(getResources().getString(R.string.help_searchincre));
+                textView.setText("Not Defined");
                 img.setImageResource(R.drawable.searincre);
+                break;
         }
         return rootView;
     }
