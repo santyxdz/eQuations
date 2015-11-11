@@ -23,6 +23,10 @@
     <string name="relative_error">Relative Error</string>
     <string name="by">by \n Juan Daniel Arboleda \n Santiago Montoya \n &amp; Sergio Atehortua</string>
     <string name="output">OutPut</string>
+    <string name="range_in_x">Domain in x:</string>
+    <string name="range_in_y">Range in y:</string>
+    <string name="min">Min</string>
+    <string name="max">Max</string>
     <string-array name="cabecera_tabla_BIncremental">
         <item>Iteration</item>
         <item>La vendita X</item>
