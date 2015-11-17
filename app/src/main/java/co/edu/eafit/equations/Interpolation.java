@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.etsy.android.grid.StaggeredGridView;
 
-public class EquationSystem extends Fragment {
+public class Interpolation extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -21,17 +21,13 @@ public class EquationSystem extends Fragment {
         TextView txtv_header = (TextView)header.findViewById(R.id.txt_title);
         TextView txtv_footer = (TextView)footer.findViewById(R.id.txt_title);
         txtv_footer.setText("Not Implemented Yet");
-        txtv_header.setText(getString(R.string.equation_system));
+        txtv_header.setText(getString(R.string.title_section6));
         gridView.addHeaderView(header);
         gridView.addFooterView(footer);
         gridView.setBackgroundColor(getResources().getColor(R.color.white));
-        MenuAdapterES mAdapter = new MenuAdapterES(this.getActivity(),R.id.txt_line1);
-        mAdapter.add("Gaussian Elimination");
-        mAdapter.add("Cholesky LU");
-        mAdapter.add("Crout LU");
-        mAdapter.add("Doolittle");
-        mAdapter.add("Gauss Seidel");
-        mAdapter.add("Jacobi");
+        MenuAdapterIN mAdapter = new MenuAdapterIN(this.getActivity(),R.id.txt_line1);
+        mAdapter.add("Newton");
+        mAdapter.add("LaGrange");
         gridView.setAdapter(mAdapter);
         //gridView.setBackgroundColor(getResources().getColor(R.color.soft_teal));
         return rootView;

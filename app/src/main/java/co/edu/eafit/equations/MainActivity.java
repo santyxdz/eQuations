@@ -60,6 +60,11 @@ public class MainActivity extends AppCompatActivity
             case 4: //Eauations System
                 fragment = new EquationSystem();
                 break;
+            case 5:
+                fragment = new Interpolation();
+                break;
+            case 6:
+                fragment = new AddedValue();
         }
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
@@ -82,6 +87,9 @@ public class MainActivity extends AppCompatActivity
                 break;
             case 5:
                 mTitle = getString(R.string.title_section5);
+                break;
+            case 6:
+                mTitle = getString(R.string.added_value);
                 break;
         }
     }

@@ -23,7 +23,7 @@ public class SingleVariable extends Fragment{
         View footer = layoutInflater.inflate(R.layout.list_item_header_footer,null);
         TextView txtv_header = (TextView)header.findViewById(R.id.txt_title);
         TextView txtv_footer = (TextView)footer.findViewById(R.id.txt_title);
-        txtv_footer.setText("x");
+        txtv_footer.setText("");
         txtv_header.setText(getString(R.string.single_variables_equations));
         gridView.addHeaderView(header);
         gridView.addFooterView(footer);

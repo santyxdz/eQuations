@@ -6,6 +6,7 @@
     <string name="title_section3">Supported Functions</string>
     <string name="title_section4">One Variable</string>
     <string name="title_section5">Equations Systems</string>
+    <string name="title_section6">Interpolation</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
@@ -19,6 +20,7 @@
     <string name="title_activity_tabs">Tabs</string>
     <string name="single_variables_equations">Single Variable Equations</string>
     <string name="equation_system">Equations Systems</string>
+    <string name="added_value">Added Value</string>
     <string name="absolute_error">Absolute Error</string>
     <string name="relative_error">Relative Error</string>
     <string name="by">by \n Juan Daniel Arboleda \n Santiago Montoya \n &amp; Sergio Atehortua</string>
