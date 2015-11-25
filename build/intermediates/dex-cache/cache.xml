@@ -2,60 +2,46 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jar="C:\Users\Santi\.gradle\caches\modules-2\files-2.1\org.ejml\equation\0.28\1eecb7fdf79cdf91a49da24af70984ced2138914\equation-0.28.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-d9381ef5b9c86bc4076e297bfe60e4930c79fef2.jar" />
+        sha1="1eecb7fdf79cdf91a49da24af70984ced2138914">
+        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\equation-0.28-747397ee6b170b8d713df2696e1d0ca8eaf3eadc.jar" />
     </item>
     <item
-        jar="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jar="C:\Users\Santi\.gradle\caches\modules-2\files-2.1\org.ejml\core\0.28\d02bf881401f8a005a58b91e87198d18b77347dc\core-0.28.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\classes-fcff1360471c80bdf68c9eebe4b3e1094232f709.jar" />
+        sha1="d02bf881401f8a005a58b91e87198d18b77347dc">
+        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\core-0.28-a20e2e103d600e09ece0c99d3859ad45088ad8be.jar" />
     </item>
     <item
-        jar="C:\Users\Santi\Desktop\eQuations\app\libs\androidplot-core-0.6.1.jar"
+        jar="C:\Users\Santi\.gradle\caches\modules-2\files-2.1\org.ejml\all\0.28\ec528bde7536d2e5c39aafc12f19987b9279755\all-0.28.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="3db0daea52375b26bfa61c59b8df93950bdefbbc">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\androidplot-core-0.6.1-6ca2cfe9752e90a50568fff5b0e549da0858f8d1.jar" />
+        sha1="0ec528bde7536d2e5c39aafc12f19987b9279755">
+        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\all-0.28-846c1f82d015122b3973983d786cece97396426d.jar" />
     </item>
     <item
-        jar="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jar="C:\Users\Santi\.gradle\caches\modules-2\files-2.1\org.ejml\dense64\0.28\b79609796212567ed4e6f361c6f30cffd009e4a3\dense64-0.28.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\classes-d19b0f309ee15e28a955c618c02abaaf4d0d0afa.jar" />
+        sha1="b79609796212567ed4e6f361c6f30cffd009e4a3">
+        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\dense64-0.28-9f85d8d79e8e583ec57721792eff6cf82512b1b3.jar" />
     </item>
     <item
-        jar="C:\Users\Santi\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jar="C:\Users\Santi\.gradle\caches\modules-2\files-2.1\org.ejml\simple\0.28\9ed74a2da17f469fc35f6bdb99f44888cf46eb4e\simple-0.28.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-eb8d4e5b877c3e5eabac0b4eb9e2fc96769fcb4e.jar" />
+        sha1="9ed74a2da17f469fc35f6bdb99f44888cf46eb4e">
+        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\simple-0.28-e9a0f8710284e835a9a708129bb235799e4146ba.jar" />
     </item>
     <item
-        jar="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\exploded-aar\eQuations\StaggeredGrid\unspecified\jars\classes.jar"
+        jar="C:\Users\Santi\.gradle\caches\modules-2\files-2.1\org.ejml\denseC64\0.28\596ae7ecdfbf0938c34b2433947fbd97acba1055\denseC64-0.28.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="0bae4b6889660dc0e15219c5d50ca2c9eaeb44b7">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\classes-e8fdc446393aa92a95003fd2e18cca1ffac7de24.jar" />
-    </item>
-    <item
-        jar="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\classes-01a0826dc37a1c0973e8bd800b12a790adaa5676.jar" />
-    </item>
-    <item
-        jar="C:\Users\Santi\Desktop\eQuations\app\libs\exp4j-0.4.5.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1060f042519efdc41a72a3e4aa823803bf6a1dd8">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\exp4j-0.4.5-9471c1d74df5568cb654a5793ae2bc48f297ef09.jar" />
+        sha1="596ae7ecdfbf0938c34b2433947fbd97acba1055">
+        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\denseC64-0.28-2e83624e6b29162f1952dfb57810f4e5c4c907e0.jar" />
     </item>
 
 </items>

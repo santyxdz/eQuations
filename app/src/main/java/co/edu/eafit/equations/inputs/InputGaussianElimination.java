@@ -2,11 +2,14 @@ package co.edu.eafit.equations.inputs;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Toast;
@@ -32,6 +35,7 @@ public class InputGaussianElimination extends Fragment {
         final EditText inputMatrixSize = (EditText)rootView.findViewById(R.id.input_matrix_size);
         Button btnMatrixSize = (Button)rootView.findViewById(R.id.btn_matrix_size);
         matrixinput = (TableLayout)rootView.findViewById(R.id.MatrixA);
+        final Button btnCalculate = (Button)rootView.findViewById(R.id.btn_calculate);
         btnMatrixSize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,9 +54,22 @@ public class InputGaussianElimination extends Fragment {
                     for(int j=0;j<size;j++){
                         EditText input = new EditText(rootView.getContext());
                         row.addView(input);
+                        input.getLayoutParams().width=100;
+                        input.setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_DECIMAL|InputType.TYPE_NUMBER_FLAG_SIGNED);
                     }
                     matrixinput.addView(row);
                 }
+                btnCalculate.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT)
+                );
+                btnCalculate.setVisibility(View.VISIBLE);
+            }
+        });
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
         return rootView;
