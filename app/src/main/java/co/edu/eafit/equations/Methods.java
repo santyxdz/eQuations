@@ -6,7 +6,7 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-
+import org.ejml.simple.SimpleMatrix;
 public class Methods {
     public static final String[] methods = {
             "Incremental Searches", //0

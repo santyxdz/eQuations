@@ -1,6 +1,6 @@
 package co.edu.eafit.equations.tables;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -22,8 +22,9 @@ public class TableGaussianElimination extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
     private int sectionNumber;
     private TableLayout tableLayout;
-    public static TableIncrementalSearches newInstance(int sectionNumber) {
-        TableIncrementalSearches fragment = new TableIncrementalSearches();
+    public TextView text;
+    public static TableGaussianElimination newInstance(int sectionNumber) {
+        TableGaussianElimination fragment = new TableGaussianElimination();
         Bundle args = new Bundle();
         //args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
@@ -37,6 +38,7 @@ public class TableGaussianElimination extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tab_table_gaussian_elimination, container, false);
         TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+        text = (TextView)rootView.findViewById(R.id.gau_text);
         tableLayout = (TableLayout)rootView.findViewById(R.id.tabla);
         return rootView;
     }
@@ -73,4 +75,7 @@ public class TableGaussianElimination extends Fragment {
         return bounds.width();
     }
 
+    public TextView getText() {
+        return text;
+    }
 }

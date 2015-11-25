@@ -14,13 +14,18 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Toast;
 
+import org.ejml.simple.SimpleMatrix;
+
 import co.edu.eafit.equations.R;
+import co.edu.eafit.equations.Tabs;
+import co.edu.eafit.equations.tables.TableGaussianElimination;
 
 /**
  * Created by JDaniels on 09/11/2015.
  */
 public class InputGaussianElimination extends Fragment {
     TableLayout matrixinput;
+    TableLayout vectorbinput;
     public static InputGaussianElimination newInstance(int sectionNumber) {
         InputGaussianElimination fragment = new InputGaussianElimination();
         Bundle args = new Bundle();
@@ -35,11 +40,13 @@ public class InputGaussianElimination extends Fragment {
         final EditText inputMatrixSize = (EditText)rootView.findViewById(R.id.input_matrix_size);
         Button btnMatrixSize = (Button)rootView.findViewById(R.id.btn_matrix_size);
         matrixinput = (TableLayout)rootView.findViewById(R.id.MatrixA);
+        vectorbinput = (TableLayout)rootView.findViewById(R.id.VectorB);
         final Button btnCalculate = (Button)rootView.findViewById(R.id.btn_calculate);
         btnMatrixSize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 matrixinput.removeAllViews();
+                vectorbinput.removeAllViews();
                 String sSize = inputMatrixSize.getText().toString();
                 int size;
                 if(sSize.isEmpty()||sSize==null||sSize.equals("")){
@@ -59,6 +66,18 @@ public class InputGaussianElimination extends Fragment {
                     }
                     matrixinput.addView(row);
                 }
+                TableRow vectorb = new TableRow(rootView.getContext());
+                TableRow.LayoutParams vectorblp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
+                vectorb.setLayoutParams(vectorblp);
+                for(int i=0;i<size;i++){
+                    EditText input = new EditText(rootView.getContext());
+                    vectorb.addView(input);
+                    input.getLayoutParams().width=100;
+                    input.setInputType(InputType.TYPE_CLASS_NUMBER
+                            | InputType.TYPE_NUMBER_FLAG_DECIMAL
+                            | InputType.TYPE_NUMBER_FLAG_SIGNED);
+                }
+                vectorbinput.addView(vectorb);
                 btnCalculate.setLayoutParams(new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT)
@@ -69,7 +88,23 @@ public class InputGaussianElimination extends Fragment {
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                SimpleMatrix matrix = new SimpleMatrix(matrixinput.getChildCount(),matrixinput.getChildCount());
+                SimpleMatrix vectorb = new SimpleMatrix(matrixinput.getChildCount(),1);
+                for(int i = 0; i < matrixinput.getChildCount();i++){
+                    TableRow row = (TableRow)matrixinput.getChildAt(i);
+                    for(int j = 0; j < row.getChildCount(); j++){
+                        EditText input = (EditText)row.getChildAt(j);
+                        matrix.set(i,j,Double.parseDouble(input.getText().toString()));
+                    }
+                }
+                TableRow rowx = (TableRow)vectorbinput.getChildAt(0);
+                for(int i = 0; i < rowx.getChildCount() ; i++){
+                    EditText input = (EditText)rowx.getChildAt(i);
+                    vectorb.set(i,0,Double.parseDouble(input.getText().toString()));
+                }
+                Tabs activity = (Tabs)getActivity();
+                TableGaussianElimination tabgauelm = (TableGaussianElimination)activity.getFragmentTable();
+                tabgauelm.getText().setText(matrix.toString()+"\n"+vectorb.toString());
             }
         });
         return rootView;
