@@ -87,4 +87,11 @@
         </LinearLayout>
     </ScrollView>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Newton"
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal" />
+
 </LinearLayout>

@@ -2,46 +2,11 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Santi\.gradle\caches\modules-2\files-2.1\org.ejml\equation\0.28\1eecb7fdf79cdf91a49da24af70984ced2138914\equation-0.28.jar"
+        jar="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\exploded-aar\eQuations\StaggeredGrid\unspecified\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="1eecb7fdf79cdf91a49da24af70984ced2138914">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\equation-0.28-747397ee6b170b8d713df2696e1d0ca8eaf3eadc.jar" />
-    </item>
-    <item
-        jar="C:\Users\Santi\.gradle\caches\modules-2\files-2.1\org.ejml\core\0.28\d02bf881401f8a005a58b91e87198d18b77347dc\core-0.28.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d02bf881401f8a005a58b91e87198d18b77347dc">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\core-0.28-a20e2e103d600e09ece0c99d3859ad45088ad8be.jar" />
-    </item>
-    <item
-        jar="C:\Users\Santi\.gradle\caches\modules-2\files-2.1\org.ejml\all\0.28\ec528bde7536d2e5c39aafc12f19987b9279755\all-0.28.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="0ec528bde7536d2e5c39aafc12f19987b9279755">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\all-0.28-846c1f82d015122b3973983d786cece97396426d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Santi\.gradle\caches\modules-2\files-2.1\org.ejml\dense64\0.28\b79609796212567ed4e6f361c6f30cffd009e4a3\dense64-0.28.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="b79609796212567ed4e6f361c6f30cffd009e4a3">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\dense64-0.28-9f85d8d79e8e583ec57721792eff6cf82512b1b3.jar" />
-    </item>
-    <item
-        jar="C:\Users\Santi\.gradle\caches\modules-2\files-2.1\org.ejml\simple\0.28\9ed74a2da17f469fc35f6bdb99f44888cf46eb4e\simple-0.28.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="9ed74a2da17f469fc35f6bdb99f44888cf46eb4e">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\simple-0.28-e9a0f8710284e835a9a708129bb235799e4146ba.jar" />
-    </item>
-    <item
-        jar="C:\Users\Santi\.gradle\caches\modules-2\files-2.1\org.ejml\denseC64\0.28\596ae7ecdfbf0938c34b2433947fbd97acba1055\denseC64-0.28.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="596ae7ecdfbf0938c34b2433947fbd97acba1055">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\denseC64-0.28-2e83624e6b29162f1952dfb57810f4e5c4c907e0.jar" />
+        sha1="7fef884e1395077cc4eea125927b0016179fbd35">
+        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\classes-e8fdc446393aa92a95003fd2e18cca1ffac7de24.jar" />
     </item>
 
 </items>

@@ -14,25 +14,38 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import co.edu.eafit.equations.helps.Help;
-import co.edu.eafit.equations.inputs.InputBisection;
-import co.edu.eafit.equations.inputs.InputFalsePosition;
-import co.edu.eafit.equations.inputs.InputFixedPoint;
-import co.edu.eafit.equations.inputs.InputGaussianElimination;
-import co.edu.eafit.equations.inputs.InputIncrementalSearches;
-import co.edu.eafit.equations.inputs.InputMultipleRoots;
-import co.edu.eafit.equations.inputs.InputNewton;
-import co.edu.eafit.equations.inputs.InputSecant;
-import co.edu.eafit.equations.tables.TableBisection;
-import co.edu.eafit.equations.tables.TableFalsePosition;
-import co.edu.eafit.equations.tables.TableFixedPoint;
-import co.edu.eafit.equations.tables.TableGaussianElimination;
-import co.edu.eafit.equations.tables.TableIncrementalSearches;
-import co.edu.eafit.equations.tables.TableMultipleRoots;
-import co.edu.eafit.equations.tables.TableNewton;
-import co.edu.eafit.equations.tables.TableSecant;
+import co.edu.eafit.equations.inputs.equationssystems.InputCholesky;
+import co.edu.eafit.equations.inputs.equationssystems.InputCrout;
+import co.edu.eafit.equations.inputs.equationssystems.InputDoolittle;
+import co.edu.eafit.equations.inputs.equationssystems.InputGaussSeidel;
+import co.edu.eafit.equations.inputs.equationssystems.InputJacobi;
+import co.edu.eafit.equations.inputs.interpolation.InputLagrangePolynomial;
+import co.edu.eafit.equations.inputs.interpolation.InputNewtonPolynomial;
+import co.edu.eafit.equations.inputs.singlevariable.InputBisection;
+import co.edu.eafit.equations.inputs.singlevariable.InputFalsePosition;
+import co.edu.eafit.equations.inputs.singlevariable.InputFixedPoint;
+import co.edu.eafit.equations.inputs.equationssystems.InputGaussianElimination;
+import co.edu.eafit.equations.inputs.singlevariable.InputIncrementalSearches;
+import co.edu.eafit.equations.inputs.singlevariable.InputMultipleRoots;
+import co.edu.eafit.equations.inputs.singlevariable.InputNewton;
+import co.edu.eafit.equations.inputs.singlevariable.InputSecant;
+import co.edu.eafit.equations.tables.equiationssystems.TableCholesky;
+import co.edu.eafit.equations.tables.equiationssystems.TableCrout;
+import co.edu.eafit.equations.tables.equiationssystems.TableDoolittle;
+import co.edu.eafit.equations.tables.equiationssystems.TableGaussSeidel;
+import co.edu.eafit.equations.tables.equiationssystems.TableJacobi;
+import co.edu.eafit.equations.tables.interpolation.TableLagrangePolynomial;
+import co.edu.eafit.equations.tables.interpolation.TableNewtonPolynomial;
+import co.edu.eafit.equations.tables.singlevariable.TableBisection;
+import co.edu.eafit.equations.tables.singlevariable.TableFalsePosition;
+import co.edu.eafit.equations.tables.singlevariable.TableFixedPoint;
+import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
+import co.edu.eafit.equations.tables.singlevariable.TableIncrementalSearches;
+import co.edu.eafit.equations.tables.singlevariable.TableMultipleRoots;
+import co.edu.eafit.equations.tables.singlevariable.TableNewton;
+import co.edu.eafit.equations.tables.singlevariable.TableSecant;
 
 public class Tabs extends AppCompatActivity {
 
@@ -117,31 +130,53 @@ public class Tabs extends AppCompatActivity {
                                 fragmentInput = InputIncrementalSearches.newInstance();
                                 break;
                             case "Bisection":
-                                fragmentInput = InputBisection.newInstance(position);
+                                fragmentInput = InputBisection.newInstance();
                                 break;
                             case "False Position":
-                                fragmentInput = InputFalsePosition.newInstance(position);
+                                fragmentInput = InputFalsePosition.newInstance();
                                 break;
                             case "Fixed Point":
-                                fragmentInput = InputFixedPoint.newInstance(position);
+                                fragmentInput = InputFixedPoint.newInstance();
                                 break;
                             case "Newton":
-                                fragmentInput = InputNewton.newInstance(position);
+                                fragmentInput = InputNewton.newInstance();
                                 break;
                             case "Secant":
-                                fragmentInput = InputSecant.newInstance(position);
+                                fragmentInput = InputSecant.newInstance();
                                 break;
                             case "Multiple Roots":
-                                fragmentInput = InputMultipleRoots.newInstance(position);
+                                fragmentInput = InputMultipleRoots.newInstance();
                                 break;
                             case "Gaussian Elimination":
-                                fragmentInput = InputGaussianElimination.newInstance(position);
+                                fragmentInput = InputGaussianElimination.newInstance();
                                 break;
-                            case "Cholesky LU":
-                            case "Crout LU":
+                            case "Cholesky":
+                                fragmentInput = InputCholesky.newInstance();
+                                break;
+                            case "Crout":
+                                fragmentInput = InputCrout.newInstance();
+                                break;
                             case "Doolittle":
+                                fragmentInput = InputDoolittle.newInstance();
+                                break;
                             case "Gauss Seidel":
+                                fragmentInput = InputGaussSeidel.newInstance();
+                                break;
                             case "Jacobi":
+                                fragmentInput = InputJacobi.newInstance();
+                                break;
+                            //Interpolation
+                            case "Newton Polynomial":
+                                fragmentInput = InputNewtonPolynomial.newInstance();
+                                break;
+                            case "Lagrange Polynomial":
+                                fragmentInput = InputLagrangePolynomial.newInstance();
+                                break;
+                            //Added Value
+                            case "Neville":
+                            case "Gaussian Elimination with Partial Pivoting":
+                            case "Gaussian Elimination with Total Pivoting":
+                            case "Gaussian Elimination with Staggered Pivoting":
                             default:
                                 fragmentInput = null;
                                 break;
@@ -153,35 +188,59 @@ public class Tabs extends AppCompatActivity {
                         return fragmentTable;
                     }else {
                         switch (nameToolbar) {
+                            //Single Variable Equations
                             case "Incremental Searches":
                                 fragmentTable = TableIncrementalSearches.newInstance();
                                 break;
                             case "Bisection":
-                                fragmentTable = TableBisection.newInstance(position);
+                                fragmentTable = TableBisection.newInstance();
                                 break;
                             case "False Position":
-                                fragmentTable = TableFalsePosition.newInstance(position);
+                                fragmentTable = TableFalsePosition.newInstance();
                                 break;
                             case "Fixed Point":
-                                fragmentTable = TableFixedPoint.newInstance(position);
+                                fragmentTable = TableFixedPoint.newInstance();
                                 break;
                             case "Newton":
-                                fragmentTable = TableNewton.newInstance(position);
+                                fragmentTable = TableNewton.newInstance();
                                 break;
                             case "Secant":
-                                fragmentTable = TableSecant.newInstance(position);
+                                fragmentTable = TableSecant.newInstance();
                                 break;
                             case "Multiple Roots":
-                                fragmentTable = TableMultipleRoots.newInstance(position);
+                                fragmentTable = TableMultipleRoots.newInstance();
                                 break;
+                            //Equations Systems
                             case "Gaussian Elimination":
-                                fragmentTable = TableGaussianElimination.newInstance(position);
+                                fragmentTable = TableGaussianElimination.newInstance();
                                 break;
-                            case "Cholesky LU":
-                            case "Crout LU":
+                            case "Cholesky":
+                                fragmentTable = TableCholesky.newInstance();
+                                break;
+                            case "Crout":
+                                fragmentTable = TableCrout.newInstance();
+                                break;
                             case "Doolittle":
+                                fragmentTable = TableDoolittle.newInstance();
+                                break;
                             case "Gauss Seidel":
+                                fragmentTable = TableGaussSeidel.newInstance();
+                                break;
                             case "Jacobi":
+                                fragmentTable = TableJacobi.newInstance();
+                                break;
+                            //Interpolation
+                            case "Newton Polynomial":
+                                fragmentTable = TableNewtonPolynomial.newInstance();
+                                break;
+                            case "Lagrange Polynomial":
+                                fragmentTable = TableLagrangePolynomial.newInstance();
+                                break;
+                            //Added Value
+                            case "Neville":
+                            case "Gaussian Elimination with Partial Pivoting":
+                            case "Gaussian Elimination with Total Pivoting":
+                            case "Gaussian Elimination with Staggered Pivoting":
                             default:
                                 fragmentTable = null;
                                 break;
@@ -195,7 +254,7 @@ public class Tabs extends AppCompatActivity {
                         switch (nameToolbar){
                             //Usar por si nesecita un help en especifico
                             default:
-                                fragmentHelp =  Help.newInstance(position);
+                                fragmentHelp =  Help.newInstance();
                                 break;
                         }
                         return fragmentHelp;

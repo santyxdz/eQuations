@@ -10,6 +10,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import co.edu.eafit.equations.sections.AddedValue;
+import co.edu.eafit.equations.sections.EquationSystem;
+import co.edu.eafit.equations.sections.Graphic;
+import co.edu.eafit.equations.sections.Interpolation;
+import co.edu.eafit.equations.sections.SingleVariable;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 

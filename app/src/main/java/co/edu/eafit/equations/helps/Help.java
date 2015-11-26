@@ -12,11 +12,9 @@ import android.widget.TextView;
 import co.edu.eafit.equations.R;
 
 public class Help extends Fragment {
-    private static final String ARG_SECTION_NUMBER = "section_number";
-    public static Help newInstance(int sectionNumber) {
+    public static Help newInstance() {
         Help fragment = new Help();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }
