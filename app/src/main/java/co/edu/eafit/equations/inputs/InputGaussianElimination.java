@@ -1,9 +1,8 @@
 package co.edu.eafit.equations.inputs;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.text.InputType;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +11,10 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-import android.widget.Toast;
 
 import org.ejml.simple.SimpleMatrix;
 
+import co.edu.eafit.equations.Methods;
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
 import co.edu.eafit.equations.tables.TableGaussianElimination;
@@ -26,6 +25,7 @@ import co.edu.eafit.equations.tables.TableGaussianElimination;
 public class InputGaussianElimination extends Fragment {
     TableLayout matrixinput;
     TableLayout vectorbinput;
+    int size;
     public static InputGaussianElimination newInstance(int sectionNumber) {
         InputGaussianElimination fragment = new InputGaussianElimination();
         Bundle args = new Bundle();
@@ -48,7 +48,7 @@ public class InputGaussianElimination extends Fragment {
                 matrixinput.removeAllViews();
                 vectorbinput.removeAllViews();
                 String sSize = inputMatrixSize.getText().toString();
-                int size;
+
                 if(sSize.isEmpty()||sSize==null||sSize.equals("")){
                     size=4;
                 }else{
@@ -104,7 +104,18 @@ public class InputGaussianElimination extends Fragment {
                 }
                 Tabs activity = (Tabs)getActivity();
                 TableGaussianElimination tabgauelm = (TableGaussianElimination)activity.getFragmentTable();
-                tabgauelm.getText().setText(matrix.toString()+"\n"+vectorb.toString());
+                //tabgauelm.getText().setText(matrix.toString()+"\n"+vectorb.toString());
+
+                SimpleMatrix aux = Methods.eliminacionGaussiana(matrix, vectorb);
+                SimpleMatrix res = Methods.sustitucionRegresiva(aux);
+                String xx = "";
+                for(int k=0;k<size;k++)
+                    xx +=  "X"+(k+1)+" = "+res.get(k)+"\n";
+
+                tabgauelm.getText().setText("MATRIZ A \n"+ matrix.toString()+"\n VECTOR B \n"+
+                        vectorb.toString()+"\n GAUSSIAN ELIMINATION \n "+aux.toString()+"\n ANSWERS \n" +xx);
+
+
             }
         });
         return rootView;

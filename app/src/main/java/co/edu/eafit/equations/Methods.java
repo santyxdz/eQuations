@@ -3,10 +3,12 @@ package co.edu.eafit.equations;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
+import org.ejml.simple.SimpleMatrix;
+
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import org.ejml.simple.SimpleMatrix;
+
 public class Methods {
     public static final String[] methods = {
             "Incremental Searches", //0
@@ -26,6 +28,8 @@ public class Methods {
     public static Expression function;
     public static Expression function_gx;
     public static Expression function_ddf;
+    public static int numchar = 10;
+    public static int precision = 10;
 
     public static BigDecimal f(double x){
         double fx = function.setVariable("x", x).evaluate();
@@ -394,6 +398,38 @@ public class Methods {
                 }
             }
         }
+    }
+    public static SimpleMatrix sustitucionRegresiva(SimpleMatrix Ab){
+        int n = Ab.numRows();
+        SimpleMatrix x = new SimpleMatrix(n,1);
+        n--;
+        x.set(n, 0, Ab.get(n, n+1)/Ab.get(n, n));
+        for(int i=n; i>-1; i--){
+            double sum = 0;
+            for(int p=i+1; p<=n; p++){
+                sum+=Ab.get(i, p)*x.get(p, 0);
+            }
+            x.set(i, 0, (Ab.get(i, n+1)-sum)/Ab.get(i,i));
+        }
+        return x;
+    }
+
+    public static SimpleMatrix eliminacionGaussiana(SimpleMatrix A,
+                                                    SimpleMatrix b){
+        int n = b.numRows();
+        SimpleMatrix Ab = new SimpleMatrix(A.numRows(),A.numCols()+1);
+        Ab.insertIntoThis(0, 0, A);
+        Ab.insertIntoThis(0, A.numCols(), b);
+        Ab.print(numchar,precision);
+        for(int k = 0; k < n-1; k++){
+            for(int i = k+1; i < n; i++){
+                double m = Ab.get(i, k)/Ab.get(k, k);
+                for(int j = k; j < n+1; j++){
+                    Ab.set(i, j, Ab.get(i, j)-(m*Ab.get(k,j)));
+                }
+            }
+        }
+        return Ab;
     }
 
 
