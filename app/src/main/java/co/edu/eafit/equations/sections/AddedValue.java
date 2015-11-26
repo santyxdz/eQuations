@@ -29,9 +29,9 @@ public class AddedValue extends Fragment {
         gridView.addFooterView(footer);
         gridView.setBackgroundColor(getResources().getColor(R.color.white));
         MenuAdapterVA mAdapter = new MenuAdapterVA(this.getActivity(),R.id.txt_line1);
-        mAdapter.add("Pivote Parcial");
-        mAdapter.add("Pivote Total");
-        mAdapter.add("Pivote Escalonado");
+        mAdapter.add("Gaussian Elimination with Partial Pivoting");
+        mAdapter.add("Gaussian Elimination with Total Pivoting");
+        mAdapter.add("Gaussian Elimination with Staggered Pivoting");
         mAdapter.add("Neville");
         mAdapter.add("Otros...");
         gridView.setAdapter(mAdapter);

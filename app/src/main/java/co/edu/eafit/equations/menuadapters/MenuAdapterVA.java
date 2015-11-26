@@ -74,7 +74,7 @@ public class MenuAdapterVA extends ArrayAdapter<String>{
                 intent.setClass(getContext(), Tabs.class);
                 switch (position){
                     case 0:
-                        intent.putExtra("type","Newton");
+                        intent.putExtra("type","Gaussian Elimination with Partial Pivoting");
                         break;
                     case 1:
                         intent.putExtra("type","LaGrange");
@@ -83,7 +83,6 @@ public class MenuAdapterVA extends ArrayAdapter<String>{
                         intent.putExtra("type","Neville");
                         break;
                 }
-                intent.putExtra("id", position);
                 getContext().startActivity(intent);
             }
         });

@@ -20,6 +20,7 @@ import co.edu.eafit.equations.inputs.equationssystems.InputCholesky;
 import co.edu.eafit.equations.inputs.equationssystems.InputCrout;
 import co.edu.eafit.equations.inputs.equationssystems.InputDoolittle;
 import co.edu.eafit.equations.inputs.equationssystems.InputGaussSeidel;
+import co.edu.eafit.equations.inputs.equationssystems.InputGaussianEliminationWithPartialPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputJacobi;
 import co.edu.eafit.equations.inputs.interpolation.InputLagrangePolynomial;
 import co.edu.eafit.equations.inputs.interpolation.InputNewtonPolynomial;
@@ -35,6 +36,7 @@ import co.edu.eafit.equations.tables.equiationssystems.TableCholesky;
 import co.edu.eafit.equations.tables.equiationssystems.TableCrout;
 import co.edu.eafit.equations.tables.equiationssystems.TableDoolittle;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussSeidel;
+import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithPartialPivoting;
 import co.edu.eafit.equations.tables.equiationssystems.TableJacobi;
 import co.edu.eafit.equations.tables.interpolation.TableLagrangePolynomial;
 import co.edu.eafit.equations.tables.interpolation.TableNewtonPolynomial;
@@ -173,10 +175,12 @@ public class Tabs extends AppCompatActivity {
                                 fragmentInput = InputLagrangePolynomial.newInstance();
                                 break;
                             //Added Value
-                            case "Neville":
                             case "Gaussian Elimination with Partial Pivoting":
+                                fragmentInput = InputGaussianEliminationWithPartialPivoting.newInstance();
+                                break;
                             case "Gaussian Elimination with Total Pivoting":
                             case "Gaussian Elimination with Staggered Pivoting":
+                            case "Neville":
                             default:
                                 fragmentInput = null;
                                 break;
@@ -237,10 +241,12 @@ public class Tabs extends AppCompatActivity {
                                 fragmentTable = TableLagrangePolynomial.newInstance();
                                 break;
                             //Added Value
-                            case "Neville":
                             case "Gaussian Elimination with Partial Pivoting":
+                                fragmentTable = TableGaussianEliminationWithPartialPivoting.newInstance();
+                                break;
                             case "Gaussian Elimination with Total Pivoting":
                             case "Gaussian Elimination with Staggered Pivoting":
+                            case "Neville":
                             default:
                                 fragmentTable = null;
                                 break;
