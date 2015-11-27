@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<merger version="3"><dataSet config="main"><source path="C:\Users\JDaniels\Documents\Numerico\eQuations\StaggeredGrid\src\main\res"><file path="C:\Users\JDaniels\Documents\Numerico\eQuations\StaggeredGrid\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="StaggeredGridView">
-=======
 <merger version="3"><dataSet config="main"><source path="C:\Users\NN\Documents\GitHub\eQuations\StaggeredGrid\src\main\res"><file path="C:\Users\NN\Documents\GitHub\eQuations\StaggeredGrid\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="StaggeredGridView">
->>>>>>> eb9f21a28b18f54cc046bf200cbfc858ea33c423
         <attr format="integer" name="column_count"/>
         <attr format="integer" name="column_count_portrait"/>
         <attr format="integer" name="column_count_landscape"/>
@@ -12,8 +8,4 @@
         <attr format="dimension" name="grid_paddingRight"/>
         <attr format="dimension" name="grid_paddingTop"/>
         <attr format="dimension" name="grid_paddingBottom"/>
-<<<<<<< HEAD
-    </declare-styleable></file></source><source path="C:\Users\JDaniels\Documents\Numerico\eQuations\StaggeredGrid\build\generated\res\rs\release"/><source path="C:\Users\JDaniels\Documents\Numerico\eQuations\StaggeredGrid\build\generated\res\resValues\release"/></dataSet><dataSet config="release"><source path="C:\Users\JDaniels\Documents\Numerico\eQuations\StaggeredGrid\src\release\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="StaggeredGridView"><attr format="integer" name="column_count"/><attr format="integer" name="column_count_portrait"/><attr format="integer" name="column_count_landscape"/><attr format="dimension" name="item_margin"/><attr format="dimension" name="grid_paddingLeft"/><attr format="dimension" name="grid_paddingRight"/><attr format="dimension" name="grid_paddingTop"/><attr format="dimension" name="grid_paddingBottom"/></declare-styleable></configuration></mergedItems></merger>
-=======
     </declare-styleable></file></source><source path="C:\Users\NN\Documents\GitHub\eQuations\StaggeredGrid\build\generated\res\rs\release"/><source path="C:\Users\NN\Documents\GitHub\eQuations\StaggeredGrid\build\generated\res\resValues\release"/></dataSet><dataSet config="release"><source path="C:\Users\NN\Documents\GitHub\eQuations\StaggeredGrid\src\release\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="StaggeredGridView"><attr format="integer" name="column_count"/><attr format="integer" name="column_count_portrait"/><attr format="integer" name="column_count_landscape"/><attr format="dimension" name="item_margin"/><attr format="dimension" name="grid_paddingLeft"/><attr format="dimension" name="grid_paddingRight"/><attr format="dimension" name="grid_paddingTop"/><attr format="dimension" name="grid_paddingBottom"/></declare-styleable></configuration></mergedItems></merger>
->>>>>>> eb9f21a28b18f54cc046bf200cbfc858ea33c423

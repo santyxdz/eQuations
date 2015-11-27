@@ -402,6 +402,7 @@ public class Methods {
             }
         }
     }
+
     public static SimpleMatrix sustitucionRegresiva(SimpleMatrix Ab){
         int n = Ab.numRows();
         SimpleMatrix x = new SimpleMatrix(n,1);
@@ -413,6 +414,34 @@ public class Methods {
                 sum+=Ab.get(i, p)*x.get(p, 0);
             }
             x.set(i, 0, (Ab.get(i, n+1)-sum)/Ab.get(i,i));
+        }
+        return x;
+    }
+
+    public static SimpleMatrix sustitucionRegresiva(SimpleMatrix U,
+                                                    SimpleMatrix z){
+        int n = U.numCols();
+        SimpleMatrix x = new SimpleMatrix(n,1);
+        for(int i = n-1; i>=0; i--){
+            double suma = 0;
+            for(int j = i+1; j<n; j++){
+                suma+=U.get(i,j)*x.get(j,0);
+            }
+            x.set(i,0,(z.get(i,0)-suma)/U.get(i,i));
+        }
+        return x;
+    }
+
+    public static SimpleMatrix sustitucionProgresiva(SimpleMatrix L,
+                                                     SimpleMatrix b){
+        int n = L.numCols();
+        SimpleMatrix x = new SimpleMatrix(n,1);
+        for(int i = 1; i < n+1; i++){
+            double suma = 0;
+            for(int p = i-1; p > 0; p--){
+                suma+=L.get(i-1,p-1) * x.get(p-1,0);
+            }
+            x.set(i-1,0,(b.get(i-1,0)-suma)/L.get(i-1,i-1));
         }
         return x;
     }
@@ -434,6 +463,99 @@ public class Methods {
         }
         return Ab;
     }
+    //----------------------------------------------------------------------------------
+
+    public static String factorizacionLUCrout(SimpleMatrix A, SimpleMatrix b){
+        int n= A.numCols();
+        SimpleMatrix L = SimpleMatrix.identity(n);
+        SimpleMatrix U = SimpleMatrix.identity(n);
+        for(int k = 1; k < n+1; k++){
+            double suma = 0;
+            for(int p = 0; p < k-1; p++){
+                suma += L.get(k-1,p)*U.get(p,k-1);
+            }
+            L.set(k-1,k-1, A.get(k-1,k-1)-suma);
+            for(int i = k+1; i < n+1; i++){
+                suma = 0;
+                for(int p = 0; p < k-1; p++){
+                    suma += L.get(i - 1, p) * U.get(p,k-1);
+                }
+                L.set(i - 1, k - 1, (A.get(i - 1, k - 1)-suma)/U.get(k - 1, k - 1));
+            }
+            for (int j = k+1; j < n+1; j++){
+                suma = 0;
+                for (int p = 0; p < k-1; p++){
+                    suma += L.get(k-1,p)*U.get(p,j-1);
+                }
+                U.set(k-1,j- 1, (A.get(k - 1, j -1)-suma)/L.get(k-1,k-1));
+            }
+        }
+        String res = "";
+        res += "Matrix L:\n";
+
+        L.print(numchar, precision);
+        res += L.toString();
+        res += "\nMatrix U:\n";
+        U.print(numchar,precision);
+        res+= U.toString();
+        SimpleMatrix z = sustitucionProgresiva(L, b);
+        res+= "\nVector z:\n";
+        z.print(numchar,precision);
+        String xx = "";
+        for(int k=0;k<z.getNumElements();k++)
+          xx +=  "z"+(k+1)+" = "+z.get(k)+"\n";
+        res += xx;//z.toString();
+        SimpleMatrix x = sustitucionRegresiva(U, z);
+        res += "\nVector x:\n";
+        x.print(numchar, precision);
+        //res += x.toString();
+        String vecre = "";
+        for(int k=0;k<x.getNumElements();k++)
+          vecre +=  "X"+(k+1)+" = "+x.get(k)+"\n";
+        res+= vecre;
+        return res;
+    }
+    //----------------------------------------------------------------------------------
+    public static String factorizacionLUDoolittle(SimpleMatrix A, SimpleMatrix b){
+        int n = A.numCols();
+        String res = "";
+        SimpleMatrix L = SimpleMatrix.identity(n);
+        SimpleMatrix U = SimpleMatrix.identity(n);
+        for(int k = 1; k < n+1; k++){
+            double suma = 0;
+            for(int p = 0; p < k-1; p++){
+                suma += L.get(k-1,p)*U.get(p,k-1);
+            }
+            U.set(k-1,k-1,(A.get(k-1,k-1)-suma)/L.get(k-1,k-1));
+            for(int j = k+1; j < n+1; j++){
+                suma = 0;
+                for(int p = 0; p < k-1; p++){
+                    suma += L.get(k-1,p)*U.get(p,j-1);
+                }
+                U.set(k-1,j-1,(A.get(k-1,j-1)-suma)/L.get(k-1,k-1));
+            }
+            for(int i = k+1; i < n+1; i++){
+                suma = 0;
+                for(int p = 0; p < k-1; p++){
+                    suma += L.get(i-1,p)*U.get(p,k-1);
+                }
+                L.set(i-1,k-1,(A.get(i-1,k-1)-suma)/U.get(k-1,k-1));
+            }
+        }
+        System.out.println("\nMatrix L:");
+        L.print(numchar, precision);
+        System.out.println("\nMatrix U:");
+        U.print(numchar, precision);
+        SimpleMatrix z = sustitucionProgresiva(L, b);
+        System.out.println("\nVector z:");
+        z.print(numchar, precision);
+        SimpleMatrix x = sustitucionRegresiva(U, z);
+        System.out.println("\nVector x:");
+        x.print(numchar, precision);
+        return res;
+    }
+
+
     //----------------------------------------------------------------------------------
     public static SimpleMatrix eliminacionGaussianaConPivoteoParcial(SimpleMatrix A,
                                                                      SimpleMatrix b){
@@ -564,9 +686,4 @@ public class Methods {
         res= ""+Ab.toString()+"\n MASCARAS \n"+marcas.toString()+"\n ANSWERS \n"+xx;
         return res;
     }
-
-
-
-
-
 }
