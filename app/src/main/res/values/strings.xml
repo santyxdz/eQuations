@@ -243,7 +243,113 @@
         \n
         \n
     </string>
-
+    <string name="help_Gausssianelimination">
+        Given an augmented matrix Ab, the purpose of the Gaussian Elimination is to do elementary
+        row operations until we get the equivalent system, in which the coefficient matrix is an
+        upper triangular matrix.  For that purpose, in the stage k, we calculate the multipliers
+        of each row dividing each element of the column k under the element in the diagonal by the
+        element of the row k. After that, we change every row under the row k for a new
+        row, calculated as
+        \n
+             New Row (i) = Row (i) – Multiplier(i)(k)*Row (k)
+        \n
+            Once we get the desired upper triangular matrix, regressive substitution is applied
+            to solve the system of equations.
+        \n
+        \n
+        \n
+        \n
+    </string>
+    <string name="help_Cholesky">
+        The direct factorization method of Cholesky pretends to decompose a matrix A into the
+        product of the two matrices L (lower triangular matrix) and U (upper triangular matrix),
+        so that LU = A. For that purpose, we begin with one lower triangular matrix and with one
+        upper triangular one where the elements different from zero are unknown, but with the
+        particularity that the elements of the diagonals of both matrices have the same values, so
+        that L[i][i] = U[i][i]. Then, we use the matrix multiplication concept to find both matrices
+        unknown elements. Once we have L and U, progressive and regressive substitution are applied
+        to solve the system of equations.
+        \n
+        \n
+        \n
+    </string>
+    <string name="help_Crout">
+        The direct factorization method of Crout pretends to decompose a matrix A into the product
+        of the two matrices L (lower triangular matrix) and U (upper triangular matrix), so that
+        LU = A. For that purpose, we begin with one lower triangular matrix where the elements
+        different from zero are unknown, and with a upper triangular one where the elements
+        different from zero are unknown but the elements of the diagonal are one (1), so that
+        U[i][i]. Then, we use the matrix multiplication concept to find both matrices unknown
+        elements. Once we have L and U, progressive and regressive substitution are applied to solve
+        the system of equations.
+        \n
+        \n
+        \n
+    </string>
+    <string name="help_Doolittle">
+        The direct factorization method of Doolittle pretends to decompose a matrix A into the
+        product of the two matrices L (lower triangular matrix) and U (upper triangular matrix), so
+        that LU = A. For that purpose, we begin with one lower triangular matrix where the elements
+        different from zero are unknown but the elements of the diagonal are one (1), so that
+        L[i][i], and with a upper triangular one where the elements different from zero are unknown.
+        Then, we use the matrix multiplication concept to find both matrices unknown elements.
+        Once we have L and U, progressive and regressive substitution are applied to solve the
+        system of equations.
+        \n
+        \n
+        \n
+    </string>
+    <string name="help_GaussSeidel">
+        This method is based on the Fixed Point method. That means that with an initial
+        approximation of the solution, we can generate other approximations nearer to the real
+        values of the variables. The Gauss-Seidel method is an iterative algorithm for determining
+        the solutions of a system of linear equations. For the execution of the method, first we
+        try to convert the given A matrix to a diagonal dominant one moving its rows and columns.
+        Then, we take each equation and put the diagonal variable in terms of the other variables.
+        After that, we have to assign initial values to the variables and find the first
+        approximation of each one using the cleared equations, but with the particularity that we
+        replace the variable values not with the previous iterations ones, but with the current
+        calculated ones. We continue replacing the current calculated values in the mentioned
+        equations to generate more approximations to the real solution until we reach the permitted
+        tolerance. The method stops when the higher value of the dispersion (in absolute value) is
+        less than the tolerance. One feature of this method is that in every iteration the new
+        approximations are used to calculate the other current ones.
+        \n
+        Note:
+        \n
+        Remember that the Alfa value is used to obtain or to improve the system’s convergence.
+        For non-relaxation use Alfa = 1; to obtain the convergence of non-convergent systems
+        use Alfa  between 0 and  1; and to accelerate the convergence of convergent but slow
+        systems use Alfa between 1 and 2
+        \n
+        \n
+        \n
+    </string>
+    <string name="help_Jacobi">
+        This method is based on the Fixed Point method. That means that with an initial
+        approximation of the solution, we can generate other approximations nearer to the real
+        values of the variables. The Jacobi method is an iterative algorithm for determining the
+        solutions of a system of linear equations. For the execution of the method, first we try to
+        convert the given A matrix to a diagonal dominant one moving its rows and columns. Then, we
+        take each equation and put the diagonal variable in terms of the other variables. After
+        that, we have to assign initial values to the variables and find the first approximation of
+        each one using the cleared equations. We continue replacing the values of the previous
+        iterations in the mentioned equations to generate more approximations to the real solution
+        until we reach the permitted tolerance. The method stops when the higher value of the
+        dispersion (in absolute value) is less than the tolerance. One feature of this method is
+        that it works simultaneously and independently, that means that in every iteration the whole
+        new approximations are calculated using only the previous ones.
+        \n
+        Note:
+        \n
+        Remember that the Alfa value is used to obtain or to improve the system’s convergence.
+        For non-relaxation use Alfa = 1; to obtain the convergence of non-convergent systems
+        use Alfa  between 0 and  1; and to accelerate the convergence of convergent but slow
+        systems use Alfa between 1 and 2
+        \n
+        \n
+        \n
+    </string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="generate">Generar</string>
