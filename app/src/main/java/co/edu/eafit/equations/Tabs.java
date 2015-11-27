@@ -19,6 +19,7 @@ import co.edu.eafit.equations.helps.Help;
 import co.edu.eafit.equations.inputs.equationssystems.InputCholesky;
 import co.edu.eafit.equations.inputs.equationssystems.InputCrout;
 import co.edu.eafit.equations.inputs.equationssystems.InputDoolittle;
+import co.edu.eafit.equations.inputs.equationssystems.InputGEWithStaggeredPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputGEWithTotalPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputGaussSeidel;
 import co.edu.eafit.equations.inputs.equationssystems.InputGaussianEliminationWithPartialPivoting;
@@ -36,6 +37,7 @@ import co.edu.eafit.equations.inputs.singlevariable.InputSecant;
 import co.edu.eafit.equations.tables.equiationssystems.TableCholesky;
 import co.edu.eafit.equations.tables.equiationssystems.TableCrout;
 import co.edu.eafit.equations.tables.equiationssystems.TableDoolittle;
+import co.edu.eafit.equations.tables.equiationssystems.TableGEWithStaggeredPivoting;
 import co.edu.eafit.equations.tables.equiationssystems.TableGEWithTotalPivoting;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussSeidel;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithPartialPivoting;
@@ -183,7 +185,9 @@ public class Tabs extends AppCompatActivity {
                             case "Total Pivoting":
                                 fragmentInput = InputGEWithTotalPivoting.newInstance();
                                 break;
-                            case "Gaussian Elimination with Staggered Pivoting":
+                            case "Staggered Pivoting":
+                                fragmentInput = InputGEWithStaggeredPivoting.newInstance();
+                                break;
                             case "Neville":
                             default:
                                 fragmentInput = null;
@@ -251,7 +255,9 @@ public class Tabs extends AppCompatActivity {
                             case "Total Pivoting":
                                 fragmentTable = TableGEWithTotalPivoting.newInstance();
                                 break;
-                            case "Gaussian Elimination with Staggered Pivoting":
+                            case "Staggered Pivoting":
+                                fragmentInput = TableGEWithStaggeredPivoting.newInstance();
+                                break;
                             case "Neville":
                             default:
                                 fragmentTable = null;
