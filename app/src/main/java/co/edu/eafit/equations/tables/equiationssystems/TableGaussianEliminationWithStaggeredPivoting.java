@@ -18,24 +18,24 @@ import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
 
 
-public class TableGEWithStaggeredPivoting extends Fragment {
+public class TableGaussianEliminationWithStaggeredPivoting extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
     private int sectionNumber;
     private TableLayout tableLayout;
     public TextView text;
-    public static TableGEWithStaggeredPivoting newInstance() {
-        TableGEWithStaggeredPivoting fragment = new TableGEWithStaggeredPivoting();
+    public static TableGaussianEliminationWithStaggeredPivoting newInstance() {
+        TableGaussianEliminationWithStaggeredPivoting fragment = new TableGaussianEliminationWithStaggeredPivoting();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
     }
 
-    public TableGEWithStaggeredPivoting() {
+    public TableGaussianEliminationWithStaggeredPivoting() {
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab_table_ge_with_staggered_pivoting, container, false);
+        View rootView = inflater.inflate(R.layout.tab_table_gaussian_elimination_with_partial_pivoting, container, false);
         TextView textView = (TextView) rootView.findViewById(R.id.section_label);
         text = (TextView)rootView.findViewById(R.id.gau_text);
         tableLayout = (TableLayout)rootView.findViewById(R.id.tabla);

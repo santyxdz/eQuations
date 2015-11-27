@@ -19,12 +19,13 @@ import co.edu.eafit.equations.helps.Help;
 import co.edu.eafit.equations.inputs.equationssystems.InputCholesky;
 import co.edu.eafit.equations.inputs.equationssystems.InputCrout;
 import co.edu.eafit.equations.inputs.equationssystems.InputDoolittle;
-import co.edu.eafit.equations.inputs.equationssystems.InputGEWithStaggeredPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputGEWithTotalPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputGaussSeidel;
 import co.edu.eafit.equations.inputs.equationssystems.InputGaussianEliminationWithPartialPivoting;
+import co.edu.eafit.equations.inputs.equationssystems.InputGaussianEliminationWithStaggeredPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputJacobi;
 import co.edu.eafit.equations.inputs.interpolation.InputLagrangePolynomial;
+import co.edu.eafit.equations.inputs.interpolation.InputNeville;
 import co.edu.eafit.equations.inputs.interpolation.InputNewtonPolynomial;
 import co.edu.eafit.equations.inputs.singlevariable.InputBisection;
 import co.edu.eafit.equations.inputs.singlevariable.InputFalsePosition;
@@ -37,12 +38,13 @@ import co.edu.eafit.equations.inputs.singlevariable.InputSecant;
 import co.edu.eafit.equations.tables.equiationssystems.TableCholesky;
 import co.edu.eafit.equations.tables.equiationssystems.TableCrout;
 import co.edu.eafit.equations.tables.equiationssystems.TableDoolittle;
-import co.edu.eafit.equations.tables.equiationssystems.TableGEWithStaggeredPivoting;
 import co.edu.eafit.equations.tables.equiationssystems.TableGEWithTotalPivoting;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussSeidel;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithPartialPivoting;
+import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithStaggeredPivoting;
 import co.edu.eafit.equations.tables.equiationssystems.TableJacobi;
 import co.edu.eafit.equations.tables.interpolation.TableLagrangePolynomial;
+import co.edu.eafit.equations.tables.interpolation.TableNeville;
 import co.edu.eafit.equations.tables.interpolation.TableNewtonPolynomial;
 import co.edu.eafit.equations.tables.singlevariable.TableBisection;
 import co.edu.eafit.equations.tables.singlevariable.TableFalsePosition;
@@ -186,9 +188,11 @@ public class Tabs extends AppCompatActivity {
                                 fragmentInput = InputGEWithTotalPivoting.newInstance();
                                 break;
                             case "Staggered Pivoting":
-                                fragmentInput = InputGEWithStaggeredPivoting.newInstance();
+                                fragmentInput = InputGaussianEliminationWithStaggeredPivoting.newInstance();
                                 break;
                             case "Neville":
+                                fragmentInput = InputNeville.newInstance();
+                                break;
                             default:
                                 fragmentInput = null;
                                 break;
@@ -256,9 +260,11 @@ public class Tabs extends AppCompatActivity {
                                 fragmentTable = TableGEWithTotalPivoting.newInstance();
                                 break;
                             case "Staggered Pivoting":
-                                fragmentInput = TableGEWithStaggeredPivoting.newInstance();
+                                fragmentTable = TableGaussianEliminationWithStaggeredPivoting.newInstance();
                                 break;
                             case "Neville":
+                                fragmentTable = TableNeville.newInstance();
+                                break;
                             default:
                                 fragmentTable = null;
                                 break;
