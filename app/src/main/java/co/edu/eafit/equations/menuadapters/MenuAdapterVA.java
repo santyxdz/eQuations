@@ -77,9 +77,12 @@ public class MenuAdapterVA extends ArrayAdapter<String>{
                         intent.putExtra("type","Gaussian Elimination with Partial Pivoting");
                         break;
                     case 1:
-                        intent.putExtra("type","LaGrange");
+                        intent.putExtra("type","Total Pivoting");
                         break;
                     case 2:
+                        intent.putExtra("type","Staggered Pivoting");
+                        break;
+                    case 3:
                         intent.putExtra("type","Neville");
                         break;
                 }
