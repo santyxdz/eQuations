@@ -2,11 +2,19 @@
 <items version="2" >
 
     <item
+<<<<<<< HEAD
         jar="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\exploded-aar\eQuations\StaggeredGrid\unspecified\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="eb827a71a0efc55bda947094fa50a66d05e73e04">
         <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\classes-64158a7ebfe93faedf137cd4b66b90a3826271c1.jar" />
+=======
+        jar="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\exploded-aar\eQuations\StaggeredGrid\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6520c2afc7a77cb83156e71c24ccaf8b87270f9c">
+        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\classes-e8fdc446393aa92a95003fd2e18cca1ffac7de24.jar" />
+>>>>>>> origin/master
     </item>
 
 </items>

@@ -80,6 +80,9 @@ public class MenuAdapterVA extends ArrayAdapter<String>{
                         intent.putExtra("type","Total Pivoting");
                         break;
                     case 2:
+                        intent.putExtra("type","Staggered Pivoting");
+                        break;
+                    case 3:
                         intent.putExtra("type","Neville");
                         break;
                 }
