@@ -19,6 +19,7 @@ import co.edu.eafit.equations.helps.Help;
 import co.edu.eafit.equations.inputs.equationssystems.InputCholesky;
 import co.edu.eafit.equations.inputs.equationssystems.InputCrout;
 import co.edu.eafit.equations.inputs.equationssystems.InputDoolittle;
+import co.edu.eafit.equations.inputs.equationssystems.InputGEWithTotalPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputGaussSeidel;
 import co.edu.eafit.equations.inputs.equationssystems.InputGaussianEliminationWithPartialPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputJacobi;
@@ -35,6 +36,7 @@ import co.edu.eafit.equations.inputs.singlevariable.InputSecant;
 import co.edu.eafit.equations.tables.equiationssystems.TableCholesky;
 import co.edu.eafit.equations.tables.equiationssystems.TableCrout;
 import co.edu.eafit.equations.tables.equiationssystems.TableDoolittle;
+import co.edu.eafit.equations.tables.equiationssystems.TableGEWithTotalPivoting;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussSeidel;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithPartialPivoting;
 import co.edu.eafit.equations.tables.equiationssystems.TableJacobi;
@@ -178,7 +180,9 @@ public class Tabs extends AppCompatActivity {
                             case "Gaussian Elimination with Partial Pivoting":
                                 fragmentInput = InputGaussianEliminationWithPartialPivoting.newInstance();
                                 break;
-                            case "Gaussian Elimination with Total Pivoting":
+                            case "Total Pivoting":
+                                fragmentInput = InputGEWithTotalPivoting.newInstance();
+                                break;
                             case "Gaussian Elimination with Staggered Pivoting":
                             case "Neville":
                             default:
@@ -244,7 +248,9 @@ public class Tabs extends AppCompatActivity {
                             case "Gaussian Elimination with Partial Pivoting":
                                 fragmentTable = TableGaussianEliminationWithPartialPivoting.newInstance();
                                 break;
-                            case "Gaussian Elimination with Total Pivoting":
+                            case "Total Pivoting":
+                                fragmentTable = TableGEWithTotalPivoting.newInstance();
+                                break;
                             case "Gaussian Elimination with Staggered Pivoting":
                             case "Neville":
                             default:

@@ -32,6 +32,7 @@ public class Methods {
     public static Expression function_ddf;
     public static int numchar = 10;
     public static int precision = 10;
+    public static Boolean stop = Boolean.FALSE;
 
     public static BigDecimal f(double x){
         double fx = function.setVariable("x", x).evaluate();
@@ -405,7 +406,7 @@ public class Methods {
         int n = Ab.numRows();
         SimpleMatrix x = new SimpleMatrix(n,1);
         n--;
-        x.set(n, 0, Ab.get(n, n+1)/Ab.get(n, n));
+        x.set(n, 0, Ab.get(n, n + 1) / Ab.get(n, n));
         for(int i=n; i>-1; i--){
             double sum = 0;
             for(int p=i+1; p<=n; p++){
@@ -422,7 +423,7 @@ public class Methods {
         SimpleMatrix Ab = new SimpleMatrix(A.numRows(),A.numCols()+1);
         Ab.insertIntoThis(0, 0, A);
         Ab.insertIntoThis(0, A.numCols(), b);
-        Ab.print(numchar,precision);
+        Ab.print(numchar, precision);
         for(int k = 0; k < n-1; k++){
             for(int i = k+1; i < n; i++){
                 double m = Ab.get(i, k)/Ab.get(k, k);
@@ -433,6 +434,139 @@ public class Methods {
         }
         return Ab;
     }
+    //----------------------------------------------------------------------------------
+    public static SimpleMatrix eliminacionGaussianaConPivoteoParcial(SimpleMatrix A,
+                                                                     SimpleMatrix b){
+        int n = A.numRows();
+        SimpleMatrix Ab = new SimpleMatrix(A.numRows(),A.numCols()+1);
+        Ab.insertIntoThis(0, 0, A);
+        Ab.insertIntoThis(0, A.numCols(), b);
+        for(int k = 1; k < n; k++){
+            pivoteoParcial(Ab, k);
+            for(int i = k+1; i < n+1; i++){
+                double multiplicador = Ab.get(i-1,k-1)/Ab.get(k-1,k-1);
+                for(int j = k ; j < n+2; j++){
+                    Ab.set(i-1,j-1,Ab.get(i-1,j-1)-multiplicador*Ab.get(k-1,j-1));
+                }
+            }
+        }
+        SimpleMatrix x = new SimpleMatrix(n,1);
+        for(int i = n; i>0;i--){
+            double sumatoria = 0;
+            for(int p = i+1; p <= n; p++){
+                sumatoria = sumatoria + Ab.get(i-1,p-1)*x.get(p-1,0);
+            }
+            x.set(i-1,0,(Ab.get(i-1,n)-sumatoria)/Ab.get(i-1,i-1));
+        }
+        return Ab;
+    }
+
+    public static SimpleMatrix pivoteoParcial(SimpleMatrix A, int k){
+        int n = A.numRows();
+        double elementoMayor = Math.abs(A.get(k-1,k-1));
+        int filaMayor = k-1;
+        for(int s = k-1; s < n; s++){
+            double nuevoElemento = Math.abs(A.get(s,k-1));
+            if( nuevoElemento > elementoMayor){
+                elementoMayor =  Math.abs(A.get(s,k-1));
+                filaMayor = s;
+            }
+        }
+        if(elementoMayor != 0){
+            if(filaMayor != k-1){
+                for(int i = 0; i < A.numCols(); i++){
+                    double aux = A.get(k-1,i);
+                    A.set(k-1,i,A.get(filaMayor,i));
+                    A.set(filaMayor,i,aux);
+                }
+            }
+        }
+        return A;
+    }
+    //-----------------------------------------------------------------------------------
+    public static SimpleMatrix crearMarcas(int n){
+        SimpleMatrix marcas = new SimpleMatrix(n,1);
+        for(int i = 0; i < n; i++){
+            marcas.set(i,0,i+1);
+        }
+        return marcas;
+    }
+    public static SimpleMatrix pivoteoTotal(SimpleMatrix Ab,
+                                            SimpleMatrix marcas, int k, int n){
+        double mayor = 0;
+        int filaMayor = k-1;
+        int columnaMayor = k-1;
+        for(int r = k-1; r < n; r++){
+            for(int s = k-1; s < n; s++){
+                if(Math.abs(Ab.get(r,s)) > mayor){
+                    mayor = Math.abs(Ab.get(r,s));
+                    filaMayor = r;
+                    columnaMayor = s;
+                }
+            }
+        }
+        if(mayor == 0){
+            stop = Boolean.TRUE;
+        }else{
+            stop = Boolean.FALSE;
+            if(filaMayor != k-1){
+                for(int i = 0; i < Ab.numCols(); i++){ //Warning Maybe NumRows
+                    double aux = Ab.get(k-1,i);
+                    Ab.set(k-1,i,Ab.get(filaMayor,i));
+                    Ab.set(filaMayor,i,aux);
+                }
+            }
+            if(columnaMayor != k-1){
+                for(int i = 0; i < n; i++){
+                    double aux = Ab.get(i,k-1);
+                    Ab.set(i,k-1,Ab.get(i,columnaMayor));
+                    Ab.set(i,columnaMayor,aux);
+                }
+                double aux2 = marcas.get(columnaMayor,0);
+                marcas.set(columnaMayor,0,marcas.get(k-1,0));
+                marcas.set(k-1,0,aux2);
+            }
+        }
+        return Ab;
+    }
+    public static String eliminacionGaussianaConPivoteoTotal(SimpleMatrix A,
+                                                           SimpleMatrix b,int size){
+        int n = A.numRows();
+        String res = "";
+        SimpleMatrix Ab = new SimpleMatrix(A.numRows(),A.numCols()+1);
+        Ab.insertIntoThis(0, 0, A);
+        Ab.insertIntoThis(0, A.numCols(), b);
+        SimpleMatrix marcas = crearMarcas(n);
+        for(int k = 1; k < n; k++){
+            pivoteoTotal(Ab, marcas, k, n);
+            if (stop)
+                return "El sistema no tiene solucion unica";
+            for(int i = k+1; i < n+1; i++){
+                double multiplicador = Ab.get(i-1,k-1)/Ab.get(k-1,k-1);
+                for(int j = k ; j < n+2; j++){
+                    Ab.set(i-1,j-1,Ab.get(i-1,j-1)-multiplicador*Ab.get(k-1,j-1));
+                }
+            }
+        }
+        SimpleMatrix x = new SimpleMatrix(n,1);
+        for(int i = n; i>0;i--){
+            double sumatoria = 0;
+            for(int p = i+1; p <= n; p++){
+                sumatoria = sumatoria + Ab.get(i-1,p-1)*x.get(p-1,0);
+            }
+            x.set(i-1,0,(Ab.get(i-1,n)-sumatoria)/Ab.get(i-1,i-1));
+        }
+
+        String xx = "";
+        for (int k = 0; k < size; k++)
+            xx += "X" + marcas.get(k) + " = " + x.get(k) + "\n";
+
+        res= ""+Ab.toString()+"\n MASCARAS \n"+marcas.toString()+"\n ANSWERS \n"+xx;
+        return res;
+    }
+
+
+
 
 
 }
