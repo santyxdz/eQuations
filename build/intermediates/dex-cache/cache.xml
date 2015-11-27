@@ -2,6 +2,7 @@
 <items version="2" >
 
     <item
+<<<<<<< HEAD
         jar="C:\Users\JDaniels\.gradle\caches\modules-2\files-2.1\org.ejml\denseC64\0.28\596ae7ecdfbf0938c34b2433947fbd97acba1055\denseC64-0.28.jar"
         jumboMode="false"
         revision="23.0.1"
@@ -98,6 +99,104 @@
         revision="23.0.1"
         sha1="9ed74a2da17f469fc35f6bdb99f44888cf46eb4e">
         <dex dex="C:\Users\JDaniels\Documents\Numerico\eQuations\app\build\intermediates\pre-dexed\debug\simple-0.28-73cab20663720412b09f4057a9a1365a6e21f932.jar" />
+=======
+        jar="C:\Users\NN\.gradle\caches\modules-2\files-2.1\org.ejml\equation\0.28\1eecb7fdf79cdf91a49da24af70984ced2138914\equation-0.28.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1eecb7fdf79cdf91a49da24af70984ced2138914">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\equation-0.28-50217eeab113b392d40b9b7011d000ec03804605.jar" />
+    </item>
+    <item
+        jar="C:\Users\NN\.gradle\caches\modules-2\files-2.1\org.ejml\denseC64\0.28\596ae7ecdfbf0938c34b2433947fbd97acba1055\denseC64-0.28.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="596ae7ecdfbf0938c34b2433947fbd97acba1055">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\denseC64-0.28-76849a2bb5712cf00a04287b04b21e72a107927f.jar" />
+    </item>
+    <item
+        jar="C:\Users\NN\.gradle\caches\modules-2\files-2.1\org.ejml\core\0.28\d02bf881401f8a005a58b91e87198d18b77347dc\core-0.28.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d02bf881401f8a005a58b91e87198d18b77347dc">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\core-0.28-a699206a1a11170c0f9a6b91e3d9f398ca5361be.jar" />
+    </item>
+    <item
+        jar="C:\Users\NN\Documents\GitHub\eQuations\app\libs\exp4j-0.4.5.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1060f042519efdc41a72a3e4aa823803bf6a1dd8">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\exp4j-0.4.5-c3bdd45728404bd2873d848a84c5871234466c95.jar" />
+    </item>
+    <item
+        jar="C:\Users\NN\.gradle\caches\modules-2\files-2.1\org.ejml\all\0.28\ec528bde7536d2e5c39aafc12f19987b9279755\all-0.28.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="0ec528bde7536d2e5c39aafc12f19987b9279755">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\all-0.28-b56b8c5016f96d1dae9e4fcf8840f538a9b6e5d7.jar" />
+    </item>
+    <item
+        jar="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\exploded-aar\eQuations\StaggeredGrid\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="53e46bcdcee7601ee507539f227b7a1ca03a83a9">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\classes-64158a7ebfe93faedf137cd4b66b90a3826271c1.jar" />
+    </item>
+    <item
+        jar="C:\Users\NN\.gradle\caches\modules-2\files-2.1\org.ejml\dense64\0.28\b79609796212567ed4e6f361c6f30cffd009e4a3\dense64-0.28.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b79609796212567ed4e6f361c6f30cffd009e4a3">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\dense64-0.28-85eb76c1d4342731e1561912110227a64e0202ca.jar" />
+    </item>
+    <item
+        jar="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\classes-4f7e9bd729b45edf07ce9c34c92f3f1980795cf2.jar" />
+    </item>
+    <item
+        jar="C:\Users\NN\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-0fab0af53f06cf1480e8d48cf9d948cd8b139a41.jar" />
+    </item>
+    <item
+        jar="C:\Users\NN\.gradle\caches\modules-2\files-2.1\org.ejml\simple\0.28\9ed74a2da17f469fc35f6bdb99f44888cf46eb4e\simple-0.28.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9ed74a2da17f469fc35f6bdb99f44888cf46eb4e">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\simple-0.28-0a0eb37709cf543a1ab66551bb90705e319b91f2.jar" />
+    </item>
+    <item
+        jar="C:\Users\NN\Documents\GitHub\eQuations\app\libs\androidplot-core-0.6.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3db0daea52375b26bfa61c59b8df93950bdefbbc">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\androidplot-core-0.6.1-716f51c12c75c5ed4da86dbb97ad511eb088c121.jar" />
+    </item>
+    <item
+        jar="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\classes-ef863cd5af3107b7b9cb159145818589714d7eaa.jar" />
+    </item>
+    <item
+        jar="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-86ecb7a289ac13f497bf30bb2d73d88e0ff8e3e8.jar" />
+    </item>
+    <item
+        jar="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="C:\Users\NN\Documents\GitHub\eQuations\app\build\intermediates\pre-dexed\debug\classes-7f0645b9d180fecc63459e7899481789eafdbb32.jar" />
+>>>>>>> c8ccd8654ebd0246e07941445c91ca8b1df36cc3
     </item>
 
 </items>

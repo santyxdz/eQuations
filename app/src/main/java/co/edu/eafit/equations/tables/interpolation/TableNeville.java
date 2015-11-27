@@ -34,37 +34,11 @@ public class TableNeville extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab_table_newton_polynomial, container, false);
-        TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-        text = (TextView)rootView.findViewById(R.id.gau_text);
-        tableLayout = (TableLayout)rootView.findViewById(R.id.tabla);
+        View rootView = inflater.inflate(R.layout.tab_table_neville, container, false);
+        text = (TextView)rootView.findViewById(R.id.txt_show_text);
         return rootView;
     }
 
-    public void load_tables(){
-        tableLayout.removeAllViews();
-        for(ArrayList<String> row:((Tabs)this.getActivity()).getTabla().getArray()){
-            TableRow.LayoutParams layoutCelda;
-            TableRow.LayoutParams layoutFila = new TableRow.LayoutParams(
-                    TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT
-            );
-            TableRow fila = new TableRow(getActivity());
-            fila.setLayoutParams(layoutFila);
-            for(String item:row){
-                TextView text = new TextView(getActivity());
-                text.setText(item);
-                text.setGravity(Gravity.CENTER_HORIZONTAL);
-                text.setBackgroundResource(R.drawable.tabla_celda);
-                layoutCelda = new TableRow.LayoutParams(
-                        getTextWidth(item),
-                        TableRow.LayoutParams.WRAP_CONTENT
-                );
-                text.setLayoutParams(layoutCelda);
-                fila.addView(text);
-            }
-            tableLayout.addView(fila);
-        }
-    }
     private int getTextWidth(String text){
         Paint p = new Paint();
         Rect bounds = new Rect();
