@@ -21,8 +21,8 @@ public class Methods {
             "Secant", // 5
             "Multiple Roots", //6
             "Gaussian Elimination", //7
-            "Cholesky LU", //8
-            "Crout LU", //9
+            "Cholesky", //8
+            "Crout", //9
             "Doolittle", //10
             "Gauss Seidel", //11
             "Jacobi", //12

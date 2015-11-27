@@ -59,11 +59,29 @@ public class Help extends Fragment {
                 img.setImageResource(R.drawable.multipleroots);
                 break;
             case "Gaussian Elimination":
-            case "Cholesky LU":
-            case "Crout LU":
+                textView.setText(getResources().getString(R.string.help_Gausssianelimination));
+                img.setImageResource(R.drawable.gaussianelimination);
+                break;
+            case "Cholesky":
+                textView.setText(getResources().getString(R.string.help_Cholesky));
+                img.setImageResource(R.drawable.cholesky);
+                break;
+            case "Crout":
+                textView.setText(getResources().getString(R.string.help_Crout));
+                img.setImageResource(R.drawable.crout1);
+                break;
             case "Doolittle":
+                textView.setText(getResources().getString(R.string.help_Doolittle));
+                img.setImageResource(R.drawable.doolittle);
+                break;
             case "Gauss Seidel":
+                textView.setText(getResources().getString(R.string.help_GaussSeidel));
+                img.setImageResource(R.drawable.gaussseidel);
+                break;
             case "Jacobi":
+                textView.setText(getResources().getString(R.string.help_Jacobi));
+                img.setImageResource(R.drawable.jacobi);
+                break;
             default:
                 textView.setText("Not Defined");
                 img.setImageResource(R.drawable.searincre);

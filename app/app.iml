@@ -93,6 +93,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="denseC64-0.28" level="project" />
     <orderEntry type="library" exported="" name="design-23.0.1" level="project" />
+<<<<<<< HEAD
     <orderEntry type="library" exported="" name="all-0.28" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-23.0.1" level="project" />
     <orderEntry type="library" exported="" name="simple-0.28" level="project" />
@@ -103,6 +104,12 @@
     <orderEntry type="library" exported="" name="support-annotations-23.0.1" level="project" />
     <orderEntry type="library" exported="" name="exp4j-0.4.5" level="project" />
     <orderEntry type="library" exported="" name="equation-0.28" level="project" />
+=======
+    <orderEntry type="library" exported="" name="appcompat-v7-23.0.1" level="project" />
+    <orderEntry type="library" exported="" name="exp4j-0.4.5" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-23.0.1" level="project" />
+    <orderEntry type="library" exported="" name="all-0.28" level="project" />
+>>>>>>> eb9f21a28b18f54cc046bf200cbfc858ea33c423
     <orderEntry type="module" module-name="StaggeredGrid" exported="" />
   </component>
 </module>
