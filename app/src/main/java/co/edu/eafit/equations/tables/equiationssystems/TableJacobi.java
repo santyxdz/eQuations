@@ -1,4 +1,4 @@
-package co.edu.eafit.equations.tables.equiationssystems;
+package co.edu.eafit.equations.tables.singlevariable;
 
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -17,12 +17,10 @@ import java.util.ArrayList;
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
 
-
 public class TableJacobi extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
     private int sectionNumber;
     private TableLayout tableLayout;
-    public TextView text;
     public static TableJacobi newInstance() {
         TableJacobi fragment = new TableJacobi();
         Bundle args = new Bundle();
@@ -37,11 +35,9 @@ public class TableJacobi extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tab_table_jacobi, container, false);
         TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-        text = (TextView)rootView.findViewById(R.id.gau_text);
         tableLayout = (TableLayout)rootView.findViewById(R.id.tabla);
         return rootView;
     }
-
     public void load_tables(){
         tableLayout.removeAllViews();
         for(ArrayList<String> row:((Tabs)this.getActivity()).getTabla().getArray()){
@@ -54,7 +50,7 @@ public class TableJacobi extends Fragment {
             for(String item:row){
                 TextView text = new TextView(getActivity());
                 text.setText(item);
-                text.setGravity(Gravity.CENTER_HORIZONTAL);
+                text.setGravity(Gravity.HORIZONTAL_GRAVITY_MASK);
                 text.setBackgroundResource(R.drawable.tabla_celda);
                 layoutCelda = new TableRow.LayoutParams(
                         getTextWidth(item),
@@ -70,11 +66,7 @@ public class TableJacobi extends Fragment {
         Paint p = new Paint();
         Rect bounds = new Rect();
         p.setTextSize(50);
-        p.getTextBounds(text,0,text.length(),bounds);
+        p.getTextBounds(text, 0, text.length(), bounds);
         return bounds.width();
-    }
-
-    public TextView getText() {
-        return text;
     }
 }

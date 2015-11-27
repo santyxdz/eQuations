@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="-"
+                android:text="Vector B"
                 android:id="@+id/textView"
                 android:gravity="center_vertical|center|center_horizontal" />
 
@@ -74,6 +74,56 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/VectorB" />
             </HorizontalScrollView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Initialize Variables"
+                android:id="@+id/textView3"
+                android:gravity="center_vertical|center|center_horizontal" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/horizontalScrollView3" >
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/VectorX" />
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/inpt_iter"
+                    android:layout_weight="1"
+                    android:hint="Iterations" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:ems="10"
+                    android:id="@+id/inpt_lambda"
+                    android:layout_weight="1"
+                    android:hint="Lambda" />
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/inpt_tol"
+                android:hint="Tolerance" />
 
             <Button
                 android:layout_width="match_parent"
@@ -84,14 +134,22 @@
                 android:background="@color/bg_buttom_submit"
                 android:layout_marginTop="10dp"
                 android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Output"
+                android:id="@+id/textView9" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/txt_push" />
+
         </LinearLayout>
     </ScrollView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Jacobi"
-        android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

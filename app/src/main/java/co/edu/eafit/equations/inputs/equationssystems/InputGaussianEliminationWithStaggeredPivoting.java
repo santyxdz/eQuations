@@ -17,11 +17,9 @@ import org.ejml.simple.SimpleMatrix;
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
 import co.edu.eafit.equations.sections.Methods;
-import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithPartialPivoting;
+import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithStaggeredPivoting;
 
-/**
- * Created by JDaniels on 09/11/2015.
- */
+
 public class InputGaussianEliminationWithStaggeredPivoting extends Fragment {
     TableLayout matrixinput;
     TableLayout vectorbinput;
@@ -36,7 +34,7 @@ public class InputGaussianEliminationWithStaggeredPivoting extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.tab_input_gaussian_elimination_with_partial_pivoting, container, false);
+        final View rootView = inflater.inflate(R.layout.tab_input_ge_with_staggered_pivoting, container, false);
         final EditText inputMatrixSize = (EditText)rootView.findViewById(R.id.input_matrix_size);
         Button btnMatrixSize = (Button)rootView.findViewById(R.id.btn_matrix_size);
         matrixinput = (TableLayout)rootView.findViewById(R.id.MatrixA);
@@ -100,25 +98,20 @@ public class InputGaussianEliminationWithStaggeredPivoting extends Fragment {
                 TableRow rowx = (TableRow)vectorbinput.getChildAt(0);
                 for(int i = 0; i < rowx.getChildCount() ; i++){
                     EditText input = (EditText)rowx.getChildAt(i);
-                    vectorb.set(i,0,Double.parseDouble(input.getText().toString()));
+                    vectorb.set(i, 0, Double.parseDouble(input.getText().toString()));
                 }
                 Tabs activity = (Tabs)getActivity();
-                TableGaussianEliminationWithPartialPivoting tabgauelm = (TableGaussianEliminationWithPartialPivoting)activity.getFragmentTable();
+                TableGaussianEliminationWithStaggeredPivoting tabgauelm = (TableGaussianEliminationWithStaggeredPivoting)activity.getFragmentTable();
                 //tabgauelm.getText().setText(matrix.toString()+"\n"+vectorb.toString());
-                double elementoMayor = Math.abs(matrix.get(size - 1, size - 1));
-                if(elementoMayor != 0) {
-                    SimpleMatrix aux = Methods.eliminacionGaussianaConPivoteoParcial(matrix, vectorb);
-                    SimpleMatrix res = Methods.sustitucionRegresiva(aux);
-
+                    String aux = Methods.eliminacionGaussianaConPivoteoEscalonado(matrix, vectorb, size);
+                    /*SimpleMatrix res = Methods.sustitucionRegresiva(aux);
                     String xx = "";
                     for (int k = 0; k < size; k++)
-                        xx += "X" + (k + 1) + " = " + res.get(k) + "\n";
+                        xx += "X" + (k + 1) + " = " + res.get(k) + "\n";*/
 
                     tabgauelm.getText().setText("MATRIZ A \n" + matrix.toString() + "\n VECTOR B \n" +
-                            vectorb.toString() + "\n PARTIAL PIVOTING \n " + aux.toString() + "\n ANSWERS \n" + xx);
-                }else{
-                       tabgauelm.getText().setText("El sistema no tiene solucion");
-                }
+                            vectorb.toString() + "\n STAGGERED PIVOTING \n " + aux + "\n\n\n");
+
 
             }
         });

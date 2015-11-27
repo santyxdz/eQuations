@@ -567,7 +567,153 @@ public class Methods {
 
 //--------------------------------------------------------------------------------------
 
+    public static SimpleMatrix busquedaDelMayorDeCadaFila(int n,
+                                                          SimpleMatrix matrix){
+        SimpleMatrix s= new SimpleMatrix(n, 1);
+        for(int i=1; i<n+1;i++){
+            for(int j=1;j<n+1;j++){
+                if(Math.abs(matrix.get(i-1,j-1))>s.get(i-1,0)){
+                    s.set(i-1,0, Math.abs(matrix.get(i-1,j-1)));
+                }
+            }
+        }
+        return s;
+    }
+    public static void pivoteoEscalonado(SimpleMatrix matrix, int k, int n,
+                                         SimpleMatrix s) {
+        double mayor = 0;
+        int filamayor = k-1;
+        SimpleMatrix cocientes = new SimpleMatrix(n,1);
+        for(int i = k; i<n+1;i++){
+            cocientes.set(i-1,0,Math.abs(matrix.get(i-1,k-1))/s.get(i-1,0));
+        }
+        for(int i = k-1; i<n;i++){
+            if(cocientes.get(i,0)>mayor){
+                mayor = cocientes.get(i,0);
+                filamayor = i;
+            }
+        }
+        if(mayor==0){
+            stop = Boolean.TRUE;
+        }else{
+            if(filamayor!=k-1){
+                for(int i = 0; i < matrix.numRows(); i++){
+                    double aux = matrix.get(k-1,i);
+                    matrix.set(k-1,i,matrix.get(filamayor,i));
+                    matrix.set(filamayor,i,aux);
+                }
+                double aux2 = s.get(k-1);
+                s.set(k-1,0,s.get(filamayor,0));
+                s.set(filamayor,0,aux2);
+            }
+        }
+    }
 
+    public static String eliminacionGaussianaConPivoteoEscalonado(SimpleMatrix A,
+                                                                SimpleMatrix b, int size){
+        stop = Boolean.FALSE;
+        int n = A.numRows();
+        SimpleMatrix Ab = new SimpleMatrix(A.numRows(),A.numCols()+1);
+        Ab.insertIntoThis(0, 0, A);
+        Ab.insertIntoThis(0, A.numCols(), b);
+        SimpleMatrix s = busquedaDelMayorDeCadaFila(n, Ab);
+        for(int k = 1; k < n; k++){
+            pivoteoEscalonado(Ab, k, n, s);
+            if (stop)
+                return "El sistema no tiene solucion unica";
+            for(int i=k+1; i<(n+1); i++){
+                double multiplicador = Ab.get(i-1,k-1)/Ab.get(k-1,k-1);
+                for(int j = k ; j < n+2; j++){
+                    Ab.set(i-1,j-1,Ab.get(i-1,j-1)-multiplicador*Ab.get(k-1,j-1));
+                }
+            }
+        }
+        SimpleMatrix x = new SimpleMatrix(n,1);
+        //sustitucion regresiva
+        for(int i = n; i>0;i--){
+            double sumatoria = 0;
+            for(int p = i+1; p <= n; p++){
+                sumatoria = sumatoria + Ab.get(i-1,p-1)*x.get(p-1,0);
+            }
+            x.set(i-1,0,(Ab.get(i-1,n)-sumatoria)/Ab.get(i-1,i-1));
+        }
+        String xx = "";
+        for(int k=0;k<size;k++)
+            xx +=  "X"+(k+1)+" = "+x.get(k)+"\n";
+
+        return ""+Ab.toString()+"\n ANSWERS \n"+ xx;
+    }
+//======================================JACOBI======================================================
+    public static double norma(SimpleMatrix x, SimpleMatrix x0){
+        int n = x.getNumElements();
+        boolean absolute = Boolean.TRUE;
+        double mayor = Double.NEGATIVE_INFINITY;
+        double norma = 0;
+            for(int i=1;i<n+1;i++){
+                if(Math.abs(x.get(i-1,0)-x0.get(i-1,0))>mayor){
+                    if(absolute){
+                        mayor = Math.abs(x.get(i-1,0)-x0.get(i-1,0));
+                    }else{
+                        mayor = Math.abs((x.get(i-1,0)-x0.get(i-1,0))/
+                                x.get(i, i));
+                    }
+                }
+            }
+            norma = mayor;
+        return norma;
+    }
+
+
+    public static void jacobi(SimpleMatrix A, SimpleMatrix b,
+                              SimpleMatrix x0, long iteraciones, double tolerancia, double lambda, int size, Tabla tabla){
+        DecimalFormat format = new DecimalFormat("#.###E0");
+        int n = A.numRows();
+        int contador = 1;
+        double error = tolerancia+1;
+        SimpleMatrix x = new SimpleMatrix(n,1);
+        while(error>tolerancia && contador<iteraciones){
+            error = 0;
+            for(int i=1;i<n+1;i++){
+                double suma = 0;
+                for(int j=1;j<n+1;j++){
+                    if(i!=j){
+                        suma = suma + A.get(i-1,j-1)*x0.get(j-1,0);
+                    }
+                }
+                x.set(i-1,0,(b.get(i-1,0)-suma)/A.get(i-1,i-1));
+                x.set(i-1,0,lambda*(x.get(i-1,0))+(1-lambda)*(x0.get(i-1,0)));
+            }
+            error = norma(x, x0);
+            x0 = x.copy();
+
+            //x.transpose().print(numchar, precision);
+            //System.out.print("Error: "+formatter.format(error)+"\n");
+            ArrayList<String> newRow = new ArrayList<String>();
+            newRow.add(Long.toString(contador));
+            if (contador==1){
+                for(int i=0;i<size;i++){
+                    newRow.add(""+x0.get(i));
+                }
+                newRow.add(" ");
+            }else{
+                for(int i=0;i<size;i++){
+                    newRow.add(""+x.get(i));
+                }
+                newRow.add(""+ format.format(error));
+            }
+            tabla.addRow(newRow);
+            contador++;
+        }
+        if(error<tolerancia){
+            x.print(numchar, precision);
+            String xx = "";
+            for(int k=0;k<size;k++)
+                xx +=  "X"+(k+1)+" = "+x.get(k)+"\n";
+            tabla.setResult("Aproximacion con una tolerancia de " + tolerancia +"\n Valores \n" + xx);
+        }else{
+            tabla.setResult("Fracaso en " + iteraciones+" iteraciones.");
+        }
+    }
 
 
 }

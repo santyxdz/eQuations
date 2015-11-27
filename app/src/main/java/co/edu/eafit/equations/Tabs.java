@@ -21,16 +21,15 @@ import co.edu.eafit.equations.inputs.equationssystems.InputCrout;
 import co.edu.eafit.equations.inputs.equationssystems.InputDoolittle;
 import co.edu.eafit.equations.inputs.equationssystems.InputGEWithTotalPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputGaussSeidel;
+import co.edu.eafit.equations.inputs.equationssystems.InputGaussianElimination;
 import co.edu.eafit.equations.inputs.equationssystems.InputGaussianEliminationWithPartialPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputGaussianEliminationWithStaggeredPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputJacobi;
 import co.edu.eafit.equations.inputs.interpolation.InputLagrangePolynomial;
-import co.edu.eafit.equations.inputs.interpolation.InputNeville;
 import co.edu.eafit.equations.inputs.interpolation.InputNewtonPolynomial;
 import co.edu.eafit.equations.inputs.singlevariable.InputBisection;
 import co.edu.eafit.equations.inputs.singlevariable.InputFalsePosition;
 import co.edu.eafit.equations.inputs.singlevariable.InputFixedPoint;
-import co.edu.eafit.equations.inputs.equationssystems.InputGaussianElimination;
 import co.edu.eafit.equations.inputs.singlevariable.InputIncrementalSearches;
 import co.edu.eafit.equations.inputs.singlevariable.InputMultipleRoots;
 import co.edu.eafit.equations.inputs.singlevariable.InputNewton;
@@ -40,17 +39,16 @@ import co.edu.eafit.equations.tables.equiationssystems.TableCrout;
 import co.edu.eafit.equations.tables.equiationssystems.TableDoolittle;
 import co.edu.eafit.equations.tables.equiationssystems.TableGEWithTotalPivoting;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussSeidel;
+import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithPartialPivoting;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithStaggeredPivoting;
-import co.edu.eafit.equations.tables.equiationssystems.TableJacobi;
 import co.edu.eafit.equations.tables.interpolation.TableLagrangePolynomial;
-import co.edu.eafit.equations.tables.interpolation.TableNeville;
 import co.edu.eafit.equations.tables.interpolation.TableNewtonPolynomial;
 import co.edu.eafit.equations.tables.singlevariable.TableBisection;
 import co.edu.eafit.equations.tables.singlevariable.TableFalsePosition;
 import co.edu.eafit.equations.tables.singlevariable.TableFixedPoint;
-import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
 import co.edu.eafit.equations.tables.singlevariable.TableIncrementalSearches;
+import co.edu.eafit.equations.tables.singlevariable.TableJacobi;
 import co.edu.eafit.equations.tables.singlevariable.TableMultipleRoots;
 import co.edu.eafit.equations.tables.singlevariable.TableNewton;
 import co.edu.eafit.equations.tables.singlevariable.TableSecant;
@@ -191,8 +189,8 @@ public class Tabs extends AppCompatActivity {
                                 fragmentInput = InputGaussianEliminationWithStaggeredPivoting.newInstance();
                                 break;
                             case "Neville":
-                                fragmentInput = InputNeville.newInstance();
-                                break;
+                                //fragmentInput = InputNeville.newInstance();
+                                //break;
                             default:
                                 fragmentInput = null;
                                 break;
@@ -263,8 +261,8 @@ public class Tabs extends AppCompatActivity {
                                 fragmentTable = TableGaussianEliminationWithStaggeredPivoting.newInstance();
                                 break;
                             case "Neville":
-                                fragmentTable = TableNeville.newInstance();
-                                break;
+                                //fragmentTable = TableNeville.newInstance();
+                               // break;
                             default:
                                 fragmentTable = null;
                                 break;
