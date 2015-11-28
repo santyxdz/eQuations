@@ -114,7 +114,7 @@ public class InputGEWithTotalPivoting extends Fragment {
                         xx += "X" + (k + 1) + " = " + res.get(k) + "\n";*/
 
                     tabgauelm.getText().setText("MATRIZ A \n" + matrix.toString() + "\n VECTOR B \n" +
-                            vectorb.toString() + "\n PARTIAL PIVOTING \n " + aux +"\n\n\n");
+                            vectorb.toString() + "\n TOTAL PIVOTING \n " + aux +"\n\n\n");
                 }else{
                        tabgauelm.getText().setText("El sistema no tiene solucion");
                 }

@@ -23,7 +23,7 @@ public class AddedValue extends Fragment {
         View footer = layoutInflater.inflate(R.layout.list_item_header_footer,null);
         TextView txtv_header = (TextView)header.findViewById(R.id.txt_title);
         TextView txtv_footer = (TextView)footer.findViewById(R.id.txt_title);
-        txtv_footer.setText("Not Implemented Yet");
+        txtv_footer.setText("Implemented");
         txtv_header.setText(getString(R.string.added_value));
         gridView.addHeaderView(header);
         gridView.addFooterView(footer);

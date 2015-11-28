@@ -1,6 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <merger version="3"><dataSet config="debug"><source path="C:\Users\JDaniels\Documents\Numerico\eQuations\StaggeredGrid\build\intermediates\bundles\debug\assets"/></dataSet><dataSet config="main"><source path="C:\Users\JDaniels\Documents\Numerico\eQuations\StaggeredGrid\src\androidTest\assets"/></dataSet></merger>
-=======
-<merger version="3"><dataSet config="debug"><source path="C:\Users\NN\Documents\GitHub\eQuations\StaggeredGrid\build\intermediates\bundles\debug\assets"/></dataSet><dataSet config="main"><source path="C:\Users\NN\Documents\GitHub\eQuations\StaggeredGrid\src\androidTest\assets"/></dataSet></merger>
->>>>>>> c8ccd8654ebd0246e07941445c91ca8b1df36cc3

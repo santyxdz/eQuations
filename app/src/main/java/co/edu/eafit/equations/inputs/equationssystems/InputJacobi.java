@@ -20,9 +20,7 @@ import co.edu.eafit.equations.Tabs;
 import co.edu.eafit.equations.sections.Methods;
 import co.edu.eafit.equations.tables.singlevariable.TableJacobi;
 
-/**
- * Created by JDaniels on 09/11/2015.
- */
+
 public class InputJacobi extends Fragment {
     TableLayout matrixinput;
     TableLayout vectorbinput;
