@@ -20,12 +20,12 @@ import co.edu.eafit.equations.sections.Methods;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithStaggeredPivoting;
 
 
-public class InputGaussianEliminationWithStaggeredPivoting extends Fragment {
+public class InputGEWithStaggeredPivoting extends Fragment {
     TableLayout matrixinput;
     TableLayout vectorbinput;
     int size;
-    public static InputGaussianEliminationWithStaggeredPivoting newInstance() {
-        InputGaussianEliminationWithStaggeredPivoting fragment = new InputGaussianEliminationWithStaggeredPivoting();
+    public static InputGEWithStaggeredPivoting newInstance() {
+        InputGEWithStaggeredPivoting fragment = new InputGEWithStaggeredPivoting();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

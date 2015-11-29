@@ -19,12 +19,12 @@ import co.edu.eafit.equations.Tabs;
 import co.edu.eafit.equations.sections.Methods;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithPartialPivoting;
 
-public class InputGaussianEliminationWithPartialPivoting extends Fragment {
+public class InputGEWithPartialPivoting extends Fragment {
     TableLayout matrixinput;
     TableLayout vectorbinput;
     int size;
-    public static InputGaussianEliminationWithPartialPivoting newInstance() {
-        InputGaussianEliminationWithPartialPivoting fragment = new InputGaussianEliminationWithPartialPivoting();
+    public static InputGEWithPartialPivoting newInstance() {
+        InputGEWithPartialPivoting fragment = new InputGEWithPartialPivoting();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

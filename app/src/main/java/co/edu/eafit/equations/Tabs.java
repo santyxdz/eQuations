@@ -25,8 +25,8 @@ import co.edu.eafit.equations.inputs.equationssystems.InputDoolittle;
 import co.edu.eafit.equations.inputs.equationssystems.InputGEWithTotalPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputGaussSeidel;
 import co.edu.eafit.equations.inputs.equationssystems.InputGaussianElimination;
-import co.edu.eafit.equations.inputs.equationssystems.InputGaussianEliminationWithPartialPivoting;
-import co.edu.eafit.equations.inputs.equationssystems.InputGaussianEliminationWithStaggeredPivoting;
+import co.edu.eafit.equations.inputs.equationssystems.InputGEWithPartialPivoting;
+import co.edu.eafit.equations.inputs.equationssystems.InputGEWithStaggeredPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputJacobi;
 import co.edu.eafit.equations.inputs.interpolation.InputLagrangePolynomial;
 import co.edu.eafit.equations.inputs.interpolation.InputNeville;
@@ -167,7 +167,6 @@ public class Tabs extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        //Toast.makeText(this,"Bundle:"+nameToolbar,Toast.LENGTH_SHORT).show();
     }
 
 
@@ -251,13 +250,13 @@ public class Tabs extends AppCompatActivity {
                                 break;
                             //Added Value
                             case "Partial Pivoting":
-                                fragmentInput = InputGaussianEliminationWithPartialPivoting.newInstance();
+                                fragmentInput = InputGEWithPartialPivoting.newInstance();
                                 break;
                             case "Total Pivoting":
                                 fragmentInput = InputGEWithTotalPivoting.newInstance();
                                 break;
                             case "Staggered Pivoting":
-                                fragmentInput = InputGaussianEliminationWithStaggeredPivoting.newInstance();
+                                fragmentInput = InputGEWithStaggeredPivoting.newInstance();
                                 break;
                             case "Neville":
                                 fragmentInput = InputNeville.newInstance();
