@@ -14,21 +14,24 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:layout_width="157dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/input_points_size" />
+            android:hint="@string/matrix_size_hint"
+            android:id="@+id/input_points_size"
+            android:layout_weight="0.7" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/generate"
             android:id="@+id/btn_points_size"
             android:theme="@style/AppTheme.AppBarOverlay"
             android:background="@color/bg_buttom_submit"
             android:layout_marginTop="10dp"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.3" />
 
     </LinearLayout>
 

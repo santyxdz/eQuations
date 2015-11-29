@@ -352,6 +352,7 @@
     </string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="generate">Generar</string>
-    <string name="calculate">Carcular</string>
+    <string name="generate">Generate</string>
+    <string name="calculate">Carculate</string>
+    <string name="matrix_size_hint">Matrix Size</string>
 </resources>
