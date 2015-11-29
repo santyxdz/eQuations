@@ -26,6 +26,7 @@ public class Methods {
             "Doolittle", //10
             "Gauss Seidel", //11
             "Jacobi", //12
+            "Neville", //13
     };
     public static Expression function;
     public static Expression function_gx;
@@ -972,6 +973,54 @@ public class Methods {
             tabla.setResult("Fracaso en " + iteraciones + " iteraciones.");
         }
     }
+//-------------------------------------------------------------------------------------------------
+private static String imprimirMatriz(double [][] matrix, int n, double x[]){
+    String result = "";
+    result+="Xi";
+    result+=printSpaces(String.valueOf("Xi").length(),20);
+    for(int i=0;i<n;i++){
+        result+="f"+(i)+"[]";
+        result+=printSpaces(String.valueOf("f"+i+"[]").length(),20);
+    }
+    result+="\n";
+    for(int i=0; i< n;i++){
+        result+=x[i];
+        result+=printSpaces(String.valueOf(x[i]).length(),20);
+        for(int j=0; j <n; j++){
+            result += matrix[i][j];
+            result+=printSpaces(String.valueOf(matrix[i][j]).length(),20);
+        }
+        result+="\n";
+    }
+    result+="\n";
+    return result;
+}
 
+    private static String printSpaces(int n, int k){
+        String result = "";
+        if(n<k){
+            for(int i = 0; i<k-n;i++){
+                result+=" ";
+            }
+        }
+        return result;
+    }
 
+    public static String interpolacionNeville(int nroPuntos, double valor, double[] x, double[] y){
+        String result = "";
+        double [][] tabla = new double[nroPuntos][nroPuntos];
+        for(int i = 0; i<nroPuntos;i++){
+            tabla[i][0] = y[i];
+        }
+        result+= "Result table:\n";
+        for(int i = 0; i<nroPuntos;i++){
+            for(int j = 1; j<i+1;j++){
+                tabla[i][j] = ((valor-x[i-j])*tabla[i][j-1] - ((valor-x[i])*tabla[i-1][j-1]))/(x[i] - x[i-j]);
+            }
+        }
+        result+=imprimirMatriz(tabla, nroPuntos, x); //Ésta es la mierda que imprime raro
+        result+= "\nResultado:\n";
+        result+="f("+valor+") = "+ tabla[nroPuntos-1][nroPuntos-1];
+        return result;
+    }
 }

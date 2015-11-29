@@ -29,6 +29,7 @@ import co.edu.eafit.equations.inputs.equationssystems.InputGaussianEliminationWi
 import co.edu.eafit.equations.inputs.equationssystems.InputGaussianEliminationWithStaggeredPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputJacobi;
 import co.edu.eafit.equations.inputs.interpolation.InputLagrangePolynomial;
+import co.edu.eafit.equations.inputs.interpolation.InputNeville;
 import co.edu.eafit.equations.inputs.interpolation.InputNewtonPolynomial;
 import co.edu.eafit.equations.inputs.singlevariable.InputBisection;
 import co.edu.eafit.equations.inputs.singlevariable.InputFalsePosition;
@@ -46,6 +47,7 @@ import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithPartialPivoting;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithStaggeredPivoting;
 import co.edu.eafit.equations.tables.interpolation.TableLagrangePolynomial;
+import co.edu.eafit.equations.tables.interpolation.TableNeville;
 import co.edu.eafit.equations.tables.interpolation.TableNewtonPolynomial;
 import co.edu.eafit.equations.tables.singlevariable.TableBisection;
 import co.edu.eafit.equations.tables.singlevariable.TableFalsePosition;
@@ -258,8 +260,8 @@ public class Tabs extends AppCompatActivity {
                                 fragmentInput = InputGaussianEliminationWithStaggeredPivoting.newInstance();
                                 break;
                             case "Neville":
-                                //fragmentInput = InputNeville.newInstance();
-                                //break;
+                                fragmentInput = InputNeville.newInstance();
+                                break;
                             default:
                                 fragmentInput = null;
                                 break;
@@ -330,8 +332,8 @@ public class Tabs extends AppCompatActivity {
                                 fragmentTable = TableGaussianEliminationWithStaggeredPivoting.newInstance();
                                 break;
                             case "Neville":
-                                //fragmentTable = TableNeville.newInstance();
-                               // break;
+                                fragmentTable = TableNeville.newInstance();
+                                break;
                             default:
                                 fragmentTable = null;
                                 break;

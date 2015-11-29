@@ -85,12 +85,13 @@ public class InputNeville extends Fragment {
                     vectorx[i] = Double.parseDouble(x.getText().toString());
                     vectory[i] = Double.parseDouble(y.getText().toString());
                 }
-                int value = Integer.parseInt(inputValue.getText().toString());
+                double value = Double.parseDouble(inputValue.getText().toString());
 
                 Tabs activity = (Tabs)getActivity();
                 TableNeville table = (TableNeville)activity.getFragmentTable();
 
-                table.getText().setText("Angarita es un puto");
+                String res = Methods.interpolacionNeville(numPoints,value,vectorx,vectory);
+                table.getText().setText(res);
             }
         });
         return rootView;
