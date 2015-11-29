@@ -104,19 +104,12 @@ public class InputDoolittle extends Fragment {
                     vectorb.set(i,0,Double.parseDouble(input.getText().toString()));
                 }
                 Tabs activity = (Tabs)getActivity();
-                TableDoolittle tabgauelm = (TableDoolittle)activity.getFragmentTable();
-                //tabgauelm.getText().setText(matrix.toString()+"\n"+vectorb.toString());
+                TableDoolittle tabla = (TableDoolittle)activity.getFragmentTable();
 
                 String res = Methods.factorizacionLUDoolittle(matrix, vectorb);
-                //SimpleMatrix res = Methods.sustitucionRegresiva(aux);
-                String xx = "";
-                //for(int k=0;k<size;k++)
-                //    xx +=  "X"+(k+1)+" = "+res.get(k)+"\n";
 
-                tabgauelm.getText().setText("MATRIZ A \n"+ matrix.toString()+"\n VECTOR B \n"+
-                        vectorb.toString());
-
-
+                tabla.getText().setText("MATRIZ A \n"+ matrix.toString()+"\n VECTOR B \n"+
+                        vectorb.toString()+"\n"+res+"\n\n\n" );
             }
         });
         return rootView;

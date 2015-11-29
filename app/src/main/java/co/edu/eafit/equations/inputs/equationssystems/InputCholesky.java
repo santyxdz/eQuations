@@ -17,6 +17,7 @@ import org.ejml.simple.SimpleMatrix;
 import co.edu.eafit.equations.sections.Methods;
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
+import co.edu.eafit.equations.tables.equiationssystems.TableCholesky;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
 
 /**
@@ -103,19 +104,12 @@ public class InputCholesky extends Fragment {
                     vectorb.set(i,0,Double.parseDouble(input.getText().toString()));
                 }
                 Tabs activity = (Tabs)getActivity();
-                TableGaussianElimination tabgauelm = (TableGaussianElimination)activity.getFragmentTable();
-                //tabgauelm.getText().setText(matrix.toString()+"\n"+vectorb.toString());
+                TableCholesky tabla = (TableCholesky)activity.getFragmentTable();
 
-                SimpleMatrix aux = Methods.eliminacionGaussiana(matrix, vectorb);
-                SimpleMatrix res = Methods.sustitucionRegresiva(aux);
-                String xx = "";
-                for(int k=0;k<size;k++)
-                    xx +=  "X"+(k+1)+" = "+res.get(k)+"\n";
+                String res = Methods.factorizacionLUCholesky(matrix,vectorb);
 
-                tabgauelm.getText().setText("MATRIZ A \n"+ matrix.toString()+"\n VECTOR B \n"+
-                        vectorb.toString()+"\n GAUSSIAN ELIMINATION \n "+aux.toString()+"\n ANSWERS \n" +xx);
-
-
+                tabla.getText().setText("MATRIZ A \n"+ matrix.toString()+"\n VECTOR B \n"+
+                        vectorb.toString()+"\n" + res +"\n\n\n");
             }
         });
         return rootView;

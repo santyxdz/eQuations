@@ -104,16 +104,12 @@ public class InputCrout extends Fragment {
                     vectorb.set(i,0,Double.parseDouble(input.getText().toString()));
                 }
                 Tabs activity = (Tabs)getActivity();
-                TableCrout tabgauelm = (TableCrout)activity.getFragmentTable();
+                TableCrout tabla = (TableCrout)activity.getFragmentTable();
                 //tabgauelm.getText().setText(matrix.toString()+"\n"+vectorb.toString());
 
-                //SimpleMatrix aux = Methods.eliminacionGaussiana(matrix, vectorb);
                 String res = Methods.factorizacionLUCrout(matrix,vectorb);
-                //String xx = "";
-                //for(int k=0;k<size;k++)
-                    //xx +=  "X"+(k+1)+" = "+res.get(k)+"\n";
 
-                tabgauelm.getText().setText("MATRIZ A \n"+ matrix.toString()+"\n VECTOR B \n"+
+                tabla.getText().setText("MATRIZ A \n"+ matrix.toString()+"\n VECTOR B \n"+
                         vectorb.toString()+"\n"+res+"\n\n\n" );
             }
         });
