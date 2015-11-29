@@ -1,5 +1,7 @@
 package co.edu.eafit.equations;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import co.edu.eafit.equations.helps.Help;
 import co.edu.eafit.equations.inputs.equationssystems.InputCholesky;
@@ -92,7 +95,71 @@ public class Tabs extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                SharedPreferences preferences;
+                switch (nameToolbar){
+                    case "Incremental Searches":
+                    case "Bisection":
+                    case "False Position":
+                    case "Fixed Point":
+                    case "Newton":
+                    case "Secant":
+                    case "Multiple Roots":
+                        preferences = getSharedPreferences("SingleVariable",
+                                Context.MODE_PRIVATE);
+                        EditText inpt_fx = (EditText)findViewById(R.id.inpt_fx);
+                        EditText inpt_delta = (EditText)findViewById(R.id.inpt_delta);
+                        EditText inpt_xinit = (EditText)findViewById(R.id.inpt_xinit);
+                        EditText inpt_iter = (EditText)findViewById(R.id.inpt_iter);
+                        EditText inpt_tol = (EditText)findViewById(R.id.inpt_tol);
+                        EditText inpt_xfin = (EditText)findViewById(R.id.inpt_xfin);
+                        EditText inpt_gx = (EditText)findViewById(R.id.inpt_gx);
+                        EditText inpt_fpx = (EditText)findViewById(R.id.inpt_fpx);
+                        EditText inpt_fppx = (EditText)findViewById(R.id.inpt_fppx);
+                        try{
+                            inpt_fx.setText(preferences.getString("fx",""));
+                        }catch (NullPointerException nullp){}
+                        try{
+                            inpt_delta.setText(preferences.getString("delta",""));
+                        }catch (NullPointerException nullp){}
+                        try{
+                            inpt_xinit.setText(preferences.getString("xinit",""));
+                        }catch (NullPointerException nullp){}
+                        try{
+                            inpt_iter.setText(preferences.getString("iter",""));
+                        }catch (NullPointerException nullp){}
+                        try{
+                            inpt_tol.setText(preferences.getString("tol",""));
+                        }catch (NullPointerException nullp){}
+                        try{
+                            inpt_xfin.setText(preferences.getString("xfin",""));
+                        }catch (NullPointerException nullp){}
+                        try{
+                            inpt_gx.setText(preferences.getString("gx",""));
+                        }catch (NullPointerException nullp){}
+                        try{
+                            inpt_fpx.setText(preferences.getString("fpx",""));
+                        }catch (NullPointerException nullp){}
+                        try{
+                            inpt_fppx.setText(preferences.getString("fpx",""));
+                        }catch (NullPointerException nullp){}
+                        break;
+                    case "Gaussian Elimination":
+                    case "Cholesky":
+                    case "Crout":
+                    case "Doolittle":
+                    case "Gauss Seidel":
+                    case "Jacobi":
+                    case "Newton Polynomial":
+                    case "Lagrange Polynomial":
+                    case "Gaussian Elimination with Partial Pivoting":
+                    case "Total Pivoting":
+                    case "Staggered Pivoting":
+                    case "Neville":
+                    default:
+                        break;
+                }
+
+                Snackbar.make(view, "Loading Data...", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });

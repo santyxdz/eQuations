@@ -1,5 +1,7 @@
 package co.edu.eafit.equations.inputs.singlevariable;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -33,15 +35,17 @@ public class InputSecant extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.tab_input_secant, null);
-        final EditText inpt_function = (EditText)rootView.findViewById(R.id.inpt_function);
+        final EditText inpt_fx = (EditText)rootView.findViewById(R.id.inpt_fx);
         final EditText inpt_tol = (EditText)rootView.findViewById(R.id.inpt_tol);
-        final EditText inpt_xlower = (EditText)rootView.findViewById(R.id.inpt_xlower);
-        final EditText inpt_xtop = (EditText)rootView.findViewById(R.id.inpt_xtop);
+        final EditText inpt_xinit = (EditText)rootView.findViewById(R.id.inpt_xinit);
+        final EditText inpt_xfin = (EditText)rootView.findViewById(R.id.inpt_xfin);
         final EditText inpt_iter = (EditText)rootView.findViewById(R.id.inpt_iter);
         final TextView txt_push = (TextView) rootView.findViewById(R.id.txt_push);
         final RadioGroup radioGroup = (RadioGroup) rootView.findViewById(R.id.RG);
         final int[] tipeError = new int[1];
         Button btn_run = (Button)rootView.findViewById(R.id.btn_run);
+        final SharedPreferences preferences = getActivity().getSharedPreferences("SingleVariable", Context.MODE_PRIVATE);
+        final SharedPreferences.Editor editor = preferences.edit();
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -60,8 +64,8 @@ public class InputSecant extends Fragment {
             @Override
             public void onClick(View v) {
                 ((Tabs) getActivity()).getTabla().getArray().clear();
-                BigDecimal x0 = new BigDecimal(inpt_xlower.getText().toString());
-                BigDecimal x1 = new BigDecimal(inpt_xtop.getText().toString());
+                BigDecimal x0 = new BigDecimal(inpt_xinit.getText().toString());
+                BigDecimal x1 = new BigDecimal(inpt_xfin.getText().toString());
                 BigDecimal tol = new BigDecimal(inpt_tol.getText().toString());
                 long iter = Integer.parseInt(inpt_iter.getText().toString());
                 ((Tabs) getActivity()).getTabla().addHead(
@@ -70,10 +74,16 @@ public class InputSecant extends Fragment {
                         )
                 );
                 Methods.Secant(x0, x1, tol, iter, tipeError[0],
-                        inpt_function.getText().toString(),((Tabs) getActivity()).getTabla()
+                        inpt_fx.getText().toString(),((Tabs) getActivity()).getTabla()
                 );
                 ((TableSecant) ((Tabs) getActivity()).getFragmentTable()).load_tables();
                 txt_push.setText(((Tabs) getActivity()).getTabla().getResult());
+                editor.putString("fx",inpt_fx.getText().toString());
+                editor.putString("tol",inpt_tol.getText().toString());
+                editor.putString("xinit",inpt_xinit.getText().toString());
+                editor.putString("xfin",inpt_xfin.getText().toString());
+                editor.putString("iter",inpt_iter.getText().toString());
+                editor.commit();
             }
         });
         return rootView;

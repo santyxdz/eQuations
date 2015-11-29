@@ -21,7 +21,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/inpt_function"
+                android:id="@+id/inpt_fx"
                 android:hint="f(x)" />
 
             <LinearLayout
@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal|numberSigned"
                     android:ems="10"
-                    android:id="@+id/inpt_init"
+                    android:id="@+id/inpt_xinit"
                     android:hint="Xo" />
 
                 <EditText

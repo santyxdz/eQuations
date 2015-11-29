@@ -94,7 +94,6 @@ public class MenuAdapterES extends ArrayAdapter<String>{
                         intent.putExtra("type","Jacobi");
                         break;
                 }
-                Log.i("Position",Integer.toString(position));
                 getContext().startActivity(intent);
             }
         });

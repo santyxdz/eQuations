@@ -22,13 +22,13 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/inpt_function"
+                android:id="@+id/inpt_fx"
                 android:hint="f(x)"
                 android:layout_marginTop="5dp" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/inpt_function_gx"
+                android:id="@+id/inpt_gx"
                 android:hint="g(x)"
                 android:layout_marginTop="5dp" />
 
@@ -52,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal|numberSigned"
                     android:ems="10"
-                    android:id="@+id/inpt_xlower"
+                    android:id="@+id/inpt_xinit"
                     android:hint="Xo"
                     android:layout_marginTop="5dp" />
 
