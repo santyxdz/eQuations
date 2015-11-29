@@ -20,9 +20,7 @@ import co.edu.eafit.equations.Tabs;
 import co.edu.eafit.equations.tables.equiationssystems.TableDoolittle;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
 
-/**
- * Created by JDaniels on 09/11/2015.
- */
+
 public class InputDoolittle extends Fragment {
     TableLayout matrixinput;
     TableLayout vectorbinput;

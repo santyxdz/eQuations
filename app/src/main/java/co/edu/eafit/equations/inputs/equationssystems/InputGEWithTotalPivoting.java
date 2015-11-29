@@ -19,9 +19,6 @@ import co.edu.eafit.equations.Tabs;
 import co.edu.eafit.equations.sections.Methods;
 import co.edu.eafit.equations.tables.equiationssystems.TableGEWithTotalPivoting;
 
-/**
- * Created by JDaniels on 09/11/2015.
- */
 public class InputGEWithTotalPivoting extends Fragment {
     TableLayout matrixinput;
     TableLayout vectorbinput;

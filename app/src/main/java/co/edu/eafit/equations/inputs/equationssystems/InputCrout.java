@@ -20,9 +20,6 @@ import co.edu.eafit.equations.Tabs;
 import co.edu.eafit.equations.tables.equiationssystems.TableCrout;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
 
-/**
- * Created by JDaniels on 09/11/2015.
- */
 public class InputCrout extends Fragment {
     TableLayout matrixinput;
     TableLayout vectorbinput;

@@ -19,9 +19,6 @@ import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
 
-/**
- * Created by JDaniels on 09/11/2015.
- */
 public class InputLagrangePolynomial extends Fragment {
     TableLayout matrixinput;
     TableLayout vectorbinput;

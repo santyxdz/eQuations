@@ -21,9 +21,6 @@ import co.edu.eafit.equations.sections.Methods;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
 import co.edu.eafit.equations.tables.interpolation.TableNeville;
 
-/**
- * Created by JDaniels on 09/11/2015.
- */
 public class InputNeville extends Fragment {
     TableLayout matrixinput;
     TableLayout vectorbinput;

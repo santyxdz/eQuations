@@ -144,16 +144,18 @@ public class Tabs extends AppCompatActivity {
                         }catch (NullPointerException nullp){}
                         break;
                     case "Gaussian Elimination":
+                    case "Partial Pivoting":
+                    case "Total Pivoting":
+                    case "Staggered Pivoting":
                     case "Cholesky":
                     case "Crout":
                     case "Doolittle":
                     case "Gauss Seidel":
                     case "Jacobi":
+
+                        break;
                     case "Newton Polynomial":
                     case "Lagrange Polynomial":
-                    case "Gaussian Elimination with Partial Pivoting":
-                    case "Total Pivoting":
-                    case "Staggered Pivoting":
                     case "Neville":
                     default:
                         break;
@@ -246,7 +248,7 @@ public class Tabs extends AppCompatActivity {
                                 fragmentInput = InputLagrangePolynomial.newInstance();
                                 break;
                             //Added Value
-                            case "Gaussian Elimination with Partial Pivoting":
+                            case "Partial Pivoting":
                                 fragmentInput = InputGaussianEliminationWithPartialPivoting.newInstance();
                                 break;
                             case "Total Pivoting":
@@ -318,7 +320,7 @@ public class Tabs extends AppCompatActivity {
                                 fragmentTable = TableLagrangePolynomial.newInstance();
                                 break;
                             //Added Value
-                            case "Gaussian Elimination with Partial Pivoting":
+                            case "Partial Pivoting":
                                 fragmentTable = TableGaussianEliminationWithPartialPivoting.newInstance();
                                 break;
                             case "Total Pivoting":
