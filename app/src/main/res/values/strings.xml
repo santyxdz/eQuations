@@ -428,6 +428,25 @@
         Lk(x) = ((x-X0)(x-X1)…(x-Xk-1)(x-Xk+1)…(x-Xn))/((Xk-X0)(Xk-X1)…(Xk-Xk-1)(Xk-Xk+1)…(Xk-Xn))
         \n\n\n
     </string>
+    <string name="help_cubic_splin">
+        The most widely used Spline is that generates cubic polynomials between eachsuccessive pair
+        of nodes. Is liner most commonly used by its good adjustment to the points and what itscomplexity
+        of calculation is not exaggerated.
+        The polynomial P (x) through which we construct the Splines have grade 3, so youhave the form:
+        \n\n
+         P (x) = ax³ + bx² + cx + d
+        \n\n\n
+    </string>
+    <string name="help_lineal_splin">
+        Liners are a class of functions that are used in applications requiring data interpolationor
+        smooth curves and are used both for one or more dimensions.
+        The idea of linear liners is to make possible the construction of spaces of smoothenough
+        functions so they are easy to handle, these spaces are generated frompolynomials to pieces
+        of low grade.
+        \n\n
+          The form of polynomials will be P (x) = ax + b.
+        \n\n\n
+    </string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="generate">Generate</string>

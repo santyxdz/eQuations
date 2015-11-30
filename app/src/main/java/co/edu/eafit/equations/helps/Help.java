@@ -106,6 +106,14 @@ public class Help extends Fragment {
                 textView.setText(getResources().getString(R.string.help_lagrange_polynomial));
                 img.setImageResource(R.drawable.lagrange2);
                 break;
+            case "Linear Spline":
+                textView.setText(getResources().getString(R.string.help_lineal_splin));
+                img.setImageResource(R.drawable.spline_lineal);
+                break;
+            case "Cubic Spline":
+                textView.setText(getResources().getString(R.string.help_cubic_splin));
+                img.setImageResource(R.drawable.spline_cubico);
+                break;
             default:
                 textView.setText("Not Defined");
                 img.setImageResource(R.drawable.searincre);
