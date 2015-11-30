@@ -16,7 +16,7 @@ import org.ejml.simple.SimpleMatrix;
 
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
-import co.edu.eafit.equations.sections.Methods;
+import co.edu.eafit.equations.Methods;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithPartialPivoting;
 
 public class InputGEWithPartialPivoting extends Fragment {
@@ -33,7 +33,7 @@ public class InputGEWithPartialPivoting extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.tab_input_gaussian_elimination_with_partial_pivoting, container, false);
+        final View rootView = inflater.inflate(R.layout.tab_input_ge_with_partial_pivoting, container, false);
         final EditText inputMatrixSize = (EditText)rootView.findViewById(R.id.input_matrix_size);
         Button btnMatrixSize = (Button)rootView.findViewById(R.id.btn_matrix_size);
         matrixinput = (TableLayout)rootView.findViewById(R.id.MatrixA);

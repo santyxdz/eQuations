@@ -1,5 +1,7 @@
 package co.edu.eafit.equations.inputs.interpolation;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.InputType;
@@ -12,18 +14,16 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
-import org.ejml.simple.SimpleMatrix;
-
-import co.edu.eafit.equations.sections.Methods;
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
-import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
-
+import co.edu.eafit.equations.Methods;
+import co.edu.eafit.equations.tables.interpolation.TableNewtonPolynomial;
 
 public class InputNewtonPolynomial extends Fragment {
     TableLayout matrixinput;
     TableLayout vectorbinput;
     int size;
+    int numPoints;
     public static InputNewtonPolynomial newInstance() {
         InputNewtonPolynomial fragment = new InputNewtonPolynomial();
         Bundle args = new Bundle();
@@ -34,86 +34,68 @@ public class InputNewtonPolynomial extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.tab_input_newton_polynomial, container, false);
-        final EditText inputMatrixSize = (EditText)rootView.findViewById(R.id.input_matrix_size);
-        Button btnMatrixSize = (Button)rootView.findViewById(R.id.btn_matrix_size);
-        matrixinput = (TableLayout)rootView.findViewById(R.id.MatrixA);
-        vectorbinput = (TableLayout)rootView.findViewById(R.id.VectorB);
+        final View rootView = inflater.inflate(R.layout.tab_input_neville, container, false);
+        final EditText inputPointsSize = (EditText)rootView.findViewById(R.id.input_points_size);
+        final Button btnPointSize = (Button)rootView.findViewById(R.id.btn_points_size);
+        final TableLayout pointsLayout = (TableLayout)rootView.findViewById(R.id.PointsTable);
+        final LinearLayout layinput = (LinearLayout)rootView.findViewById(R.id.lay_input_function);
         final Button btnCalculate = (Button)rootView.findViewById(R.id.btn_calculate);
-        btnMatrixSize.setOnClickListener(new View.OnClickListener() {
+        final EditText inputValue = (EditText)rootView.findViewById(R.id.input_value);
+        btnPointSize.setInputType(InputType.TYPE_CLASS_NUMBER);
+        inputValue.setInputType(InputType.TYPE_CLASS_NUMBER
+                | InputType.TYPE_NUMBER_FLAG_DECIMAL
+                | InputType.TYPE_NUMBER_FLAG_SIGNED);
+        //OTROS
+        btnPointSize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                matrixinput.removeAllViews();
-                vectorbinput.removeAllViews();
-                String sSize = inputMatrixSize.getText().toString();
-
-                if(sSize.isEmpty()||sSize==null||sSize.equals("")){
-                    size=4;
-                }else{
-                    size = Integer.parseInt(sSize);
-                }
-                for (int i=0;i<size;i++){
-                    TableRow row = new TableRow(rootView.getContext());
-                    TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
-                    row.setLayoutParams(lp);
-                    for(int j=0;j<size;j++){
-                        EditText input = new EditText(rootView.getContext());
-                        row.addView(input);
-                        input.getLayoutParams().width=100;
-                        input.setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_DECIMAL|InputType.TYPE_NUMBER_FLAG_SIGNED);
-                    }
-                    matrixinput.addView(row);
-                }
-                TableRow vectorb = new TableRow(rootView.getContext());
-                TableRow.LayoutParams vectorblp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
-                vectorb.setLayoutParams(vectorblp);
-                for(int i=0;i<size;i++){
-                    EditText input = new EditText(rootView.getContext());
-                    vectorb.addView(input);
-                    input.getLayoutParams().width=100;
-                    input.setInputType(InputType.TYPE_CLASS_NUMBER
+                pointsLayout.removeAllViews();
+                numPoints = Integer.parseInt(inputPointsSize.getText().toString());
+                for(int i=0;i<numPoints;i++){
+                    TableRow fila = new TableRow(rootView.getContext());
+                    TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT);
+                    fila.setLayoutParams(lp);
+                    EditText editx = new EditText(rootView.getContext());
+                    EditText edity = new EditText(rootView.getContext());
+                    fila.addView(editx);
+                    fila.addView(edity);
+                    editx.setInputType(InputType.TYPE_CLASS_NUMBER
                             | InputType.TYPE_NUMBER_FLAG_DECIMAL
                             | InputType.TYPE_NUMBER_FLAG_SIGNED);
+                    edity.setInputType(InputType.TYPE_CLASS_NUMBER
+                            | InputType.TYPE_NUMBER_FLAG_DECIMAL
+                            | InputType.TYPE_NUMBER_FLAG_SIGNED);
+                    TableRow.LayoutParams editparams = new TableRow.LayoutParams(
+                            0,ViewGroup.LayoutParams.WRAP_CONTENT,0.5f);
+                    editx.setLayoutParams(editparams);
+                    edity.setLayoutParams(editparams);
+                    pointsLayout.addView(fila);
+                    layinput.setVisibility(LinearLayout.VISIBLE);
                 }
-                vectorbinput.addView(vectorb);
-                btnCalculate.setLayoutParams(new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT)
-                );
-                btnCalculate.setVisibility(View.VISIBLE);
             }
         });
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SimpleMatrix matrix = new SimpleMatrix(matrixinput.getChildCount(),matrixinput.getChildCount());
-                SimpleMatrix vectorb = new SimpleMatrix(matrixinput.getChildCount(),1);
-                for(int i = 0; i < matrixinput.getChildCount();i++){
-                    TableRow row = (TableRow)matrixinput.getChildAt(i);
-                    for(int j = 0; j < row.getChildCount(); j++){
-                        EditText input = (EditText)row.getChildAt(j);
-                        matrix.set(i,j,Double.parseDouble(input.getText().toString()));
-                    }
+                double []vectorx = new double[numPoints];
+                double []vectory = new double[numPoints];
+                for(int i = 0; i < numPoints;i++){
+                    TableRow row = (TableRow)pointsLayout.getChildAt(i);
+                    EditText  x = (EditText)row.getChildAt(0);
+                    EditText  y = (EditText)row.getChildAt(1);
+                    vectorx[i] = Double.parseDouble(x.getText().toString());
+                    vectory[i] = Double.parseDouble(y.getText().toString());
                 }
-                TableRow rowx = (TableRow)vectorbinput.getChildAt(0);
-                for(int i = 0; i < rowx.getChildCount() ; i++){
-                    EditText input = (EditText)rowx.getChildAt(i);
-                    vectorb.set(i,0,Double.parseDouble(input.getText().toString()));
-                }
+                double value = Double.parseDouble(inputValue.getText().toString());
+
                 Tabs activity = (Tabs)getActivity();
-                TableGaussianElimination tabgauelm = (TableGaussianElimination)activity.getFragmentTable();
-                //tabgauelm.getText().setText(matrix.toString()+"\n"+vectorb.toString());
-
-                SimpleMatrix aux = Methods.eliminacionGaussiana(matrix, vectorb);
-                SimpleMatrix res = Methods.sustitucionRegresiva(aux);
-                String xx = "";
-                for(int k=0;k<size;k++)
-                    xx +=  "X"+(k+1)+" = "+res.get(k)+"\n";
-
-                tabgauelm.getText().setText("MATRIZ A \n"+ matrix.toString()+"\n VECTOR B \n"+
-                        vectorb.toString()+"\n GAUSSIAN ELIMINATION \n "+aux.toString()+"\n ANSWERS \n" +xx);
-
-
+                TableNewtonPolynomial table = (TableNewtonPolynomial)activity.getFragmentTable();
+                String res = Methods.interpolacionNewtonDiferenciasDivididas(numPoints, value, vectorx, vectory);
+                table.getText().setText(res);
+                SharedPreferences preferences = getActivity().getSharedPreferences("Interpolation", Context.MODE_PRIVATE);
+                Load.saveEvalValue(preferences,Double.toString(value));
+                Load.saveNumPoints(preferences,Integer.toString(numPoints));
+                Load.savePoints(preferences, vectorx, vectory);
             }
         });
         return rootView;

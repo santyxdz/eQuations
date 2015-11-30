@@ -1,4 +1,4 @@
-package co.edu.eafit.equations.sections;
+package co.edu.eafit.equations;
 
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
@@ -10,6 +10,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import co.edu.eafit.equations.Tabla;
+import co.edu.eafit.equations.methods.classes.Spline;
 
 public class Methods {
     public static final String[] methods = {
@@ -966,19 +967,17 @@ public class Methods {
 //-------------------------------------------------------------------------------------------------
 private static String imprimirMatriz(double [][] matrix, int n, double x[]){
     String result = "";
-    result+="Xi";
-    result+=printSpaces(String.valueOf("Xi").length(),20);
+    result+="Xi__________________             ";
     for(int i=0;i<n;i++){
-        result+="f"+(i)+"[]";
-        result+=printSpaces(String.valueOf("f"+i+"[]").length(),20);
+        result+="f"+(i)+"()________________             ";
     }
     result+="\n";
     for(int i=0; i< n;i++){
-        result+=x[i];
-        result+=printSpaces(String.valueOf(x[i]).length(),20);
-        for(int j=0; j <n; j++){
-            result += matrix[i][j];
-            result+=printSpaces(String.valueOf(matrix[i][j]).length(),20);
+        String xString = printFixed(Double.toString(x[i]),20);
+        result+=xString;
+        for(int j=0; j<n; j++){
+            String doubleString =  printFixed(Double.toString(matrix[i][j]),20);
+            result += doubleString;
         }
         result+="\n";
     }
@@ -986,14 +985,16 @@ private static String imprimirMatriz(double [][] matrix, int n, double x[]){
     return result;
 }
 
-    private static String printSpaces(int n, int k){
-        String result = "";
-        if(n<k){
-            for(int i = 0; i<k-n;i++){
-                result+=" ";
+    private static String printFixed(String num, int pres){
+        String result = num;
+        if(result.length()>pres) {
+            result = result.substring(0, pres + 1);
+        }else if(result.length()<pres){
+            while (result.length()!=pres){
+                result+="0";
             }
         }
-        return result;
+        return result+"   ";
     }
 
     public static String interpolacionNeville(int nroPuntos, double valor, double[] x, double[] y){
@@ -1009,8 +1010,70 @@ private static String imprimirMatriz(double [][] matrix, int n, double x[]){
             }
         }
         result+=imprimirMatriz(tabla, nroPuntos, x); //Ésta es la mierda que imprime raro
-        result+= "\nResultado:\n";
-        result+="f("+valor+") = "+ tabla[nroPuntos-1][nroPuntos-1];
+        result+= "\nResult:\n";
+        result+="p("+valor+") = "+ tabla[nroPuntos-1][nroPuntos-1];
         return result;
+    }
+    /////////////////////////////////////////////////////////
+    public static String interpolacionLagrange(int nroPuntos, double valor, double[] x, double[] y){
+        String result="";
+        result+="Building funtion L(x):\n";
+        double resultado = 0;
+        String pol = "P(x): ";
+        for(int k = 0; k<nroPuntos;k++){
+            double productoria = 1;
+            String termino = "";
+            for(int i = 0; i < nroPuntos ; i++){
+                if(i!=k){
+                    productoria = productoria * (valor-x[i])/(x[k]-x[i]);
+                    termino = termino + ("[(x-"+x[i]+")/("+x[k]+"-"+x[i]+")]");
+                }
+            }
+            result+="L"+k+"(x):"+termino+"\n";
+            pol += (y[k]>0?"+":"")+y[k]+"*"+termino+"\n";
+            resultado += productoria * y[k];
+        }
+        result+="\nInterpolation Polynomial:\n";
+        result+=pol+"\n";
+        result+="Result:\n";
+        result+="p("+valor+") = "+ resultado+"\n";
+        return result;
+    }
+    public static String interpolacionNewtonDiferenciasDivididas(int nroPuntos, double valor, double[] x, double[] y){
+        String result = "";
+        double [][] tabla = new double[nroPuntos][nroPuntos];
+        for(int i = 0; i<nroPuntos;i++){
+            tabla[i][0] = y[i];
+        }
+        for(int i = 0; i<nroPuntos;i++){
+            for(int j = 1; j<i+1;j++){
+                tabla[i][j] = (tabla[i][j-1] - tabla[i-1][j-1])/(x[i] - x[i-j]);
+
+            }
+        }
+        result+="Result Table:\n";
+        result+=imprimirMatriz(tabla, nroPuntos,x);
+        result+="Interpolation Polynomial:\n";
+        String pol = "P(x): "+String.valueOf(tabla[0][0]);
+        String temp = "";
+        double resultado = tabla[0][0];
+        double aux = 1;
+        for(int i = 1; i<nroPuntos;i++){
+            temp = temp + "(x"+"-"+(x[i-1])+")";
+            pol = pol + "\n"+(tabla[i][i]>0?"+":"")+(tabla[i][i]+"*"+temp);
+            aux = aux * (valor-x[i-1]);
+            resultado = resultado + tabla[i][i]*aux;
+        }
+        result+=pol+"\n";
+        result+="\nResult:\n";
+        result+="p("+valor+") = "+ resultado+"\n";
+        return result;
+    }
+    public static String interpolacionLinearSpline(int nroPuntos, double valor, double[] x, double[] y){
+        Spline spline = new Spline(0,nroPuntos);
+        spline.addValues(x,y);
+        String result = spline.toString();
+        result+="f(" + valor + ")=" + spline.interpolate(valor)+"\n";
+        return  result;
     }
 }

@@ -31,6 +31,7 @@ public class Interpolation extends Fragment {
         MenuAdapterIN mAdapter = new MenuAdapterIN(this.getActivity(),R.id.txt_line1);
         mAdapter.add("Newton Polynomial");
         mAdapter.add("Lagrange Polynomial");
+        mAdapter.add("Linear Spline");
         gridView.setAdapter(mAdapter);
         return rootView;
     }

@@ -13,23 +13,23 @@ import android.widget.TextView;
 import co.edu.eafit.equations.R;
 
 
-public class TableLagrangePolynomial extends Fragment {
+public class TableLinearSpline extends Fragment {
     private int sectionNumber;
     private TableLayout tableLayout;
     public TextView text;
-    public static TableLagrangePolynomial newInstance() {
-        TableLagrangePolynomial fragment = new TableLagrangePolynomial();
+    public static TableLinearSpline newInstance() {
+        TableLinearSpline fragment = new TableLinearSpline();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
     }
 
-    public TableLagrangePolynomial() {
+    public TableLinearSpline() {
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab_table_neville, container, false);
+        View rootView = inflater.inflate(R.layout.tab_table_linear_spline, container, false);
         text = (TextView)rootView.findViewById(R.id.txt_show_text);
         return rootView;
     }

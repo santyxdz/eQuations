@@ -14,18 +14,19 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
+import co.edu.eafit.equations.Methods;
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
-import co.edu.eafit.equations.Methods;
-import co.edu.eafit.equations.tables.interpolation.TableNeville;
+import co.edu.eafit.equations.tables.interpolation.TableLinearSpline;
+import co.edu.eafit.equations.tables.interpolation.TableNewtonPolynomial;
 
-public class InputNeville extends Fragment {
+public class InputLinearSpline extends Fragment {
     TableLayout matrixinput;
     TableLayout vectorbinput;
     int size;
     int numPoints;
-    public static InputNeville newInstance() {
-        InputNeville fragment = new InputNeville();
+    public static InputLinearSpline newInstance() {
+        InputLinearSpline fragment = new InputLinearSpline();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -34,7 +35,7 @@ public class InputNeville extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.tab_input_neville, container, false);
+        final View rootView = inflater.inflate(R.layout.tab_input_linear_spline, container, false);
         final EditText inputPointsSize = (EditText)rootView.findViewById(R.id.input_points_size);
         final Button btnPointSize = (Button)rootView.findViewById(R.id.btn_points_size);
         final TableLayout pointsLayout = (TableLayout)rootView.findViewById(R.id.PointsTable);
@@ -89,13 +90,13 @@ public class InputNeville extends Fragment {
                 double value = Double.parseDouble(inputValue.getText().toString());
 
                 Tabs activity = (Tabs)getActivity();
-                TableNeville table = (TableNeville)activity.getFragmentTable();
-                String res = Methods.interpolacionNeville(numPoints, value, vectorx, vectory);
+                TableLinearSpline table = (TableLinearSpline)activity.getFragmentTable();
+                String res = Methods.interpolacionLinearSpline(numPoints, value, vectorx, vectory);
                 table.getText().setText(res);
                 SharedPreferences preferences = getActivity().getSharedPreferences("Interpolation", Context.MODE_PRIVATE);
                 Load.saveEvalValue(preferences,Double.toString(value));
                 Load.saveNumPoints(preferences,Integer.toString(numPoints));
-                Load.savePoints(preferences,vectorx,vectory);
+                Load.savePoints(preferences, vectorx, vectory);
             }
         });
         return rootView;

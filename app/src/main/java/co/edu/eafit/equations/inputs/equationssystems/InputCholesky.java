@@ -16,7 +16,7 @@ import android.widget.TableRow;
 
 import org.ejml.simple.SimpleMatrix;
 
-import co.edu.eafit.equations.sections.Methods;
+import co.edu.eafit.equations.Methods;
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
 import co.edu.eafit.equations.tables.equiationssystems.TableCholesky;
@@ -111,7 +111,7 @@ public class InputCholesky extends Fragment {
                         vectorb.toString() + "\n" + res + "\n\n\n");
                 SharedPreferences preferences = getActivity().getSharedPreferences("EquationsSystems", Context.MODE_PRIVATE);
                 Load.saveN(preferences, inputMatrixSize.getText().toString());
-                Load.saveMatrixA(preferences,matrix);
+                Load.saveMatrixA(preferences, matrix);
                 Load.saveVectorB(preferences,vectorb);
             }
         });
