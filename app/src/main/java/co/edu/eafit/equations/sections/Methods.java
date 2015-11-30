@@ -976,19 +976,17 @@ public class Methods {
 //-------------------------------------------------------------------------------------------------
 private static String imprimirMatriz(double [][] matrix, int n, double x[]){
     String result = "";
-    result+="Xi";
-    result+=printSpaces(String.valueOf("Xi").length(),20);
+    result+="Xi__________________             ";
     for(int i=0;i<n;i++){
-        result+="f"+(i)+"[]";
-        result+=printSpaces(String.valueOf("f"+i+"[]").length(),20);
+        result+="f"+(i)+"()________________             ";
     }
     result+="\n";
     for(int i=0; i< n;i++){
-        result+=x[i];
-        result+=printSpaces(String.valueOf(x[i]).length(),20);
-        for(int j=0; j <n; j++){
-            result += matrix[i][j];
-            result+=printSpaces(String.valueOf(matrix[i][j]).length(),20);
+        String xString = printFixed(Double.toString(x[i]),20);
+        result+=xString;
+        for(int j=0; j<n; j++){
+            String doubleString =  printFixed(Double.toString(matrix[i][j]),20);
+            result += doubleString;
         }
         result+="\n";
     }
@@ -996,14 +994,16 @@ private static String imprimirMatriz(double [][] matrix, int n, double x[]){
     return result;
 }
 
-    private static String printSpaces(int n, int k){
-        String result = "";
-        if(n<k){
-            for(int i = 0; i<k-n;i++){
-                result+=" ";
+    private static String printFixed(String num, int pres){
+        String result = num;
+        if(result.length()>pres) {
+            result = result.substring(0, pres + 1);
+        }else if(result.length()<pres){
+            while (result.length()!=pres){
+                result+="0";
             }
         }
-        return result;
+        return result+"   ";
     }
 
     public static String interpolacionNeville(int nroPuntos, double valor, double[] x, double[] y){
@@ -1019,8 +1019,8 @@ private static String imprimirMatriz(double [][] matrix, int n, double x[]){
             }
         }
         result+=imprimirMatriz(tabla, nroPuntos, x); //Ésta es la mierda que imprime raro
-        result+= "\nResultado:\n";
-        result+="f("+valor+") = "+ tabla[nroPuntos-1][nroPuntos-1];
+        result+= "\nResult:\n";
+        result+="p("+valor+") = "+ tabla[nroPuntos-1][nroPuntos-1];
         return result;
     }
 }

@@ -44,6 +44,9 @@ public class InputNeville extends Fragment {
         final Button btnCalculate = (Button)rootView.findViewById(R.id.btn_calculate);
         final EditText inputValue = (EditText)rootView.findViewById(R.id.input_value);
         btnPointSize.setInputType(InputType.TYPE_CLASS_NUMBER);
+        inputValue.setInputType(InputType.TYPE_CLASS_NUMBER
+                | InputType.TYPE_NUMBER_FLAG_DECIMAL
+                | InputType.TYPE_NUMBER_FLAG_SIGNED);
         //OTROS
         btnPointSize.setOnClickListener(new View.OnClickListener() {
             @Override

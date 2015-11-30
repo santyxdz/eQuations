@@ -4,18 +4,24 @@
     tools:context="co.edu.eafit.equations.Tabs$PlaceholderFragment"
     android:orientation="vertical">
 
-    <ScrollView
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView4" >
+        android:layout_height="match_parent"
+        android:id="@+id/horizontalScrollView4" >
 
-        <TextView
-            android:layout_width="match_parent"
+        <ScrollView
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="New Text"
-            android:id="@+id/txt_show_text"
-            android:layout_gravity="center_horizontal"
-            android:autoText="false" />
-    </ScrollView>
+            android:id="@+id/scrollView4" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Answer"
+                android:id="@+id/txt_show_text"
+                android:layout_gravity="center_horizontal"
+                />
+        </ScrollView>
+    </HorizontalScrollView>
 
 </LinearLayout>
