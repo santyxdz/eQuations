@@ -1,5 +1,7 @@
 package co.edu.eafit.equations;
 
+import android.support.design.widget.Snackbar;
+
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
@@ -124,8 +126,8 @@ public class Methods {
                         if (TipeE == 1) { //Absolute Error
                             error = (xmed.subtract(aux)).abs();
                         } else {//Relative Error
-                            error = new BigDecimal(((xmed.subtract(aux)).doubleValue()) / xmed.doubleValue());
-                            error = error.abs();
+                            //error = new BigDecimal(((xmed.subtract(aux)).doubleValue()) / xmed.doubleValue());
+                            error = (xmed.subtract(aux)).abs();
                         }
                         ArrayList<String> newRow = new ArrayList<String>();
                         newRow.add(Long.toString(cont));
@@ -192,8 +194,8 @@ public class Methods {
                         if (TipeE == 1) { //Absolute Error
                             error = (xmed.subtract(aux)).abs();
                         } else {//Relative Error
-                            error = new BigDecimal(((xmed.subtract(aux)).doubleValue()) / xmed.doubleValue());
-                            error = error.abs();
+                            //error = new BigDecimal(((xmed.subtract(aux)).doubleValue()) / xmed.doubleValue());
+                            error = (xmed.subtract(aux)).abs();
                         }
                         ArrayList<String> newRow = new ArrayList<String>();
                         newRow.add(Long.toString(cont));
@@ -233,8 +235,8 @@ public class Methods {
             if (TipeE == 1) { //Absolute Error
                 error = (xn.subtract(xinf)).abs();
             } else {//Relative Error
-                error = new BigDecimal(((xn.subtract(xinf)).doubleValue()) / xn.doubleValue());
-                error = error.abs();
+               // error = new BigDecimal(((xn.subtract(xinf)).doubleValue()) / xn.doubleValue());
+                error = (xn.subtract(xinf)).abs();
             }
             ArrayList<String> newRow = new ArrayList<String>();
             newRow.add(Long.toString(cont));
@@ -271,12 +273,7 @@ public class Methods {
             BigDecimal xn = new BigDecimal(xinf.doubleValue() - yx.doubleValue() / dyx.doubleValue());
             yx = f(xn.doubleValue());
             dyx = g(xn.doubleValue());
-            if (TipeE == 1) { //Absolute Error
-                error = (xn.subtract(xinf)).abs();
-            } else {//Relative Error
-                error = new BigDecimal(((xn.subtract(xinf)).doubleValue()) / xn.doubleValue());
-                error = error.abs();
-            }
+            error = (xn.subtract(xinf)).abs();
             ArrayList<String> newRow = new ArrayList<String>();
             newRow.add(Long.toString(cont));
             newRow.add("" + xn.setScale(10, BigDecimal.ROUND_HALF_UP));
@@ -322,8 +319,8 @@ public class Methods {
                 if (TipeE == 1) { //Absolute Error
                     error = (x1.subtract(x0)).abs();
                 } else {//Relative Error
-                    error = new BigDecimal(((x1.subtract(x0)).doubleValue()) / x1.doubleValue());
-                    error = error.abs();
+                    //error = new BigDecimal(((x1.subtract(x0)).doubleValue()) / x1.doubleValue());
+                    error = (x1.subtract(x0)).abs();
                 }
                 ArrayList<String> newRow = new ArrayList<String>();
                 newRow.add(Long.toString(cont));
@@ -383,12 +380,7 @@ public class Methods {
             newRow.add("" + format.format(ddyx));
             newRow.add("" + format.format(error));
             tabla.addRow(newRow);
-            if (TipeE == 1) { //Absolute Error
-                error = (xn.subtract(x0)).abs();
-            } else {//Relative Error
-                error = new BigDecimal(((xn.subtract(x0)).doubleValue()) / xn.doubleValue());
-                error = error.abs();
-            }
+            error = (xn.subtract(x0)).abs();
             x0 = xn;
             den = new BigDecimal(Math.pow(dyx.doubleValue(), 2) - (yx.doubleValue() * ddyx.doubleValue()));
             cont++;

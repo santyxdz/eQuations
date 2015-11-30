@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Santi\.gradle\caches\modules-2\files-2.1\de.congrace\exp4j\0.3.11\150e7b4a77af47b03a1b65be7a01bd663ea64420\exp4j-0.3.11.jar"
+        jar="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\exploded-aar\eQuations\StaggeredGrid\unspecified\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="150e7b4a77af47b03a1b65be7a01bd663ea64420">
-        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\exp4j-0.3.11-ae24e8a71be7ffa3f7dfef71f3b09303529e9321.jar" />
+        sha1="81e4c2fb230e5a305bd66866a82101d1fd99a0b1">
+        <dex dex="C:\Users\Santi\Desktop\eQuations\app\build\intermediates\pre-dexed\debug\classes-e8fdc446393aa92a95003fd2e18cca1ffac7de24.jar" />
     </item>
 
 </items>

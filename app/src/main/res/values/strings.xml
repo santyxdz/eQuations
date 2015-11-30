@@ -350,6 +350,84 @@
         \n
         \n
     </string>
+    <string name="help_partial_pivoting">
+        The Gaussian Elimination method with partial pivoting is a variant of Gaussian Elimination.
+        But with the objective to reduce propagation of error, we try to locate into the diagonal
+        all the possible maximum values of each column of the submatrix (excluding the column of
+        the independent terms) changing its rows. For that purpose, in the stage k, we have to
+        search the higher value (in absolute value) of the column k under the element in the
+        diagonal and change the row in which that higher value is located with the row k.
+        \n\n\n
+    </string>
+    <string name="help_scaled_pivoting">
+        The Gaussian Elimination method with scaled partial pivoting is a variant of Gaussian
+        Elimination with partial pivoting. But with the objective to reduce propagation of error,
+        first and only at the beginning of the process, we find and store the maximum value of
+        each row (excluding the column of the independent terms).  Then, we try to locate into
+        the diagonal all the possible maximum values (in absolute value) between the elements of
+        each column divided by the maximum value of its respective row, using the maximum row
+        values that we found at the beginning. For that purpose, in the stage k, we have to search
+        the higher value (in absolute value), under the element in the diagonal, between the
+        elements of the column k divided by its respective maximum row value (found at the
+        beginning) and change the row in which that higher value is located with the row k.
+        \n\n\n
+    </string>
+    <string name="help_total_pivoting">
+        The Gaussian Elimination method with total pivoting has the same characteristics of
+        Gaussian Elimination. But with the objective to reduce propagation of error, we try to
+        locate into the diagonal all the possible maximum values of the submatrix (excluding the
+        column of the independent terms) changing its rows and/or columns. For that purpose, in
+        the stage k, first, we create a marks vector using the numbers from 1 to n for the unknowns.
+        Then, we have to search the higher value (in absolute value) of the submatrix formed by
+        the rows under the row k and the columns to the right of the column k. Once we find that
+        higher value, we have to change the row and/or column in which that higher value is located
+        with the row and/or column k to put that element in the diagonal, not forgetting to change
+        the marks values when we needed to change columns.
+        \n\n\n
+    </string>
+    <string name="help_neville">
+        Given a set of n+1 data points (xi, yi) where no two xi are the same, the interpolating
+        polynomial is the polynomial p of degree at most n with the property
+        \n
+        p(xi) = yi for all i = 0,…,n
+        \n
+        This polynomial exists and it is unique. Nevilles algorithm evaluates the polynomial at
+        some point x.
+        \n
+        Let pi,j denote the polynomial of degree j − i which goes through the points (xk, yk)
+        for k = i, i + 1, …, j. The pi,j satisfy the recurrence relation
+        \n\n\n
+    </string>
+    <string name="help_newton_polinomial">
+        This method is used to determine the polynomial that passes through some given points
+        (x, f(x)).  The Newton\'s interpolation method uses the concept of divided differences.
+        The divided differences allow us to calculate several of the desired polynomial, because
+        we use the given points incrementally to obtain an interpolating polynomial of different
+        order in each step. The interpolating polynomial would look like:
+        \n\n
+        P(x) = f[X0] + f[X0, x1](x-X0) + f[X0, X1, X2](x-X0)(x-X1)+…+f[X0, X1, X2, X3,…,
+        Xn](x-X0)(x-X1)…(x-Xn-1) \n\n
+
+        , where the k+1 divided difference is an approximation to the derivative of the k divided
+        difference evaluated in Xk. So,
+        \n\n
+        f[Xk, Xk+1] = (f[Xk+1] – f[Xk]) / (Xk+1 – Xk) = (f(Xk+1) – f(Xk)) / (Xk+1 – Xk)
+        \n\n\n
+    </string>
+    <string name="help_lagrange_polynomial">
+        This method is used to determine the lowest order polynomial that passes through some given
+        points (x, f(x)). The polynomial looks like:
+        \n\n
+        P(x) = L0(x)f(X0) + L1(x)f(X1) + L2(x)f(X2) + … + Ln(x)f(Xn)
+        \n\n
+        , where Lk is calculated as the quotient of the polynomial formed by the multiplication of
+        the subtractions between x and the x-coordinate of every given point except for the k point,
+        and the multiplication of the subtractions between the x-coordinate of the k point and the
+        x-coordinates of every given point except for the k point again. So,
+        \n\n
+        Lk(x) = ((x-X0)(x-X1)…(x-Xk-1)(x-Xk+1)…(x-Xn))/((Xk-X0)(Xk-X1)…(Xk-Xk-1)(Xk-Xk+1)…(Xk-Xn))
+        \n\n\n
+    </string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="generate">Generate</string>
