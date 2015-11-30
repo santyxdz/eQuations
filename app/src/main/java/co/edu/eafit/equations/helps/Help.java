@@ -82,6 +82,22 @@ public class Help extends Fragment {
                 textView.setText(getResources().getString(R.string.help_Jacobi));
                 img.setImageResource(R.drawable.jacobi);
                 break;
+            case "Partial Pivoting":
+                textView.setText(getResources().getString(R.string.help_partial_pivoting));
+                img.setImageResource(R.drawable.pivotpartial);
+                break;
+            case "Total Pivoting":
+                textView.setText(getResources().getString(R.string.help_total_pivoting));
+                img.setImageResource(R.drawable.pivotetotal);
+                break;
+            case "Staggered Pivoting":
+                textView.setText(getResources().getString(R.string.help_scaled_pivoting));
+                img.setImageResource(R.drawable.pivoteescalonado);
+                break;
+            case "Neville":
+                textView.setText(getResources().getString(R.string.help_neville));
+                img.setImageResource(R.drawable.neville);
+                break;
             default:
                 textView.setText("Not Defined");
                 img.setImageResource(R.drawable.searincre);
