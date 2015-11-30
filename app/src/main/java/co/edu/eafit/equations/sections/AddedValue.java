@@ -33,7 +33,6 @@ public class AddedValue extends Fragment {
         mAdapter.add("Total Pivoting");
         mAdapter.add("Staggered Pivoting");
         mAdapter.add("Neville");
-        mAdapter.add("Otros...");
         gridView.setAdapter(mAdapter);
         //gridView.setBackgroundColor(getResources().getColor(R.color.soft_teal));
         return rootView;

@@ -1,5 +1,7 @@
 package co.edu.eafit.equations.inputs.interpolation;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.InputType;
@@ -91,6 +93,10 @@ public class InputLinearSpline extends Fragment {
                 TableLinearSpline table = (TableLinearSpline)activity.getFragmentTable();
                 String res = Methods.interpolacionLinearSpline(numPoints, value, vectorx, vectory);
                 table.getText().setText(res);
+                SharedPreferences preferences = getActivity().getSharedPreferences("Interpolation", Context.MODE_PRIVATE);
+                Load.saveEvalValue(preferences,Double.toString(value));
+                Load.saveNumPoints(preferences,Integer.toString(numPoints));
+                Load.savePoints(preferences, vectorx, vectory);
             }
         });
         return rootView;
