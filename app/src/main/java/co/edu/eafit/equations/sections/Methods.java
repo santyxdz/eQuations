@@ -1061,8 +1061,8 @@ private static String imprimirMatriz(double [][] matrix, int n, double x[]){
             }
         }
         result+="Result Table:\n";
-        result+=printMatriz(tabla, nroPuntos,x);
-        result+="Polinomio interpolante:\n";
+        result+=imprimirMatriz(tabla, nroPuntos,x);
+        result+="Interpolation Polynomial:\n";
         String pol = "P(x): "+String.valueOf(tabla[0][0]);
         String temp = "";
         double resultado = tabla[0][0];
@@ -1074,47 +1074,8 @@ private static String imprimirMatriz(double [][] matrix, int n, double x[]){
             resultado = resultado + tabla[i][i]*aux;
         }
         result+=pol+"\n";
-        result+="\nResultado:\n";
-        result+="f("+valor+") = "+ resultado+"\n";
+        result+="\nResult:\n";
+        result+="p("+valor+") = "+ resultado+"\n";
         return result;
-    }
-
-    private static String printMatriz(double [][] matrix, int n, double x[]){
-        String result = "";
-        result+="Xi";
-        result+=printSpaces(String.valueOf("Xi").length(),20);
-        for(int i=0;i<n;i++){
-            result+="f"+(i)+"[]";
-            result+=printSpaces(String.valueOf("f"+i+"[]").length(),20);
-        }
-        result+="\n";
-        for(int i=0; i< n;i++){
-            result+=x[i];
-            result+=printSpaces(String.valueOf(x[i]).length(),20);
-            for(int j=0; j <n; j++){
-                result+=matrix[i][j];
-                result+=printSpaces(String.valueOf(matrix[i][j]).length(),20);
-            }
-            result+="\n";
-        }
-        result+="\n";
-        return result;
-    }
-
-    private static String printSpaces(int n, int k){
-        String result = "";
-        if(n<k){
-            for(int i = 0; i<k-n;i++){
-                result+=" ";
-            }
-        }
-        return result;
-    }
-    private static String strI(int a, int b){
-        String str = "";
-        for(int i=a;i<=b;i++){
-            str = str +""+ i;
-        }
-        return str;
     }
 }

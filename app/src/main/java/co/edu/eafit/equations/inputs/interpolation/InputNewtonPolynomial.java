@@ -16,6 +16,7 @@ import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
 import co.edu.eafit.equations.sections.Methods;
 import co.edu.eafit.equations.tables.interpolation.TableNeville;
+import co.edu.eafit.equations.tables.interpolation.TableNewtonPolynomial;
 
 public class InputNewtonPolynomial extends Fragment {
     TableLayout matrixinput;
@@ -87,9 +88,8 @@ public class InputNewtonPolynomial extends Fragment {
                 double value = Double.parseDouble(inputValue.getText().toString());
 
                 Tabs activity = (Tabs)getActivity();
-                TableNeville table = (TableNeville)activity.getFragmentTable();
-
-                String res = Methods.interpolacionNeville(numPoints,value,vectorx,vectory);
+                TableNewtonPolynomial table = (TableNewtonPolynomial)activity.getFragmentTable();
+                String res = Methods.interpolacionNewtonDiferenciasDivididas(numPoints, value, vectorx, vectory);
                 table.getText().setText(res);
             }
         });
