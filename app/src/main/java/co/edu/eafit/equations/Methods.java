@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-import co.edu.eafit.equations.Tabla;
+import co.edu.eafit.equations.methods.classes.CubicSpline;
 import co.edu.eafit.equations.methods.classes.Spline;
 
 public class Methods {
@@ -1085,5 +1085,17 @@ private static String imprimirMatriz(double [][] matrix, int n, double x[]){
         String result = spline.toString();
         result+="f(" + valor + ")=" + spline.interpolate(valor)+"\n";
         return  result;
+    }
+    public static String interpolacionCubicSpline(int nroPuntos, double valor, double[] xv, double[] yv){
+        ArrayList<Double> xn = new ArrayList<>();
+        ArrayList<Double> yn = new ArrayList<>();
+        for(double x:xv){
+            xn.add(x);
+        }
+        for(double y:yv){
+            yn.add(y);
+        }
+        CubicSpline cs = new  CubicSpline(xn,yn);
+        return cs.toString()+"\n"+cs.evaluate(valor);
     }
 }

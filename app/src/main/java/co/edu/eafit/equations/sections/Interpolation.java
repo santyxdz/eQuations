@@ -32,6 +32,7 @@ public class Interpolation extends Fragment {
         mAdapter.add("Newton Polynomial");
         mAdapter.add("Lagrange Polynomial");
         mAdapter.add("Linear Spline");
+        mAdapter.add("Cubic Spline");
         gridView.setAdapter(mAdapter);
         return rootView;
     }

@@ -30,6 +30,7 @@ import co.edu.eafit.equations.inputs.equationssystems.InputGEWithPartialPivoting
 import co.edu.eafit.equations.inputs.equationssystems.InputGEWithStaggeredPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputJacobi;
 import co.edu.eafit.equations.inputs.equationssystems.Load;
+import co.edu.eafit.equations.inputs.interpolation.InputCubicSpline;
 import co.edu.eafit.equations.inputs.interpolation.InputLagrangePolynomial;
 import co.edu.eafit.equations.inputs.interpolation.InputLinearSpline;
 import co.edu.eafit.equations.inputs.interpolation.InputNeville;
@@ -49,6 +50,7 @@ import co.edu.eafit.equations.tables.equiationssystems.TableGaussSeidel;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithPartialPivoting;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithStaggeredPivoting;
+import co.edu.eafit.equations.tables.interpolation.TableCubicSpline;
 import co.edu.eafit.equations.tables.interpolation.TableLagrangePolynomial;
 import co.edu.eafit.equations.tables.interpolation.TableLinearSpline;
 import co.edu.eafit.equations.tables.interpolation.TableNeville;
@@ -171,6 +173,7 @@ public class Tabs extends AppCompatActivity {
                     case "Lagrange Polynomial":
                     case "Neville":
                     case "Linear Spline":
+                    case "Cubic Spline":
                         preferences = getSharedPreferences("Interpolation",Context.MODE_PRIVATE);
                         try{
                             co.edu.eafit.equations.inputs.interpolation.Load.load(preferences,returnthis());
@@ -283,6 +286,9 @@ public class Tabs extends AppCompatActivity {
                             case "Linear Spline":
                                 fragmentInput = InputLinearSpline.newInstance();
                                 break;
+                            case "Cubic Spline":
+                                fragmentInput = InputCubicSpline.newInstance();
+                                break;
                             default:
                                 fragmentInput = null;
                                 break;
@@ -357,6 +363,9 @@ public class Tabs extends AppCompatActivity {
                                 break;
                             case "Linear Spline":
                                 fragmentTable = TableLinearSpline.newInstance();
+                                break;
+                            case "Cubic Spline":
+                                fragmentTable = TableCubicSpline.newInstance();
                                 break;
                             default:
                                 fragmentTable = null;

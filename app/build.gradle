@@ -29,5 +29,6 @@ dependencies {
     compile 'com.android.support:design:23.0.1'
     compile group: 'org.ejml', name: 'all', version: '0.28'
     compile 'com.google.code.gson:gson:2.5'
+    compile 'de.congrace:exp4j:0.3.11'
 
 }

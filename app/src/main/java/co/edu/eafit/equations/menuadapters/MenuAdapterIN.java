@@ -82,6 +82,8 @@ public class MenuAdapterIN extends ArrayAdapter<String>{
                     case 2:
                         intent.putExtra("type","Linear Spline");
                         break;
+                    case 3:
+                        intent.putExtra("type","Cubic Spline");
                 }
                 getContext().startActivity(intent);
             }
