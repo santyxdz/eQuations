@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import java.math.BigDecimal;
 
-import co.edu.eafit.equations.sections.Methods;
+import co.edu.eafit.equations.Methods;
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
 import co.edu.eafit.equations.tables.singlevariable.TableBisection;

@@ -12,18 +12,19 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
+import co.edu.eafit.equations.Methods;
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
-import co.edu.eafit.equations.Methods;
+import co.edu.eafit.equations.tables.interpolation.TableLinearSpline;
 import co.edu.eafit.equations.tables.interpolation.TableNewtonPolynomial;
 
-public class InputNewtonPolynomial extends Fragment {
+public class InputLinearSpline extends Fragment {
     TableLayout matrixinput;
     TableLayout vectorbinput;
     int size;
     int numPoints;
-    public static InputNewtonPolynomial newInstance() {
-        InputNewtonPolynomial fragment = new InputNewtonPolynomial();
+    public static InputLinearSpline newInstance() {
+        InputLinearSpline fragment = new InputLinearSpline();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -32,7 +33,7 @@ public class InputNewtonPolynomial extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.tab_input_neville, container, false);
+        final View rootView = inflater.inflate(R.layout.tab_input_linear_spline, container, false);
         final EditText inputPointsSize = (EditText)rootView.findViewById(R.id.input_points_size);
         final Button btnPointSize = (Button)rootView.findViewById(R.id.btn_points_size);
         final TableLayout pointsLayout = (TableLayout)rootView.findViewById(R.id.PointsTable);
@@ -87,8 +88,8 @@ public class InputNewtonPolynomial extends Fragment {
                 double value = Double.parseDouble(inputValue.getText().toString());
 
                 Tabs activity = (Tabs)getActivity();
-                TableNewtonPolynomial table = (TableNewtonPolynomial)activity.getFragmentTable();
-                String res = Methods.interpolacionNewtonDiferenciasDivididas(numPoints, value, vectorx, vectory);
+                TableLinearSpline table = (TableLinearSpline)activity.getFragmentTable();
+                String res = Methods.interpolacionLinearSpline(numPoints, value, vectorx, vectory);
                 table.getText().setText(res);
             }
         });

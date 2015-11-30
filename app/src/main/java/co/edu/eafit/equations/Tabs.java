@@ -31,6 +31,7 @@ import co.edu.eafit.equations.inputs.equationssystems.InputGEWithStaggeredPivoti
 import co.edu.eafit.equations.inputs.equationssystems.InputJacobi;
 import co.edu.eafit.equations.inputs.equationssystems.Load;
 import co.edu.eafit.equations.inputs.interpolation.InputLagrangePolynomial;
+import co.edu.eafit.equations.inputs.interpolation.InputLinearSpline;
 import co.edu.eafit.equations.inputs.interpolation.InputNeville;
 import co.edu.eafit.equations.inputs.interpolation.InputNewtonPolynomial;
 import co.edu.eafit.equations.inputs.singlevariable.InputBisection;
@@ -49,6 +50,7 @@ import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithPartialPivoting;
 import co.edu.eafit.equations.tables.equiationssystems.TableGaussianEliminationWithStaggeredPivoting;
 import co.edu.eafit.equations.tables.interpolation.TableLagrangePolynomial;
+import co.edu.eafit.equations.tables.interpolation.TableLinearSpline;
 import co.edu.eafit.equations.tables.interpolation.TableNeville;
 import co.edu.eafit.equations.tables.interpolation.TableNewtonPolynomial;
 import co.edu.eafit.equations.tables.singlevariable.TableBisection;
@@ -270,6 +272,9 @@ public class Tabs extends AppCompatActivity {
                             case "Neville":
                                 fragmentInput = InputNeville.newInstance();
                                 break;
+                            case "Linear Spline":
+                                fragmentInput = InputLinearSpline.newInstance();
+                                break;
                             default:
                                 fragmentInput = null;
                                 break;
@@ -341,6 +346,9 @@ public class Tabs extends AppCompatActivity {
                                 break;
                             case "Neville":
                                 fragmentTable = TableNeville.newInstance();
+                                break;
+                            case "Linear Spline":
+                                fragmentTable = TableLinearSpline.newInstance();
                                 break;
                             default:
                                 fragmentTable = null;

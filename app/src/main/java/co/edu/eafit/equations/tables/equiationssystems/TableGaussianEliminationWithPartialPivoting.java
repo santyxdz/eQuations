@@ -35,7 +35,7 @@ public class TableGaussianEliminationWithPartialPivoting extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab_table_gaussian_elimination_with_partial_pivoting, container, false);
+        View rootView = inflater.inflate(R.layout.tab_table_ge_with_partial_pivoting, container, false);
         TextView textView = (TextView) rootView.findViewById(R.id.section_label);
         text = (TextView)rootView.findViewById(R.id.gau_text);
         tableLayout = (TableLayout)rootView.findViewById(R.id.tabla);

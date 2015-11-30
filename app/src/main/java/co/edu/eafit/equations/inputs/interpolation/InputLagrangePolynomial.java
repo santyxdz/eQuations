@@ -14,9 +14,8 @@ import android.widget.TableRow;
 
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
-import co.edu.eafit.equations.sections.Methods;
+import co.edu.eafit.equations.Methods;
 import co.edu.eafit.equations.tables.interpolation.TableLagrangePolynomial;
-import co.edu.eafit.equations.tables.interpolation.TableNeville;
 
 public class InputLagrangePolynomial extends Fragment {
     TableLayout matrixinput;

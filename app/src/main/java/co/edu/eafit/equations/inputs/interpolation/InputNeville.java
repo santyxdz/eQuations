@@ -3,7 +3,6 @@ package co.edu.eafit.equations.inputs.interpolation;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.InputType;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
-import org.ejml.simple.SimpleMatrix;
-
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
-import co.edu.eafit.equations.sections.Methods;
-import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
+import co.edu.eafit.equations.Methods;
 import co.edu.eafit.equations.tables.interpolation.TableNeville;
 
 public class InputNeville extends Fragment {

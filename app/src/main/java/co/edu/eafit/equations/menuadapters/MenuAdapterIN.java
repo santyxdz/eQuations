@@ -79,6 +79,9 @@ public class MenuAdapterIN extends ArrayAdapter<String>{
                     case 1:
                         intent.putExtra("type","Lagrange Polynomial");
                         break;
+                    case 2:
+                        intent.putExtra("type","Linear Spline");
+                        break;
                 }
                 getContext().startActivity(intent);
             }

@@ -14,11 +14,10 @@ import android.widget.TableRow;
 
 import org.ejml.simple.SimpleMatrix;
 
-import co.edu.eafit.equations.sections.Methods;
+import co.edu.eafit.equations.Methods;
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
 import co.edu.eafit.equations.tables.equiationssystems.TableCrout;
-import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
 
 public class InputCrout extends Fragment {
     TableLayout matrixinput;

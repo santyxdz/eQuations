@@ -1,4 +1,4 @@
-package co.edu.eafit.equations.sections;
+package co.edu.eafit.equations;
 
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
@@ -10,6 +10,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import co.edu.eafit.equations.Tabla;
+import co.edu.eafit.equations.methods.classes.Spline;
 
 public class Methods {
     public static final String[] methods = {
@@ -1077,5 +1078,12 @@ private static String imprimirMatriz(double [][] matrix, int n, double x[]){
         result+="\nResult:\n";
         result+="p("+valor+") = "+ resultado+"\n";
         return result;
+    }
+    public static String interpolacionLinearSpline(int nroPuntos, double valor, double[] x, double[] y){
+        Spline spline = new Spline(0,nroPuntos);
+        spline.addValues(x,y);
+        String result = spline.toString();
+        result+="f(" + valor + ")=" + spline.interpolate(valor)+"\n";
+        return  result;
     }
 }
