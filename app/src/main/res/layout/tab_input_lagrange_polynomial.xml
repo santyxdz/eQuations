@@ -19,14 +19,14 @@
             android:inputType="number"
             android:ems="10"
             android:hint="@string/matrix_size_hint"
-            android:id="@+id/input_matrix_size"
+            android:id="@+id/input_points_size"
             android:layout_weight="0.7" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/generate"
-            android:id="@+id/btn_matrix_size"
+            android:id="@+id/btn_points_size"
             android:theme="@style/AppTheme.AppBarOverlay"
             android:background="@color/bg_buttom_submit"
             android:layout_marginTop="10dp"
@@ -34,6 +34,14 @@
             android:layout_weight="0.3" />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="x                          f(x)"
+        android:id="@+id/textView2"
+        android:gravity="center_vertical|center|center_horizontal" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -44,57 +52,46 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/horizontalScrollView"
-                android:paddingBottom="20dp">
-
-                <TableLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/MatrixA"></TableLayout>
-
-            </HorizontalScrollView>
-
-            <TextView
+            <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/PointsTable"></TableLayout>
+
+            <TextView
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="-"
-                android:id="@+id/textView"
+                android:text="Point"
+                android:id="@+id/textView10"
                 android:gravity="center_vertical|center|center_horizontal" />
 
-            <HorizontalScrollView
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/horizontalScrollView2" >
+                android:layout_height="wrap_content"
+                android:id="@+id/lay_input_function"
+                android:visibility="invisible">
 
-                <TableLayout
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/VectorB" />
-            </HorizontalScrollView>
+                    android:id="@+id/input_value"
+                    android:layout_weight=".70" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:text="@string/calculate"
-                android:id="@+id/btn_calculate"
-                android:theme="@style/AppTheme.AppBarOverlay"
-                android:background="@color/bg_buttom_submit"
-                android:layout_marginTop="10dp"
-                android:visibility="invisible" />
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calculate"
+                    android:id="@+id/btn_calculate"
+                    android:theme="@style/AppTheme.AppBarOverlay"
+                    android:background="@color/bg_buttom_submit"
+                    android:visibility="visible"
+                    android:layout_weight=".30" />
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lagrange"
-        android:id="@+id/textView3"
-        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
