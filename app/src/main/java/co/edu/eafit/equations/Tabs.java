@@ -170,6 +170,14 @@ public class Tabs extends AppCompatActivity {
                     case "Newton Polynomial":
                     case "Lagrange Polynomial":
                     case "Neville":
+                    case "Linear Spline":
+                        preferences = getSharedPreferences("Interpolation",Context.MODE_PRIVATE);
+                        try{
+                            co.edu.eafit.equations.inputs.interpolation.Load.load(preferences,returnthis());
+                        }catch(Exception e){
+                            Toast.makeText(returnthis().getApplicationContext(),
+                                    e.toString(),Toast.LENGTH_SHORT).show();
+                        }
                     default:
                         break;
                 }
