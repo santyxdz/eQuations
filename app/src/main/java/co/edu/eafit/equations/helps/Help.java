@@ -98,6 +98,14 @@ public class Help extends Fragment {
                 textView.setText(getResources().getString(R.string.help_neville));
                 img.setImageResource(R.drawable.neville);
                 break;
+            case "Newton Polynomial":
+                textView.setText(getResources().getString(R.string.help_newton_polinomial));
+                img.setImageResource(R.drawable.newton_polynomial);
+                break;
+            case "Lagrange Polynomial":
+                textView.setText(getResources().getString(R.string.help_lagrange_polynomial));
+                img.setImageResource(R.drawable.lagrange2);
+                break;
             default:
                 textView.setText("Not Defined");
                 img.setImageResource(R.drawable.searincre);

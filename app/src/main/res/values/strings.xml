@@ -398,6 +398,36 @@
         for k = i, i + 1, …, j. The pi,j satisfy the recurrence relation
         \n\n\n
     </string>
+    <string name="help_newton_polinomial">
+        This method is used to determine the polynomial that passes through some given points
+        (x, f(x)).  The Newton\'s interpolation method uses the concept of divided differences.
+        The divided differences allow us to calculate several of the desired polynomial, because
+        we use the given points incrementally to obtain an interpolating polynomial of different
+        order in each step. The interpolating polynomial would look like:
+        \n\n
+        P(x) = f[X0] + f[X0, x1](x-X0) + f[X0, X1, X2](x-X0)(x-X1)+…+f[X0, X1, X2, X3,…,
+        Xn](x-X0)(x-X1)…(x-Xn-1) \n\n
+
+        , where the k+1 divided difference is an approximation to the derivative of the k divided
+        difference evaluated in Xk. So,
+        \n\n
+        f[Xk, Xk+1] = (f[Xk+1] – f[Xk]) / (Xk+1 – Xk) = (f(Xk+1) – f(Xk)) / (Xk+1 – Xk)
+        \n\n\n
+    </string>
+    <string name="help_lagrange_polynomial">
+        This method is used to determine the lowest order polynomial that passes through some given
+        points (x, f(x)). The polynomial looks like:
+        \n\n
+        P(x) = L0(x)f(X0) + L1(x)f(X1) + L2(x)f(X2) + … + Ln(x)f(Xn)
+        \n\n
+        , where Lk is calculated as the quotient of the polynomial formed by the multiplication of
+        the subtractions between x and the x-coordinate of every given point except for the k point,
+        and the multiplication of the subtractions between the x-coordinate of the k point and the
+        x-coordinates of every given point except for the k point again. So,
+        \n\n
+        Lk(x) = ((x-X0)(x-X1)…(x-Xk-1)(x-Xk+1)…(x-Xn))/((Xk-X0)(Xk-X1)…(Xk-Xk-1)(Xk-Xk+1)…(Xk-Xn))
+        \n\n\n
+    </string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="generate">Generate</string>
