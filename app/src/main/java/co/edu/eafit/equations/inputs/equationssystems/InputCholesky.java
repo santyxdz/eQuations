@@ -1,5 +1,7 @@
 package co.edu.eafit.equations.inputs.equationssystems;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.InputType;
@@ -18,7 +20,6 @@ import co.edu.eafit.equations.sections.Methods;
 import co.edu.eafit.equations.R;
 import co.edu.eafit.equations.Tabs;
 import co.edu.eafit.equations.tables.equiationssystems.TableCholesky;
-import co.edu.eafit.equations.tables.equiationssystems.TableGaussianElimination;
 
 
 public class InputCholesky extends Fragment {
@@ -104,10 +105,14 @@ public class InputCholesky extends Fragment {
                 Tabs activity = (Tabs)getActivity();
                 TableCholesky tabla = (TableCholesky)activity.getFragmentTable();
 
-                String res = Methods.factorizacionLUCholesky(matrix,vectorb);
+                String res = Methods.factorizacionLUCholesky(matrix, vectorb);
 
-                tabla.getText().setText("MATRIZ A \n"+ matrix.toString()+"\n VECTOR B \n"+
-                        vectorb.toString()+"\n" + res +"\n\n\n");
+                tabla.getText().setText("MATRIZ A \n" + matrix.toString() + "\n VECTOR B \n" +
+                        vectorb.toString() + "\n" + res + "\n\n\n");
+                SharedPreferences preferences = getActivity().getSharedPreferences("EquationsSystems", Context.MODE_PRIVATE);
+                Load.saveN(preferences, inputMatrixSize.getText().toString());
+                Load.saveMatrixA(preferences,matrix);
+                Load.saveVectorB(preferences,vectorb);
             }
         });
         return rootView;

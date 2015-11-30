@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import co.edu.eafit.equations.helps.Help;
 import co.edu.eafit.equations.inputs.equationssystems.InputCholesky;
@@ -28,6 +29,7 @@ import co.edu.eafit.equations.inputs.equationssystems.InputGaussianElimination;
 import co.edu.eafit.equations.inputs.equationssystems.InputGEWithPartialPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputGEWithStaggeredPivoting;
 import co.edu.eafit.equations.inputs.equationssystems.InputJacobi;
+import co.edu.eafit.equations.inputs.equationssystems.Load;
 import co.edu.eafit.equations.inputs.interpolation.InputLagrangePolynomial;
 import co.edu.eafit.equations.inputs.interpolation.InputNeville;
 import co.edu.eafit.equations.inputs.interpolation.InputNewtonPolynomial;
@@ -79,6 +81,7 @@ public class Tabs extends AppCompatActivity {
         this.tabla = tabla;
     }
     public String nameToolbar;
+    public Tabs returnthis(){return this;}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -154,7 +157,13 @@ public class Tabs extends AppCompatActivity {
                     case "Doolittle":
                     case "Gauss Seidel":
                     case "Jacobi":
-
+                        preferences = getSharedPreferences("EquationsSystems",Context.MODE_PRIVATE);
+                        try {
+                            Load.load(preferences,returnthis());
+                        }catch (Exception e){
+                            Toast.makeText(returnthis().getApplicationContext(),
+                                    e.toString(),Toast.LENGTH_SHORT).show();
+                        }
                         break;
                     case "Newton Polynomial":
                     case "Lagrange Polynomial":
